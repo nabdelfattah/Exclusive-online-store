@@ -1,0 +1,37 @@
+@import "../mixins";
+
+////////////////////////////////////////////////
+/// BANNER
+////////////
+.banner {
+  background-color: #000;
+  height: 4.8rem;
+  @include font();
+  color: var(--c-off-white);
+  .container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    justify-items: center;
+  }
+}
+.banner-link {
+  @include font(1.4rem, 2.4rem, 600);
+  text-decoration: underline;
+  margin-left: 0.8rem;
+}
+.banner-select {
+  display: inline-block;
+  @include font(1.4rem, 3rem);
+  color: var(--c-off-white);
+  background-color: rgba(0, 0, 0, 0.4);
+  border: none;
+  width: 7.8rem;
+  cursor: pointer;
+  border-radius: var(--radius);
+  outline: none;
+}
+////////////////////////////////////////////////
+/// HEADER
+////////////

@@ -16,7 +16,7 @@
 
   --animation: all 0.3s;
 
-  --border-radius: 4px;
+  --radius: 4px;
 }
 /********************************************************/
 /* Global Reset */
@@ -63,5 +63,5 @@ button {
   width: 100%;
   max-width: var(--width-desktop);
   margin: 0 auto;
-  padding: 1rem;
+  padding: 0 1rem;
 }
