@@ -10,8 +10,9 @@
   --c-white: #fff;
   --c-off-white: #fafafa;
   --bg-gray: #f5f5f5;
+  --bg-black-transparent: rgba(0, 0, 0, 0.4);
 
-  --width-desktop: 115rem; /*1170 - 10*2 padding*/
+  --width-desktop: 117rem; /*1170 - 10*2 padding*/
   --width-mob: 40rem;
 
   --animation: all 0.3s;
@@ -64,4 +65,12 @@ button {
   max-width: var(--width-desktop);
   margin: 0 auto;
   padding: 0 1rem;
+}
+.logo {
+  font-size: 2.4rem;
+  line-height: 2.4rem;
+  font-weight: 700;
+  font-family: var(--f-inter);
+  letter-spacing: 0.3px;
+  user-select: none;
 }

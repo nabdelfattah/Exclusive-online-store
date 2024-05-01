@@ -5,10 +5,12 @@ import UserContextProvider from "../UserContext";
 export function LayoutPage() {
   return (
     <UserContextProvider>
-      <Banner />
-      <Header />
-      <Outlet />
-      <Footer />
+      <div className="layout">
+        <Banner />
+        <Header />
+        <Outlet />
+        <Footer />
+      </div>
     </UserContextProvider>
   );
 }

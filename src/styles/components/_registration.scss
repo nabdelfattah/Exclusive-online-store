@@ -1,0 +1,10 @@
+@import "../mixins";
+
+.registration_wrapper {
+  margin: 6rem 0 14rem;
+  display: grid;
+  grid-template-columns: 1.27fr 1fr;
+  img {
+    width: auto;
+  }
+}

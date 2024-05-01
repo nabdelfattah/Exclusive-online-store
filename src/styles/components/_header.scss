@@ -16,16 +16,16 @@
     justify-items: center;
   }
 }
-.banner-link {
+.banner_link {
   @include font(1.4rem, 2.4rem, 600);
   text-decoration: underline;
   margin-left: 0.8rem;
 }
-.banner-select {
+.banner_select {
   display: inline-block;
   @include font(1.4rem, 3rem);
   color: var(--c-off-white);
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: var(--bg-black-transparent);
   border: none;
   width: 7.8rem;
   cursor: pointer;
@@ -35,3 +35,91 @@
 ////////////////////////////////////////////////
 /// HEADER
 ////////////
+.header-primary {
+  border-bottom: 0.5px solid var(--c-black);
+  .container {
+    display: flex;
+    justify-content: space-between;
+    padding: 4.3rem 1rem 1.9rem;
+    color: var(--c-black);
+  }
+}
+.header_navLink {
+  @include font(1.6rem, 2.4rem);
+  border-bottom: 1px solid transparent;
+  transition: var(--animation);
+  &.active {
+    border-bottom: 1px solid;
+    margin-bottom: -1px;
+  }
+}
+.header_nav {
+  display: flex;
+  gap: 4.8rem;
+}
+.header_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+  position: relative;
+}
+.header_form {
+  max-width: 24.3rem;
+  background-color: var(--bg-gray);
+  padding: 0.7rem 1.2rem;
+  display: flex;
+  align-items: center;
+}
+.header_input {
+  border: none;
+  outline: none;
+  background: inherit;
+  max-width: 19.7rem;
+}
+.header_iconsWrapper {
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+}
+.userIcon {
+  transition: var(--animation);
+}
+.userIcon--selected {
+  background-color: var(--c-primary);
+  border-radius: 50%;
+  padding: 0.5rem;
+  & * {
+    stroke: var(--c-white);
+  }
+}
+.header_userNavList {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0%;
+  flex-direction: column;
+  gap: 1.3rem;
+  background-color: var(--bg-black-transparent);
+  border-radius: var(--radius);
+  padding: 1.8rem 0;
+  a {
+    @include font();
+    color: var(--c-off-white);
+    display: flex;
+    gap: 1.6rem;
+    align-items: center;
+    padding: 0 2rem;
+    transition: var(--animation);
+
+    img {
+      height: 2.4rem;
+      width: 2.4rem;
+    }
+  }
+  a:hover {
+    color: var(--c-accent);
+  }
+}
+.showNav {
+  display: flex;
+}
