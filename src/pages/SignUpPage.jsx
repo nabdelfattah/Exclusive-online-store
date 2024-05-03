@@ -19,7 +19,7 @@ export function SignUpPage() {
             Sign up with Google
           </button>
           <p className="registration_redirectionText">
-            Already have account? <Link to="login">Log in</Link>
+            Already have account? <Link to="/login">Log in</Link>
           </p>
         </div>
       </form>

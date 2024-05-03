@@ -1,0 +1,70 @@
+@import "../mixins";
+.contact_wrapper.container {
+  display: grid;
+  grid-template-columns: 34rem 80rem;
+  gap: 3rem;
+  margin-top: 3.8rem;
+}
+.contact_info {
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 3.5rem;
+  box-shadow: 1px 0 13px rgba(0, 0, 0, 0.05);
+  border-radius: var(--radius);
+  h3 {
+    display: flex;
+    gap: 1.6rem;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    @include font(1.6rem, 2.4rem, 500);
+  }
+  p {
+    @include font(1.4rem, 2.1rem);
+    margin-top: 1.6rem;
+  }
+}
+.contact_info_call {
+  padding-bottom: 3.2rem;
+  border-bottom: 1px solid var(--bg-black-transparent);
+}
+.contact_info_mail {
+  padding-top: 3.2rem;
+}
+.contact_form {
+  padding: 4rem 3.2rem;
+  box-shadow: 1px 0 13px rgba(0, 0, 0, 0.05);
+  border-radius: var(--radius);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1.6rem;
+  row-gap: 3.2rem;
+  & *::placeholder {
+    @include font(1.6rem, 2.4rem);
+  }
+  textarea {
+    grid-column: span 3;
+    resize: none;
+    height: 20.7rem;
+  }
+  input,
+  textarea {
+    background-color: var(--bg-gray);
+    border: none;
+    padding: 1.3rem 1.6rem;
+    border-radius: var(--radius);
+    outline: none;
+  }
+  button {
+    grid-column: 3;
+  }
+}
+.contact_inputWrapper {
+  position: relative;
+}
+.contact_inputWrapper::before {
+  content: "*";
+  position: absolute;
+  top: 24%;
+  left: 47%;
+  color: var(--c-primary-hover);
+}

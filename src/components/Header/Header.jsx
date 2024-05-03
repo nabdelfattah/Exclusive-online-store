@@ -22,10 +22,10 @@ export function Header() {
         <div className="header_wrapper">
           <Search />
           <div className="header_iconsWrapper">
-            <Link to="wishlist">
+            <Link to="/wishlist">
               <img src={wishlist} />
             </Link>
-            <Link to="cart">
+            <Link to="/cart">
               <img src={cart} />
             </Link>
             <button className="userIcon" onClick={showUserNavHandler}>

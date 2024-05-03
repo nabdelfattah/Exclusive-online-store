@@ -1,3 +1,74 @@
+import { Breadcrumb } from "../components";
+import contactInfo1 from "../assets/icons/contactInfo1.svg";
+import contactInfo2 from "../assets/icons/contactInfo2.svg";
+
 export function ContactPage() {
-  return;
+  // const [isInputClicked, setIsInputClicked] = useState(false);
+  function inputClickHandler(e) {
+    e.currentTarget.closest("div").className = "";
+  }
+  function inputBlurHandler(e) {
+    if (!e.currentTarget.value) {
+      e.currentTarget.closest("div").className = "contact_inputWrapper";
+    }
+  }
+  const contactChain = [
+    { route: "/", text: "Home" },
+    { route: "/", text: "Contact" },
+  ];
+  return (
+    <>
+      <Breadcrumb chain={contactChain} />
+      <div className="contact_wrapper mb-14 container">
+        <div className="contact_info">
+          <section className="contact_info_call">
+            <h3>
+              <img src={contactInfo1} /> Call To Us
+            </h3>
+            <p>We are available 24/7, 7 days a week.</p>
+            <p>Phone: +8801611112222</p>
+          </section>
+          <section className="contact_info_mail">
+            <h3>
+              <img src={contactInfo2} /> Write To US
+            </h3>
+            <p>Fill out our form and we will contact you within 24 hours.</p>
+            <p>Emails: customer@exclusive.com</p>
+            <p>Emails: support@exclusive.com</p>
+          </section>
+        </div>
+        <form className="contact_form">
+          <div className="contact_inputWrapper">
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              onClick={inputClickHandler}
+              onBlur={inputBlurHandler}
+            />
+          </div>
+          <div className="contact_inputWrapper">
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              onClick={inputClickHandler}
+              onBlur={inputBlurHandler}
+            />
+          </div>
+          <div className="contact_inputWrapper">
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Your Phone"
+              onClick={inputClickHandler}
+              onBlur={inputBlurHandler}
+            />
+          </div>
+          <textarea name="message" placeholder="Your Massage" />
+          <button className="btn-primary">Send Massage</button>
+        </form>
+      </div>
+    </>
+  );
 }

@@ -1,7 +1,16 @@
 export * from './Header/Banner'
 export * from './Header/Header'
-export * from "./RegistrationHeader"
-export * from "./RegistrationInput"
+
+export * from "./Registration/RegistrationHeader"
+export * from "./Registration/RegistrationInput"
+
+export * from "./Home/Advertisement"
+export * from "./Home/SectionBestSelling"
+export * from "./Home/SectionCategories"
+export * from "./Home/SectionExplore"
+export * from "./Home/SectionNew"
+export * from "./Home/SectionSale"
+
 export * from "./Breadcrumb"
 export * from "./Features"
 export * from './Footer'

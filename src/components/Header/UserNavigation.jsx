@@ -21,25 +21,25 @@ export const UserNavigation = forwardRef((props, ref) => {
       {user ? (
         <>
           <li>
-            <Link to="users/:id">
+            <Link to="/users/:id">
               <img src={userIcon} />
               Manage My Account
             </Link>
           </li>
           <li>
-            <Link to="users/:id">
+            <Link to="/users/:id">
               <img src={ordersIcon} />
               My Order
             </Link>
           </li>
           <li>
-            <Link to="users/:id">
+            <Link to="/users/:id">
               <img src={cancelIcon} />
               My Cancellations
             </Link>
           </li>
           <li>
-            <Link to="uses/:id">
+            <Link to="/uses/:id">
               <img src={starIcon} />
               My Reviews
             </Link>
@@ -54,13 +54,13 @@ export const UserNavigation = forwardRef((props, ref) => {
       ) : (
         <>
           <li>
-            <Link to="signup">
+            <Link to="/signup">
               <img src={signupIcon} />
               Sign up
             </Link>
           </li>
           <li>
-            <Link to="login">
+            <Link to="/login">
               <img src={loginIcon} />
               Log in
             </Link>
