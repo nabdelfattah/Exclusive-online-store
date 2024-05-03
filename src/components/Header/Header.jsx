@@ -15,7 +15,9 @@ export function Header() {
   return (
     <header className="header-primary">
       <div className="container">
-        <p className="logo">Exclusive</p>
+        <Link to="/" className="logo">
+          Exclusive
+        </Link>
         <HeaderNavigation />
         <div className="header_wrapper">
           <Search />

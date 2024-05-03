@@ -4,7 +4,100 @@
   margin: 6rem 0 14rem;
   display: grid;
   grid-template-columns: 1.27fr 1fr;
-  img {
-    width: auto;
+  align-items: center;
+  gap: 12.9rem;
+  .registration_img {
+    width: 100%;
+  }
+}
+
+.registration_form {
+  @include font(1.6rem, 2.4rem);
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  max-width: 37.1rem;
+}
+.registration_header {
+  margin-bottom: 0.8rem;
+  h2 {
+    @include font(3.6rem, 3rem, 500);
+    letter-spacing: 0.4px;
+    font-family: var(--f-inter);
+    margin-bottom: 2.4rem;
+  }
+}
+.registration_label {
+  opacity: var(--opacity);
+  color: var(--c-black);
+  margin-bottom: -6rem;
+  transition: var(--animation);
+}
+.registration_label--up {
+  margin-bottom: -3rem;
+  @include font();
+}
+// .registration_label--empty,
+// .registration_label--invalid {
+//   color: var(--c-primary);
+// }
+// .registration_label--empty::after {
+//   content: "(Required)";
+// }
+// .registration_label--invalid::after {
+//   content: "(Invalid email)";
+// }
+.registration_input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--c-black);
+  transition: var(--animation);
+}
+// remove the "-internal-autofill-selected" style
+.registration_input:-webkit-autofill,
+.registration_input:-webkit-autofill:focus {
+  transition: background-color 0s 600000s, color 0s 600000s !important;
+}
+.registration_input:focus {
+  outline: none;
+  border-bottom: 2px solid var(--c-primary);
+}
+.signup-btns {
+  button {
+    width: 100%;
+  }
+  button:first-child {
+    margin-bottom: 1.6rem;
+  }
+  .btn-outline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem;
+  }
+}
+.registration_redirectionText {
+  text-align: center;
+  margin-top: 3.2rem;
+  a {
+    font-weight: 500;
+    border-bottom: 1px solid var(--c-black);
+    margin-left: 1.6rem;
+    transition: var(--animation);
+  }
+  a:hover {
+    border-bottom: 1px solid transparent;
+  }
+}
+.login_btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .forget-password {
+    color: var(--c-primary);
+    transition: var(--animation);
+    &:hover {
+      color: var(--c-primary-hover);
+    }
   }
 }

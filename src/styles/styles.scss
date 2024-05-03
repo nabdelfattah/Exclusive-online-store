@@ -1,6 +1,9 @@
 @use "./mixins";
 @use "./components/header";
-@use "./components/footer";
+@use "./components/breadcrumb";
 @use "./components/registration";
+@use "./components/features";
+@use "./components/footer";
+@use "./pages/about";
 @use "./pages";
 @use "./query";

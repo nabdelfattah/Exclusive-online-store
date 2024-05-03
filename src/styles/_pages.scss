@@ -1,5 +1,22 @@
+@import "./mixins";
 .layout {
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto auto 1fr auto;
 }
+///////////////////////////////////////////////
+/// Error Page
+///////////////
+.error_wrapper {
+  text-align: center;
+  margin: 9.8rem auto 14rem;
+}
+.error_heading {
+  @include font(11rem, 11.5rem, 500);
+  font-family: var(--f-inter);
+  letter-spacing: 0.3px;
+}
+.error_description {
+  margin: 4rem auto 8rem;
+}
+//////////////////////////////////

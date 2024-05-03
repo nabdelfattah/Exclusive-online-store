@@ -1,0 +1,18 @@
+@import "../mixins";
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 8.8rem;
+}
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.feature_title {
+  @include font(2rem, 2.8rem, 600);
+  margin: 2.4rem auto 0.8rem;
+}
+.featrue_description {
+  @include font(1.4rem, 2.1rem);
+}
