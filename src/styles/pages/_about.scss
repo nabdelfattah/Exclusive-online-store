@@ -82,18 +82,15 @@
 ////////////////////////////////////////////////
 /// Managers
 /////////////
+.about_carousel {
+  overflow: hidden;
+}
 .about_managers {
   display: flex;
   gap: 3rem;
-  overflow: hidden;
+  transition: var(--animation) ease-out;
 }
-// .translate {
-//   translate: -108.1%;
-//   translate: -216.2%;
-// }
 .manager {
-  // transition: var(--animation);
-  // margin-right: 3rem;
   .name {
     @include font(3.2rem, 3rem, 500);
     font-family: var(--f-inter);

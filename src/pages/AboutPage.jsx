@@ -56,7 +56,6 @@ const managers = [
 ];
 
 export function AboutPage() {
-  const [managerIndex, setManagerIndex] = useState(0);
   const [selectedBtn, setSelectedBtn] = useState(0);
 
   const breadcrumb = [
@@ -65,8 +64,6 @@ export function AboutPage() {
   ];
 
   function carouselBtnHandler(e) {
-    console.log("button number:", e.target.name);
-    setManagerIndex(+e.currentTarget.name);
     setSelectedBtn(+e.currentTarget.name);
   }
   return (
@@ -222,22 +219,20 @@ export function AboutPage() {
         </article>
       </section>
       <section className="about_carousel container mb-14">
-        <div className="about_managers ">
-          {managers.map((manager, index) => {
-            const desiredOne = (index + managerIndex) % managers.length;
+        <div
+          className="about_managers"
+          style={{
+            transform: `translateX(${-370 * selectedBtn - 30 * selectedBtn}px)`,
+          }}
+        >
+          {managers.map((manager) => {
             return (
-              <article
-                key={managers[desiredOne].name}
-                className="manager translate"
-              >
+              <article key={manager.name} className="manager">
                 <div className="manager_imgFrame">
-                  <img
-                    src={managers[desiredOne].image}
-                    alt={managers[desiredOne].alt}
-                  />
+                  <img src={manager.image} alt={manager.alt} />
                 </div>
-                <p className="name">{managers[desiredOne].name}</p>
-                <p className="title">{managers[desiredOne].title}</p>
+                <p className="name">{manager.name}</p>
+                <p className="title">{manager.title}</p>
                 <div className="manager_links">
                   <a href="#">
                     <svg
