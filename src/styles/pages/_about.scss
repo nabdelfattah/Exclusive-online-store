@@ -120,29 +120,3 @@
   display: flex;
   gap: 1.6rem;
 }
-.managers_carouselBtns {
-  display: flex;
-  gap: 1.2rem;
-  justify-content: center;
-  margin-top: 4rem;
-}
-.manager_btn {
-  height: 1.2rem;
-  width: 1.2rem;
-  border-radius: 50%;
-  background-color: var(--bg-black-transparent);
-  position: relative;
-}
-.manager_btn--selected::after {
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translate(17%, 17%);
-  content: "";
-  height: 0.9rem;
-  width: 0.9rem;
-  background-color: var(--c-primary);
-  border: 2px solid var(--c-white);
-  border-radius: 50%;
-}

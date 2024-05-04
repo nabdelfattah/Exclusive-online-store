@@ -8,6 +8,7 @@ export * from "./Home/Advertisement"
 export * from "./Home/SectionBestSelling"
 export * from "./Home/SectionCategories"
 export * from "./Home/SectionExplore"
+export * from "./Home/SectionHero"
 export * from "./Home/SectionNew"
 export * from "./Home/SectionSale"
 

@@ -102,6 +102,7 @@
   background-color: var(--bg-black-transparent);
   border-radius: var(--radius);
   padding: 1.8rem 0;
+  z-index: 9;
   a {
     @include font();
     color: var(--c-off-white);

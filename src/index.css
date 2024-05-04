@@ -107,9 +107,73 @@ button {
 .btn-outline:hover {
   border-color: black;
 }
+.btn-arr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4.6rem;
+  width: 4.6rem;
+  border-radius: 50%;
+  background-color: var(--bg-gray);
+  transition: var(--animation);
+}
+.btn-arr:hover {
+  background-color: var(--c-primary);
+  svg * {
+    stroke: var(--c-white);
+  }
+}
+.btn-arr-wrapper {
+  display: flex;
+  gap: 0.8rem;
+}
+/* carousel buttons */
+.carousel_btns {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  margin-top: 4rem;
+}
+.carousel_btn {
+  height: 1.2rem;
+  width: 1.2rem;
+  border-radius: 50%;
+  background-color: #999999;
+  position: relative;
+}
+.carousel_btn--selected::after {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(17%, 17%);
+  content: "";
+  height: 0.9rem;
+  width: 0.9rem;
+  background-color: var(--c-primary);
+  border: 2px solid var(--c-white);
+  border-radius: 50%;
+}
+.shopNowLink {
+  margin-bottom: 0.4rem;
+  border-bottom: 1px solid var(--c-white);
+  transition: var(--animation);
+  color: var(--c-off-white);
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 500;
+}
+.shopNowLink:hover {
+  color: var(--c-accent);
+  border-bottom: 1px solid transparent;
+}
+/* helper classes */
 .mb-14 {
   margin-bottom: 14rem !important;
 }
 .mb-8 {
   margin-bottom: 8rem !important;
+}
+.mb-7 {
+  margin-bottom: 7.1rem !important;
 }

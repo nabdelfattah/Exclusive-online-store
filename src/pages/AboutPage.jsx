@@ -302,14 +302,14 @@ export function AboutPage() {
             );
           })}
         </div>
-        <div className="managers_carouselBtns">
+        <div className="carousel_btns">
           {Array(5)
             .fill(0)
             .map((item, index) => (
               <button
                 key={index}
-                className={`manager_btn ${
-                  selectedBtn == index ? "manager_btn--selected" : ""
+                className={`carousel_btn ${
+                  selectedBtn == index ? "carousel_btn--selected" : ""
                 }`}
                 onClick={carouselBtnHandler}
                 name={index}

@@ -4,6 +4,7 @@ import {
   SectionBestSelling,
   SectionCategories,
   SectionExplore,
+  SectionHero,
   SectionNew,
   SectionSale,
 } from "../components";
@@ -11,7 +12,7 @@ import {
 export function HomePage() {
   return (
     <>
-      <section className="home_hero"></section>
+      <SectionHero />
       <SectionSale />
       <SectionCategories />
       <SectionBestSelling />
