@@ -1,6 +1,5 @@
-export function RegistrationInput({ type, label }) {
+export function RegistrationInput({ type, label, name }) {
   function leaveInputHandler(e) {
-    console.log(e);
     if (!e.currentTarget.value) {
       e.currentTarget.previousSibling.classList.remove(
         "registration_label--up"
@@ -8,7 +7,6 @@ export function RegistrationInput({ type, label }) {
     }
   }
   function clickInputHandler(e) {
-    console.log(e);
     e.currentTarget.previousSibling.classList.add("registration_label--up");
   }
   return (
@@ -22,6 +20,7 @@ export function RegistrationInput({ type, label }) {
         className="registration_input"
         id={`registration_${type}`}
         type={type}
+        name={name}
         required
       />
     </>

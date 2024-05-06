@@ -107,6 +107,17 @@ button {
 .btn-outline:hover {
   border-color: black;
 }
+button:disabled {
+  background-color: var(--bg-gray);
+  color: var(--bg-black-transparent);
+  border: 1px solid var(--bg-black-transparent);
+  cursor: not-allowed;
+  user-select: none;
+}
+button:disabled:hover {
+  background-color: var(--bg-gray);
+  border: 1px solid currentColor;
+}
 .btn-arr {
   display: flex;
   align-items: center;
