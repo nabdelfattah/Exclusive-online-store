@@ -5,40 +5,27 @@ import { UserContext } from "../../UserContext";
 export function HeaderNavigation() {
   const { user } = useContext(UserContext);
 
-  function headerNavHandler(e) {}
   return (
     <nav>
       <ul className="header_nav">
         <li>
-          <NavLink to="/" className="header_navLink" onClick={headerNavHandler}>
+          <NavLink to="/" className="header_navLink">
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink
-            to="/contact"
-            className="header_navLink"
-            onClick={headerNavHandler}
-          >
+          <NavLink to="/contact" className="header_navLink">
             Contact
           </NavLink>
         </li>
         <li>
-          <NavLink
-            to="/about"
-            className="header_navLink"
-            onClick={headerNavHandler}
-          >
+          <NavLink to="/about" className="header_navLink">
             About
           </NavLink>
         </li>
         {!user ? (
           <li>
-            <NavLink
-              to="/signup"
-              className="header_navLink"
-              onClick={headerNavHandler}
-            >
+            <NavLink to="/signup" className="header_navLink">
               Sign Up
             </NavLink>
           </li>

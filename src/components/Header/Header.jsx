@@ -5,10 +5,11 @@ import cart from "../../assets/icons/header/cart.svg";
 import { useRef } from "react";
 
 export function Header() {
+  const userIconRef = useRef();
   const userNavRef = useRef();
 
-  function showUserNavHandler(e) {
-    e.currentTarget.firstChild.classList.toggle("userIcon--selected");
+  function clickUserIconHandler() {
+    userIconRef.current.classList.toggle("userIcon--selected");
     userNavRef.current.classList.toggle("showNav");
   }
 
@@ -28,8 +29,9 @@ export function Header() {
             <Link to="/cart">
               <img src={cart} />
             </Link>
-            <button className="userIcon" onClick={showUserNavHandler}>
+            <button className="userIcon" onClick={clickUserIconHandler}>
               <svg
+                ref={userIconRef}
                 className="userIcon"
                 width="32"
                 height="32"
@@ -54,7 +56,7 @@ export function Header() {
                 />
               </svg>
             </button>
-            <UserNavigation ref={userNavRef} />
+            <UserNavigation ref={userNavRef} toggleNav={clickUserIconHandler} />
           </div>
         </div>
       </div>

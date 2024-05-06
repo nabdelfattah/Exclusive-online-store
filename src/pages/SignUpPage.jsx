@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import registrationImg from "../assets/icons/lg/side-image.svg";
 import googleIcon from "../assets/icons/google.svg";
 import { RegistrationHeader, RegistrationInput } from "../components";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../UserContext";
 import { validateSignUp } from "../helper";
 // import
@@ -11,12 +11,16 @@ export function SignUpPage() {
   const [errMsg, setErrMsg] = useState("");
   const [IsLoading, setIsLoading] = useState(false);
   const { signup, user } = useContext(UserContext);
+  const navigateTo = useNavigate();
+  useEffect(() => {
+    if (user) navigateTo("/");
+  }, []);
 
   async function signupHandler(e) {
     e.preventDefault();
     // validate user data
-    const name = e.target.name.value;
-    const email = e.target.email.value;
+    const name = e.target.name.value.trim();
+    const email = e.target.email.value.trim();
     const password = e.target.password.value;
     const validationResult = validateSignUp(name, email, password);
     // register user
@@ -24,9 +28,12 @@ export function SignUpPage() {
       try {
         setErrMsg("");
         setIsLoading(true);
-        await signup(email, password);
+        await signup(email, password, name);
+        navigateTo("/");
       } catch {
-        setErrMsg("Faild to create an account");
+        setErrMsg(
+          "Faild to create an account. Perhaps someone is already using the email."
+        );
       } finally {
         setIsLoading(false);
       }
@@ -34,6 +41,7 @@ export function SignUpPage() {
       setErrMsg(validationResult.errors[0]);
     }
   }
+
   return (
     <div className="registration_wrapper">
       <img className="registration_img" src={registrationImg} />

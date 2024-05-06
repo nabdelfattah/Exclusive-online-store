@@ -1,4 +1,4 @@
-import { forwardRef, useContext } from "react";
+import { forwardRef, useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../UserContext";
 import userIcon from "../../assets/icons/header/userIcon.svg";
@@ -10,14 +10,33 @@ import loginIcon from "../../assets/icons/header/login.svg";
 import signupIcon from "../../assets/icons/header/signup.svg";
 
 export const UserNavigation = forwardRef((props, ref) => {
-  const { user, setUser } = useContext(UserContext);
-  function logoutHandler(e) {
-    // close userNavigation
-    e.currentTarget.closest("ul").previousSibling.click();
-    setUser("");
+  const { user, logout } = useContext(UserContext);
+
+  function logoutHandler() {
+    props.toggleNav();
+    try {
+      logout();
+    } catch (err) {
+      alert(err);
+    }
+  }
+
+  let timeoutId;
+  function leaveNavHandler() {
+    clearTimeout(timeoutId); // Clear the timeout when the mouse leaves the navigation
+    timeoutId = setTimeout(() => {
+      props.toggleNav();
+    }, 1500);
   }
   return (
-    <ul className="header_userNavList" ref={ref}>
+    <ul
+      className="header_userNavList"
+      ref={ref}
+      onMouseLeave={leaveNavHandler}
+      onMouseEnter={() => {
+        clearTimeout(timeoutId);
+      }}
+    >
       {user ? (
         <>
           <li>
