@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { HomeHeader } from "./HomeHeader";
-export function SectionExplore() {
+import { Link } from "react-router-dom";
+import { ProductList } from "../Product";
+
+export function SectionExplore({ products }) {
   const [productIndex, setProductIndex] = useState(0);
 
-  const products = [];
   function arrowPreviousHandler() {
     setProductIndex((index) => {
       if (index == 0) return products.length - 1;
@@ -17,7 +19,7 @@ export function SectionExplore() {
     });
   }
   return (
-    <section className="section-sale container mb-14">
+    <section className="section-explore container mb-14">
       <HomeHeader subheading="Our Products" heading="Explore Our Products">
         <div className="btn-arr-wrapper">
           <button className="btn-arr" onClick={arrowPreviousHandler}>
@@ -56,6 +58,11 @@ export function SectionExplore() {
           </button>
         </div>
       </HomeHeader>
+      <ProductList products={products.slice(0, 5)} />
+      <ProductList products={products.slice(5)} />
+      <Link to="products" className="btn-primary">
+        View All Products
+      </Link>
     </section>
   );
 }

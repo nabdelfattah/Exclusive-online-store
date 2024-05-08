@@ -1,28 +1,44 @@
 import { useState } from "react";
 import { HomeHeader } from "./HomeHeader";
 import { Timer } from "./Timer";
-export function SectionSale() {
-  const [productIndex, setProductIndex] = useState(0);
+import { ProductList } from "../Product";
+import { Link } from "react-router-dom";
 
-  const products = [];
-  function arrowPreviousHandler() {
+export function SectionSale({ products }) {
+  const [productIndex, setProductIndex] = useState(0);
+  const [nextBtnDisabled, setNextBtnDisabled] = useState(false);
+  const [previousBtnDisabled, setPreviousBtnDisabled] = useState(false);
+  function arrowPreviousHandler(e) {
     setProductIndex((index) => {
-      if (index == 0) return products.length - 1;
+      if (index == 0) {
+        setPreviousBtnDisabled(true);
+        return;
+      }
+      setPreviousBtnDisabled(false);
       return index - 1;
     });
   }
-  function arrowNextHandler() {
+  function arrowNextHandler(e) {
     setProductIndex((index) => {
-      if (index == products.length - 1) return 0;
+      if (index == 2) {
+        setNextBtnDisabled(true);
+        return;
+      }
+      setNextBtnDisabled(false);
       return index + 1;
     });
   }
+  console.log(products);
   return (
     <section className="section-sale container mb-8">
       <HomeHeader subheading="Today’s" heading="Flash Sales">
         <Timer />
         <div className="btn-arr-wrapper">
-          <button className="btn-arr" onClick={arrowPreviousHandler}>
+          <button
+            className="btn-arr"
+            onClick={arrowPreviousHandler}
+            disabled={previousBtnDisabled}
+          >
             <svg
               width="24"
               height="24"
@@ -39,7 +55,11 @@ export function SectionSale() {
               />
             </svg>
           </button>
-          <button className="btn-arr" onClick={arrowNextHandler}>
+          <button
+            className="btn-arr"
+            onClick={arrowNextHandler}
+            disabled={nextBtnDisabled}
+          >
             <svg
               width="24"
               height="24"
@@ -58,6 +78,17 @@ export function SectionSale() {
           </button>
         </div>
       </HomeHeader>
+      <div
+        className="home_carousel_container"
+        style={{
+          transform: `translateX(-${(100 * productIndex) / 5}%)`,
+        }}
+      >
+        <ProductList products={products} />
+      </div>
+      <Link to="/products" className="btn-primary">
+        View All Products
+      </Link>
     </section>
   );
 }

@@ -116,7 +116,7 @@ button:disabled {
 }
 button:disabled:hover {
   background-color: var(--bg-gray);
-  border: 1px solid currentColor;
+  border: 1px solid transparent;
 }
 .btn-arr {
   display: flex;

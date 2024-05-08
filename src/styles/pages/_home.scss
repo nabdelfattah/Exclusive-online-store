@@ -92,6 +92,11 @@
 ///////////////////////////////////////////
 /// FLASH SALE
 //////////////////
+.section-sale,
+.section-explore {
+  display: flex;
+  flex-direction: column;
+}
 .timer {
   margin-top: -0.4rem;
   margin-left: -30%;
@@ -115,6 +120,11 @@
     font-family: var(--f-inter);
     letter-spacing: 0.4px;
   }
+}
+.section-sale .btn-primary,
+.section-explore .btn-primary {
+  margin-top: 6rem;
+  align-self: center;
 }
 ///////////////////////////////////////////
 /// CATEGORIES
