@@ -6,14 +6,14 @@ import { ProductContextProvider } from "../ProductContext";
 export function LayoutPage() {
   return (
     <UserContextProvider>
-      <ProductContextProvider>
-        <div className="layout">
-          <Banner />
-          <Header />
+      <div className="layout">
+        <Banner />
+        <Header />
+        <ProductContextProvider>
           <Outlet />
-          <Footer />
-        </div>
-      </ProductContextProvider>
+        </ProductContextProvider>
+        <Footer />
+      </div>
     </UserContextProvider>
   );
 }

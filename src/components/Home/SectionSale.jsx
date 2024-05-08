@@ -28,7 +28,6 @@ export function SectionSale({ products }) {
       return index + 1;
     });
   }
-  console.log(products);
   return (
     <section className="section-sale container mb-8">
       <HomeHeader subheading="Today’s" heading="Flash Sales">

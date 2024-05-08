@@ -12,37 +12,20 @@ import {
 import { ProductContext } from "../ProductContext";
 
 export function HomePage() {
-  let { pdtsList } = useContext(ProductContext);
+  const { pdtsList } = useContext(ProductContext);
 
-  if (!pdtsList.length) {
-    pdtsList = JSON.parse(localStorage.getItem("pdtsList"));
-    if (!pdtsList || !pdtsList.length) {
-      pdtsList = Array(20)
-        .fill()
-        .map(() => ({
-          id: 1,
-          title: "Product",
-          price: 0.0,
-          description: "A product",
-          category: "not organized",
-          image: "https://placehold.co/600x400/png",
-          rating: {
-            rate: 0,
-            count: 0,
-          },
-        }));
-    }
-  }
+  const first6Products = pdtsList.slice(0, 6);
+  const next4Products = pdtsList.slice(6, 10);
+  const next10Products = pdtsList.slice(10);
 
-  console.log("rerender home page with this product list:", pdtsList);
   return (
     <>
       <SectionHero />
-      <SectionSale products={pdtsList.splice(0, 6)} />
+      <SectionSale products={first6Products} />
       <SectionCategories />
-      <SectionBestSelling products={pdtsList.splice(0, 4)} />
+      <SectionBestSelling products={next4Products} />
       <Advertisement />
-      <SectionExplore products={pdtsList.splice(0, 10)} />
+      <SectionExplore products={next10Products} />
       <SectionNew />
       <Features />
     </>

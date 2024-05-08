@@ -13,9 +13,7 @@ export function useFetch(url) {
       throw new Error(err.message);
     }
   }
-  console.log("useFetch re-evaluation with pdtList of:", pdtsList);
   useEffect(() => {
-    console.log("useFetch calls fetchData...");
     setIsFetchErr(false);
     setIsFetchLoading(true);
     fetctData(url)
