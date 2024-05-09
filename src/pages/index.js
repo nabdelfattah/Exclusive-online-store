@@ -1,6 +1,7 @@
 export * from './LayoutPage'
 export * from './HomePage'
 export * from './ProductsPage'
+export * from './DetailsPage'
 export * from './AboutPage'
 export * from './ContactPage'
 export * from './SignUpPage'

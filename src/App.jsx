@@ -9,6 +9,7 @@ import {
   AboutPage,
   SignUpPage,
   LogInPage,
+  DetailsPage,
 } from "./pages";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<LayoutPage />}>
           <Route index element={<HomePage />} />
           <Route path="products" element={<ProductsPage />} />
+          <Route path="products/:id" element={<DetailsPage />} />
           <Route path="contact" element={<ContactPage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="signup" element={<SignUpPage />} />

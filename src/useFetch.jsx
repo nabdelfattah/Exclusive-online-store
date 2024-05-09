@@ -6,6 +6,7 @@ export function useFetch(url) {
   const [isFetchLoading, setIsFetchLoading] = useState(false);
 
   async function fetctData(url) {
+    console.log("fetch data....");
     try {
       const response = await fetch(url);
       return await response.json();

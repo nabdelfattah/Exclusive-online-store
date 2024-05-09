@@ -5,6 +5,7 @@
   gap: 3rem;
 }
 .pdt {
+  position: relative;
   input[type="radio"] {
     display: none;
   }
@@ -14,19 +15,38 @@
     // margin: 1px;
   }
 }
+.pdt:hover .pdt_addToCartBtn {
+  transform: translateY(0%);
+}
+
 .pdt_imgWrapper {
+  position: relative;
   width: 27rem;
   height: 25rem;
   border-radius: var(--radius);
   background-color: var(--bg-gray);
   margin-bottom: 1.6rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  justify-content: center;
+  align-items: center;
+  overflow: hidden;
   img {
     max-width: 100%;
     max-height: 100%;
   }
+}
+.pdt_addToCartBtn {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0.8rem 0;
+  @include font(1.6rem, 2.4rem, 500);
+  text-align: center;
+  color: var(--c-white);
+  background-color: var(--c-black);
+  transition: var(--animation);
+  transform: translateY(100%);
 }
 .pdt_textWrapper {
   display: flex;
@@ -55,4 +75,20 @@
 .pdt_rating_num,
 .pdt_price--before {
   color: rgba(0, 0, 0, 0.5);
+}
+.card_icons {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  svg {
+    cursor: pointer;
+    fill: var(--c-white);
+    transition: var(--animation);
+  }
+  svg:hover {
+    fill: var(--c-primary-hover);
+  }
 }
