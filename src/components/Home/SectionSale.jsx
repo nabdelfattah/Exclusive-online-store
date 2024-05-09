@@ -7,26 +7,23 @@ import { Link } from "react-router-dom";
 export function SectionSale({ products }) {
   const [productIndex, setProductIndex] = useState(0);
   const [nextBtnDisabled, setNextBtnDisabled] = useState(false);
-  const [previousBtnDisabled, setPreviousBtnDisabled] = useState(false);
-  function arrowPreviousHandler(e) {
-    setProductIndex((index) => {
-      if (index == 0) {
-        setPreviousBtnDisabled(true);
-        return;
-      }
-      setPreviousBtnDisabled(false);
-      return index - 1;
-    });
-  }
-  function arrowNextHandler(e) {
-    setProductIndex((index) => {
-      if (index == 2) {
-        setNextBtnDisabled(true);
-        return;
-      }
+  const [previousBtnDisabled, setPreviousBtnDisabled] = useState(true);
+
+  function previousArrowHandler() {
+    if (productIndex == 0) {
+      setPreviousBtnDisabled(true);
+    } else {
       setNextBtnDisabled(false);
-      return index + 1;
-    });
+      setProductIndex((previousVal) => previousVal - 1);
+    }
+  }
+  function nextArrowHandler() {
+    if (productIndex == 2) {
+      setNextBtnDisabled(true);
+    } else {
+      setPreviousBtnDisabled(false);
+      setProductIndex((previousVal) => previousVal + 1);
+    }
   }
   return (
     <section className="section-sale container mb-8">
@@ -35,7 +32,7 @@ export function SectionSale({ products }) {
         <div className="btn-arr-wrapper">
           <button
             className="btn-arr"
-            onClick={arrowPreviousHandler}
+            onClick={previousArrowHandler}
             disabled={previousBtnDisabled}
           >
             <svg
@@ -56,7 +53,7 @@ export function SectionSale({ products }) {
           </button>
           <button
             className="btn-arr"
-            onClick={arrowNextHandler}
+            onClick={nextArrowHandler}
             disabled={nextBtnDisabled}
           >
             <svg
@@ -80,7 +77,9 @@ export function SectionSale({ products }) {
       <div
         className="home_carousel_container"
         style={{
-          transform: `translateX(-${(100 * productIndex) / 5}%)`,
+          transform: `translateX(-${
+            productIndex ? 27 * productIndex + 3 * productIndex : 0
+          }rem)`,
         }}
       >
         <ProductList products={products} />

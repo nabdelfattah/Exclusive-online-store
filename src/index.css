@@ -39,6 +39,7 @@ body {
   color: var(--c-black);
   font-size: 1.6rem;
   font-weight: 400;
+  overflow-x: hidden;
 }
 a {
   text-decoration: none;

@@ -3,14 +3,8 @@
 .pdtList {
   display: flex;
   gap: 3rem;
-  // overflow: hidden;
-  // overflow-x: hidden; /* Hide overflow on the horizontal axis */
-  // overflow-y: auto; /* Enable vertical scrolling if needed */
-  // width: 300px; /* Adjust the width of the container as needed */
 }
 .pdt {
-  // margin-left: -20px; /* Adjust the negative margin to hide overflow from the left */
-  // padding-left: 20px; /* Add padding to counteract the negative margin */
   input[type="radio"] {
     display: none;
   }
@@ -25,7 +19,6 @@
   height: 25rem;
   border-radius: var(--radius);
   background-color: var(--bg-gray);
-  // background-color: var(--c-white);
   margin-bottom: 1.6rem;
   display: flex;
   justify-content: center;

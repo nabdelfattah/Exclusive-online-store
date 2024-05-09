@@ -229,3 +229,15 @@
 .newPdt:last-of-type {
   background-image: url("../assets/icons/lg/hero5.svg");
 }
+//////////////////////////////////////////
+/// HomePage Carousels
+//////////////////////
+.section-sale {
+  clip-path: inset(0px -60% 0px 0px);
+}
+.section-explore {
+  overflow-x: hidden;
+}
+.home_carousel_container {
+  transition: var(--animation);
+}
