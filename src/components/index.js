@@ -14,4 +14,5 @@ export * from "./Home/SectionSale"
 
 export * from "./Breadcrumb"
 export * from "./Features"
+export * from "./UpButton"
 export * from './Footer'

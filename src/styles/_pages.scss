@@ -20,3 +20,17 @@
   margin: 4rem auto 8rem;
 }
 //////////////////////////////////
+/// ProductsPage
+////////////////
+.products-wrapper {
+  padding: 9rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .pdtList {
+    flex-wrap: wrap;
+    li {
+      margin-bottom: 3rem;
+    }
+  }
+}

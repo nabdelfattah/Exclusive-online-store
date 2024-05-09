@@ -1,4 +1,9 @@
 @import "../mixins";
+
+// .HomePage {
+//   max-width: 200rem;
+//   margin: 0 auto;
+// }
 ///////////////////////////////////////////
 /// Header
 //////////////////
@@ -240,4 +245,7 @@
 }
 .home_carousel_container {
   transition: var(--animation);
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
 }

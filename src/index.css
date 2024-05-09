@@ -40,6 +40,8 @@ body {
   font-size: 1.6rem;
   font-weight: 400;
   overflow-x: hidden;
+  scroll-behavior: smooth;
+  /* scroll-padding-top: 11rem; */
 }
 a {
   text-decoration: none;
@@ -138,6 +140,14 @@ button:disabled:hover {
 .btn-arr-wrapper {
   display: flex;
   gap: 0.8rem;
+}
+/* up button */
+.btn-up {
+  z-index: 10;
+  position: sticky;
+  left: 100vw;
+  bottom: 2rem;
+  margin: 4rem;
 }
 /* carousel buttons */
 .carousel_btns {

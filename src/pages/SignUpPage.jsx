@@ -62,7 +62,7 @@ export function SignUpPage() {
           <button disabled={IsLoading} className="btn-primary">
             Create Account
           </button>
-          <button disabled={IsLoading} className="btn-outline">
+          <button disabled={IsLoading} className="btn-outline" type="button">
             <img src={googleIcon} />
             Sign up with Google
           </button>
