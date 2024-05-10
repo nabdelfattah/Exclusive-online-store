@@ -162,6 +162,7 @@
   padding: 1.6rem;
   a {
     text-decoration: underline;
+    cursor: pointer;
   }
   .title {
     @include font(1.6rem, 2.4rem, 500);

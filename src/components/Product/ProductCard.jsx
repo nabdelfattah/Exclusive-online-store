@@ -17,10 +17,10 @@ export function ProductCard(props) {
       <div className="pdt_textWrapper">
         <p className="pdt_title">{title}</p>
         <p className="pdt_price">{price}$</p>
-        <p className="pdt_rating_wrapper">
+        <div className="pdt_rating_wrapper">
           <RatingStars initialRating={rating} />
           <span className="pdt_rating_num">({Math.round(rating + 100)})</span>
-        </p>
+        </div>
         <div className="card_icons">
           <button onClick={addToWishlistHandler}>
             <svg

@@ -84,3 +84,66 @@
     fill: var(--c-primary-hover);
   }
 }
+.loadingPdt {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.loading-img {
+  margin-bottom: 0.8rem;
+  width: 27rem;
+  height: 25rem;
+}
+.loading-title {
+  width: 20.1rem;
+  height: 2.4rem;
+}
+.loading-price {
+  width: 8.5rem;
+  height: 2.4rem;
+}
+.loading-rating {
+  width: 14rem;
+  height: 2rem;
+}
+.loading-animation {
+  background: linear-gradient(270deg, #f5f5f5, #dddddd);
+  background-size: 400% 400%;
+
+  -webkit-animation: product 4s ease infinite;
+  -moz-animation: product 4s ease infinite;
+  animation: product 4s ease infinite;
+}
+@-webkit-keyframes product {
+  0% {
+    background-position: 0% 49%;
+  }
+  50% {
+    background-position: 100% 52%;
+  }
+  100% {
+    background-position: 0% 49%;
+  }
+}
+@-moz-keyframes product {
+  0% {
+    background-position: 0% 49%;
+  }
+  50% {
+    background-position: 100% 52%;
+  }
+  100% {
+    background-position: 0% 49%;
+  }
+}
+@keyframes product {
+  0% {
+    background-position: 0% 49%;
+  }
+  50% {
+    background-position: 100% 52%;
+  }
+  100% {
+    background-position: 0% 49%;
+  }
+}
