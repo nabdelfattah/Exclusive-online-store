@@ -56,6 +56,10 @@
   @include font(1.6rem, 2.4rem, 500);
   color: var(--c-primary);
 }
+.price--before {
+  color: rgba(0, 0, 0, 0.5);
+  margin-left: 1.2rem;
+}
 .pdt_rating_wrapper {
   display: flex;
   align-items: center;
@@ -84,6 +88,25 @@
     fill: var(--c-primary-hover);
   }
 }
+///////////////////////////////////////////
+// tags
+.tag {
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+  border-radius: var(--radius);
+  padding: 0.4rem 1.2rem;
+  color: var(--c-off-white);
+  @include font(1.2rem, 1.8rem);
+}
+.discountTag {
+  background-color: var(--c-primary);
+}
+.newTag {
+  background-color: var(--c-accent);
+}
+///////////////////////////////////////////
+// LoadingProduct
 .loadingPdt {
   display: flex;
   flex-direction: column;

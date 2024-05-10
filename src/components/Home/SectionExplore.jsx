@@ -3,7 +3,7 @@ import { HomeHeader } from "./HomeHeader";
 import { Link } from "react-router-dom";
 import { ProductList } from "../Product";
 
-export function SectionExplore({ products }) {
+export function SectionExplore() {
   const [productIndex, setProductIndex] = useState(0);
   const [nextBtnDisabled, setNextBtnDisabled] = useState(false);
   const [previousBtnDisabled, setPreviousBtnDisabled] = useState(true);
@@ -80,8 +80,8 @@ export function SectionExplore({ products }) {
           }rem)`,
         }}
       >
-        <ProductList products={products.slice(0, 5)} />
-        <ProductList products={products.slice(5)} />
+        <ProductList category="lighting" />
+        <ProductList category="laptops" />
       </div>
       <Link to="products" className="btn-primary">
         View All Products

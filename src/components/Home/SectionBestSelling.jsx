@@ -10,7 +10,7 @@ export function SectionBestSelling({ products }) {
           View All
         </Link>
       </HomeHeader>
-      <ProductList products={products} />
+      <ProductList category="furniture" />
     </section>
   );
 }

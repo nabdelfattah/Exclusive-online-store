@@ -4,7 +4,6 @@ export function useFetch(url) {
   const [data, setData] = useState();
 
   async function fetctData(url) {
-    console.log("fetch data....");
     try {
       const response = await fetch(url);
       return await response.json();

@@ -4,7 +4,7 @@ import { Timer } from "./Timer";
 import { ProductList } from "../Product";
 import { Link } from "react-router-dom";
 
-export function SectionSale({ products }) {
+export function SectionSale() {
   const [productIndex, setProductIndex] = useState(0);
   const [nextBtnDisabled, setNextBtnDisabled] = useState(false);
   const [previousBtnDisabled, setPreviousBtnDisabled] = useState(true);
@@ -18,7 +18,7 @@ export function SectionSale({ products }) {
     }
   }
   function nextArrowHandler() {
-    if (productIndex == 2) {
+    if (productIndex == 1) {
       setNextBtnDisabled(true);
     } else {
       setPreviousBtnDisabled(false);
@@ -82,7 +82,7 @@ export function SectionSale({ products }) {
           }rem)`,
         }}
       >
-        <ProductList products={products} />
+        <ProductList category="mens-watches" />
       </div>
       <Link to="/products" className="btn-primary">
         View All Products

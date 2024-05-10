@@ -1,14 +1,40 @@
 import { Link } from "react-router-dom";
 import { RatingStars } from "./";
+import { addToCart, addToWishlist } from "../../helper";
 
 export function ProductCard(props) {
-  const { id, title, price, discountPercentage, stock, thumbnail, rating } =
-    props.data;
-  function addToCartHandler() {}
-  function addToWishlistHandler() {}
+  const {
+    id,
+    title,
+    price,
+    discountPercentage,
+    category,
+    stock,
+    thumbnail,
+    rating,
+  } = props.data;
+  console.log(discountPercentage);
+  function addToCartHandler() {
+    addToCart({ id, color: "color1", size: "M", count: 1 });
+  }
+  function addToWishlistHandler() {
+    addToWishlist(id);
+  }
   return (
     <article className="pdt">
       <div className="pdt_imgWrapper">
+        {discountPercentage >= 15 || category == "mens-watches" ? (
+          <span className="discountTag tag">
+            -{Math.round(discountPercentage)}%
+          </span>
+        ) : (
+          ""
+        )}
+        {id % 2 == 0 && category == "laptops" ? (
+          <span className="newTag tag">NEW</span>
+        ) : (
+          ""
+        )}
         <img src={thumbnail} alt={title} />
         <button className="pdt_addToCartBtn" onClick={addToCartHandler}>
           Add To Cart
@@ -16,10 +42,19 @@ export function ProductCard(props) {
       </div>
       <div className="pdt_textWrapper">
         <p className="pdt_title">{title}</p>
-        <p className="pdt_price">{price}$</p>
+        <div className="pdt_price">
+          ${price}{" "}
+          {discountPercentage >= 15 ? (
+            <span className="price--before">
+              ${Math.round(price / (1 - discountPercentage / 100))}
+            </span>
+          ) : (
+            ""
+          )}
+        </div>
         <div className="pdt_rating_wrapper">
           <RatingStars initialRating={rating} />
-          <span className="pdt_rating_num">({Math.round(rating + 100)})</span>
+          <span className="pdt_rating_num">({stock})</span>
         </div>
         <div className="card_icons">
           <button onClick={addToWishlistHandler}>
@@ -70,18 +105,3 @@ export function ProductCard(props) {
     </article>
   );
 }
-// <article className="pdt">
-//   <div className="pdt_imgWrapper">
-//     <img src={image} alt={title} />
-//   </div>
-//   <div className="pdt_textWrapper">
-//     <p className="pdt_title">{title}</p>
-//     <p className="pdt_price">
-//       {price}
-//       <span className="pdt_price--before"></span>
-//     </p>
-//     <div className="pdt_rating">
-//       <RatingStars /> <span className="pdt_rating_num"></span>
-//     </div>
-//   </div>
-// </article>

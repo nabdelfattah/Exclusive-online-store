@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Breadcrumb, Header, Loading } from "../components";
 import { ProductList, RatingStars } from "../components/Product";
 import { useEffect, useState } from "react";
@@ -27,6 +27,7 @@ export function DetailsPage() {
   const [color, setColor] = useState("color1");
   const [size, setSize] = useState("M");
   const [count, setCount] = useState(1);
+  const navigateTo = useNavigate();
 
   function decreaseCountHandler() {
     if (count == 1) return;
@@ -42,10 +43,11 @@ export function DetailsPage() {
   }
   function buyHandler(e) {
     e.preventDefault();
-    addToCart({ id, color, size, count });
+    addToCart({ id: +id, color, size, count });
+    navigateTo("/cart");
   }
   function addToWishlistHandler() {
-    addToWishlist(id);
+    addToWishlist(+id);
   }
 
   return (

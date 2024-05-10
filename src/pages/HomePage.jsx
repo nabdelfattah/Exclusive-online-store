@@ -10,17 +10,8 @@ import {
   SectionSale,
   UpButton,
 } from "../components";
-import { useFetch } from "../useFetch";
 
 export function HomePage() {
-  // Get the pdtsList and split its content through the sections
-  const data = useFetch("https://dummyjson.com/products");
-
-  const pdtsList20 = data.products.slice(0, 20);
-  const first6Products = pdtsList20.slice(0, 6);
-  const next4Products = pdtsList20.slice(6, 10);
-  const next10Products = pdtsList20.slice(10);
-
   // Scroll to top when page loads
   useEffect(() => {
     window.scrollTo(0, 0); // Scrolls to the top left corner of the page
@@ -53,17 +44,11 @@ export function HomePage() {
       <div ref={heroRef}>
         <SectionHero />
       </div>
-      {data ? (
-        <>
-          <SectionSale products={first6Products} />
-          <SectionCategories />
-          <SectionBestSelling products={next4Products} />
-          <Advertisement />
-          <SectionExplore products={next10Products} />
-        </>
-      ) : (
-        ""
-      )}
+      <SectionSale />
+      <SectionCategories />
+      <SectionBestSelling />
+      <Advertisement />
+      <SectionExplore />
       <SectionNew />
       <Features />
       {isHidden ? "" : <UpButton />}
