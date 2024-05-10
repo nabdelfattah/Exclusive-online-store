@@ -18,7 +18,7 @@ export function ProductCard(props) {
         <p className="pdt_title">{title}</p>
         <p className="pdt_price">{price}$</p>
         <p className="pdt_rating_wrapper">
-          <RatingStars rate={rating} />
+          <RatingStars initialRating={rating} />
           <span className="pdt_rating_num">({Math.round(rating + 100)})</span>
         </p>
         <div className="card_icons">

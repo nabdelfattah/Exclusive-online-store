@@ -49,3 +49,35 @@ function isValidEmail(email) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
 }
+export function addToWishlist(id) {
+  // Get current wishlist items from local storage
+  let wishlistItems = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+  // Check if the item is already in the wishlist
+  if (!wishlistItems.includes(id)) {
+    // Add the item to the wishlist
+    wishlistItems.push(id);
+    
+    // Update the wishlist in local storage
+    localStorage.setItem('wishlist', JSON.stringify(wishlistItems));
+  }
+}
+
+export function addToCart(item) {
+  // Get current cart items from local storage
+  let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+  // Check if an item with the same id already exists in the cart
+  const existingIndex = cartItems.findIndex((cartItem) => cartItem.id === item.id);
+
+  if (existingIndex !== -1) {
+    // Replace the existing item with the new item
+    cartItems[existingIndex] = item;
+  } else {
+    // Add the item to the cart
+    cartItems.push(item);
+  }
+
+  // Update the cart in local storage
+  localStorage.setItem('cart', JSON.stringify(cartItems));
+}

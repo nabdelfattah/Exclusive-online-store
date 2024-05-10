@@ -1,14 +1,24 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-export function RatingStars(rate) {
-  const [rating, setRating] = useState(null);
+export function RatingStars({ initialRating }) {
+  const [rating, setRating] = useState(Math.round(initialRating));
   const [hover, setHover] = useState(null);
-  useEffect(() => {
-    setRating(rate);
-  }, []);
+
+  const handleRatingChange = (currentRating) => {
+    setRating(currentRating);
+  };
+
+  const handleMouseEnter = (currentRating) => {
+    setHover(currentRating);
+  };
+
+  const handleMouseLeave = () => {
+    setHover(null);
+  };
+
   return (
     <div className="ratingStars">
-      {[...Array(5)].map((star, index) => {
+      {[...Array(5)].map((_, index) => {
         const currentRating = index + 1;
 
         return (
@@ -17,7 +27,8 @@ export function RatingStars(rate) {
               type="radio"
               name="rating"
               value={currentRating}
-              onChange={() => setRating(currentRating)}
+              checked={currentRating === rating}
+              onChange={() => handleRatingChange(currentRating)}
             />
             <span
               className="star"
@@ -25,8 +36,8 @@ export function RatingStars(rate) {
                 color:
                   currentRating <= (hover || rating) ? "#ffc107" : "#e4e5e9",
               }}
-              onMouseEnter={() => setHover(currentRating)}
-              onMouseLeave={() => setHover(null)}
+              onMouseEnter={() => handleMouseEnter(currentRating)}
+              onMouseLeave={handleMouseLeave}
             >
               &#9733;
             </span>

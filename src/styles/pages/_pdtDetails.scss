@@ -1,6 +1,6 @@
 @import "../mixins";
 .details_wrapper {
-  padding: 6.3rem 0 14rem;
+  padding: 3.8rem 0 14rem;
   display: grid;
   grid-template-columns: 7fr 4fr;
   gap: 7rem;
@@ -30,8 +30,6 @@
     max-width: 100%;
     max-height: 100%;
   }
-}
-.details_details {
 }
 .f-sm {
   @include font(1.4rem, 2.1rem);
@@ -67,16 +65,39 @@
   border-bottom: 1px solid var(--bg-black-transparent);
 }
 
-.details_colors {
-}
-.colors {
-}
+.details_colors,
 .details_sizes {
+  display: flex;
+  gap: 2.4rem;
+  align-items: center;
 }
 .sizes {
+  display: flex;
+  gap: 1.6rem;
+  input[type="radio"] {
+    display: none;
+  }
+  label {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--bg-black-transparent);
+    transition: var(--animation);
+  }
+  input[type="radio"]:checked + label,
+  label:hover {
+    background-color: var(--c-primary);
+    border: 1px solid var(--c-primary);
+    color: white;
+  }
 }
 .details_buy {
   display: flex;
+  align-items: center;
   gap: 1.6rem;
   align-items: center;
   .wishlist-icon {
@@ -84,6 +105,49 @@
   }
 }
 .count {
+  border-radius: var(--radius);
+  display: flex;
+  & * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4.4rem;
+  }
+  p {
+    @include font(2rem, 2.8rem, 500);
+    width: 7.8rem;
+    border-top: 1px solid var(--bg-black-transparent);
+    border-bottom: 1px solid var(--bg-black-transparent);
+  }
+  button {
+    border: 1px solid var(--bg-black-transparent);
+    width: 4.1rem;
+    &:first-child {
+      border-top-left-radius: var(--radius);
+      border-bottom-left-radius: var(--radius);
+    }
+    &:last-child {
+      border-top-right-radius: var(--radius);
+      border-bottom-right-radius: var(--radius);
+    }
+    &:hover {
+      border: 1px solid var(--c-primary);
+      background-color: var(--c-primary);
+      color: var(--c-white);
+    }
+    span {
+      width: 8rem;
+    }
+  }
+}
+.wishlist-icon {
+  width: 4rem;
+  height: 4rem;
+  fill: var(--c-white);
+  transition: var(--animation);
+}
+.wishlist-icon:hover {
+  fill: var(--bg-gray);
 }
 .details_delivary {
   border: 1px solid rgba(0, 0, 0, 0.5);
@@ -116,4 +180,8 @@
 .details_description,
 .details_sizes {
   margin: 2.4rem 0;
+}
+
+.details_relatedPdts .home_subHeading {
+  margin: 0;
 }

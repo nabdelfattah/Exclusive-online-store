@@ -1,5 +1,4 @@
-export * from './ProductInfo'
 export * from './ProductList'
-export * from './ProductLoading'
 export * from './ProductCard'
 export * from './RatingStars'
+export * from './LoadingProduct'

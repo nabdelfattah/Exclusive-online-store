@@ -199,10 +199,34 @@ button:disabled:hover {
 .mb-7 {
   margin-bottom: 7.1rem !important;
 }
+
+/* Review Stars */
 .ratingStars input[type="radio"] {
   display: none;
 }
 .ratingStars .star {
   cursor: pointer;
   font-size: 2.5rem;
+}
+
+/* Radio buttons */
+.colors {
+  display: flex;
+  gap: 0.8rem;
+}
+.colors input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  /* transition: var(--animation); */
+}
+.colors input[type="radio"]:checked,
+.colors input[type="radio"]:checked {
+  box-shadow: inset 0 0 0 2px #fff;
+  border: 2px solid black;
 }
