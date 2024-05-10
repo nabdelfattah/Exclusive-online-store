@@ -7,8 +7,10 @@
 @use "./components/features";
 @use "./components/footer";
 @use "./pages/home";
+@use "./pages/pdtDetails";
+@use "./pages/account";
+@use "./pages/cart";
 @use "./pages/about";
 @use "./pages/contact";
-@use "./pages/pdtDetails";
 @use "./pages";
 @use "./query";

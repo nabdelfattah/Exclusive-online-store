@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { RatingStars } from "./";
 import { addToCart, addToWishlist } from "../../helper";
+import { useState } from "react";
 
 export function ProductCard(props) {
   const {
@@ -13,12 +14,23 @@ export function ProductCard(props) {
     thumbnail,
     rating,
   } = props.data;
-  console.log(discountPercentage);
+  const [color, setColor] = useState("color1");
   function addToCartHandler() {
-    addToCart({ id, color: "color1", size: "M", count: 1 });
+    addToCart({ id, color, size: "M", count: 1 });
   }
   function addToWishlistHandler() {
     addToWishlist(id);
+  }
+  let chosenColor;
+  switch (id) {
+    case 6:
+      chosenColor = "#FB1314";
+      break;
+    case 7:
+      chosenColor = "#EEFF61"; // Corrected the color value
+      break;
+    default:
+      chosenColor = "#000";
   }
   return (
     <article className="pdt">
@@ -56,6 +68,28 @@ export function ProductCard(props) {
           <RatingStars initialRating={rating} />
           <span className="pdt_rating_num">({stock})</span>
         </div>
+        {category == "laptops" ? (
+          <div className="card_colors">
+            <div className="colors">
+              <input
+                type="radio"
+                name="color"
+                value="color1"
+                style={{ backgroundColor: chosenColor }}
+                onChange={(event) => setColor(event.target.value)}
+              />
+              <input
+                type="radio"
+                name="color"
+                value="color2"
+                style={{ backgroundColor: "#DB4444" }}
+                onChange={(event) => setColor(event.target.value)}
+              />
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
         <div className="card_icons">
           <button onClick={addToWishlistHandler}>
             <svg
