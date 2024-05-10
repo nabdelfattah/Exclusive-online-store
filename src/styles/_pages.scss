@@ -34,3 +34,44 @@
     }
   }
 }
+//////////////////////////////////
+/// Loading
+////////////////
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 6rem auto;
+  gap: 6rem;
+  svg {
+    -webkit-animation: rotate-center 1s ease-in-out infinite;
+    animation: rotate-center 1s ease-in-out infinite;
+    width: 15rem;
+    height: 15rem;
+  }
+  p {
+    font-size: 15rem;
+    line-height: 0.6rem;
+    font-weight: 400;
+  }
+}
+@-webkit-keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

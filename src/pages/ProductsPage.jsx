@@ -1,15 +1,16 @@
-import { useContext, useEffect, useState } from "react";
-import { ProductContext } from "../ProductContext";
+import { useEffect, useState } from "react";
 import { ProductList } from "../components/Product";
+import { useFetch } from "../useFetch";
 
 export function ProductsPage() {
-  const { pdtsList } = useContext(ProductContext);
+  const pdtsList = useFetch("https://dummyjson.com/products");
+  console.log(pdtsList);
   const [targetIndex, setTargetIndex] = useState(10);
   function showMoreHandler() {
-    if (pdtsList.length >= targetIndex + 10) {
+    if (pdtsList.products.length >= targetIndex + 10) {
       setTargetIndex((previousVal) => previousVal + 10);
     } else {
-      setTargetIndex(pdtsList.length);
+      setTargetIndex(pdtsList.products.length);
     }
   }
 
@@ -17,15 +18,21 @@ export function ProductsPage() {
     window.scrollTo(0, 0); // Scrolls to the top left corner of the page
   }, []);
   return (
-    <div className="products-wrapper container">
-      <ProductList products={pdtsList.slice(0, targetIndex)} />
-      {targetIndex < pdtsList.length ? (
-        <button className="btn-primary" onClick={showMoreHandler}>
-          Show More
-        </button>
+    <>
+      {pdtsList.products ? (
+        <div className="products-wrapper container">
+          <ProductList products={pdtsList.products.slice(0, targetIndex)} />
+          {targetIndex < pdtsList.products.length ? (
+            <button className="btn-primary" onClick={showMoreHandler}>
+              Show More
+            </button>
+          ) : (
+            ""
+          )}
+        </div>
       ) : (
         ""
       )}
-    </div>
+    </>
   );
 }

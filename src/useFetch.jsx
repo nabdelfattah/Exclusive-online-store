@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 
 export function useFetch(url) {
-  const [pdtsList, setPdtsList] = useState([]);
-  const [IsFetchErr, setIsFetchErr] = useState(false);
-  const [isFetchLoading, setIsFetchLoading] = useState(false);
+  const [data, setData] = useState();
 
   async function fetctData(url) {
     console.log("fetch data....");
@@ -15,19 +13,14 @@ export function useFetch(url) {
     }
   }
   useEffect(() => {
-    setIsFetchErr(false);
-    setIsFetchLoading(true);
     fetctData(url)
       .then((data) => {
-        setPdtsList(data);
+        setData(data);
       })
       .catch(() => {
-        setIsFetchErr(true);
-      })
-      .finally(() => {
-        setIsFetchLoading(false);
+        setData(null);
       });
   }, []);
 
-  return { pdtsList, IsFetchErr, isFetchLoading };
+  return data;
 }

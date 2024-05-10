@@ -12,6 +12,7 @@ export * from "./Home/SectionHero"
 export * from "./Home/SectionNew"
 export * from "./Home/SectionSale"
 
+export * from "./Loading"
 export * from "./Breadcrumb"
 export * from "./Features"
 export * from "./UpButton"

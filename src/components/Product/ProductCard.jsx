@@ -2,13 +2,14 @@ import { Link } from "react-router-dom";
 import { RatingStars } from "./";
 
 export function ProductCard(props) {
-  const { id, title, price, category, description, image, rating } = props.data;
+  const { id, title, price, discountPercentage, stock, thumbnail, rating } =
+    props.data;
   function addToCartHandler() {}
   function addToWishlistHandler() {}
   return (
     <article className="pdt">
       <div className="pdt_imgWrapper">
-        <img src={image} alt={title} />
+        <img src={thumbnail} alt={title} />
         <button className="pdt_addToCartBtn" onClick={addToCartHandler}>
           Add To Cart
         </button>
@@ -17,8 +18,8 @@ export function ProductCard(props) {
         <p className="pdt_title">{title}</p>
         <p className="pdt_price">{price}$</p>
         <p className="pdt_rating_wrapper">
-          <RatingStars rate={rating.rate} />
-          <span className="pdt_rating_num">({rating.count})</span>
+          <RatingStars rate={rating} />
+          <span className="pdt_rating_num">({Math.round(rating + 100)})</span>
         </p>
         <div className="card_icons">
           <button onClick={addToWishlistHandler}>
