@@ -10,6 +10,7 @@ export function DetailsPage() {
   // Fetch Data
   const { id } = useParams();
   const url = `https://fakestoreapi.com/products/${id}`;
+
   const { pdtsList: pdtObj, IsFetchErr, isFetchLoading } = useFetch(url);
   console.log({ pdtObj });
   const [count, setCount] = useState(1);
@@ -31,32 +32,42 @@ export function DetailsPage() {
       {pdtObj.id ? (
         <div className="details_wrapper container">
           <div className="details_imgs">
-            <img src={pdtObj.image} alt={pdtObj.title} />
-            <img src={pdtObj.image} alt={pdtObj.title} />
-            <img src={pdtObj.image} alt={pdtObj.title} />
-            <img src={pdtObj.image} alt={pdtObj.title} />
-            <img src={pdtObj.image} alt={pdtObj.title} />
+            <figure>
+              <img src={pdtObj.image} alt={pdtObj.title} />
+            </figure>
+            <figure>
+              <img src={pdtObj.image} alt={pdtObj.title} />
+            </figure>
+            <figure>
+              <img src={pdtObj.image} alt={pdtObj.title} />
+            </figure>
+            <figure>
+              <img src={pdtObj.image} alt={pdtObj.title} />
+            </figure>
+            <figure>
+              <img src={pdtObj.image} alt={pdtObj.title} />
+            </figure>
           </div>
           <div className="details_details">
             <h2 className="details_title">{pdtObj.title}</h2>
             <div className="details_rating_box">
               <RatingStars rate={pdtObj.rating.rate} />
-              <p>
-                ({pdtObj.rating.count}) Reviews &npsp; |{" "}
+              <p className="f-sm details_rating">
+                ({pdtObj.rating.count}) Reviews <span>|</span>
                 <span className="details_inStock">In Stock</span>
               </p>
             </div>
             <p className="details_price">${pdtObj.price}</p>
-            <p className="details_description">${pdtObj.description}</p>
+            <p className="details_description f-sm">{pdtObj.description}</p>
             <div className="details_colors">
-              <p>Colours:</p>
+              <p className="f-md">Colours:</p>
               <div className="colors">
                 <button>&nbsp;</button>
                 <button>&nbsp;</button>
               </div>
             </div>
             <div className="details_sizes">
-              <p>Size:</p>
+              <p className="f-md">Size:</p>
               <div className="sizes">
                 <button>XS</button>
                 <button>S</button>
@@ -76,6 +87,7 @@ export function DetailsPage() {
               </button>
               <button onClick={addToWishlistHandler}>
                 <svg
+                  className="wishlist-icon"
                   width="42"
                   height="42"
                   viewBox="0 0 42 42"
@@ -102,7 +114,7 @@ export function DetailsPage() {
               </button>
             </div>
             <div className="details_delivary">
-              <div>
+              <div className="details_delivary_item">
                 <img src={truck} alt="a truck" />
                 <div className="text-box">
                   <p className="title">Free Delivery</p>
@@ -111,7 +123,7 @@ export function DetailsPage() {
                   </a>
                 </div>
               </div>
-              <div>
+              <div className="details_delivary_item">
                 <img src={rotatingArrows} alt="two rotating arrows" />
                 <div className="text-box">
                   <p className="title">Return Delivery</p>

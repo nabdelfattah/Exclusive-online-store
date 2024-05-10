@@ -1,20 +1,72 @@
 @import "../mixins";
 .details_wrapper {
+  padding: 6.3rem 0 14rem;
+  display: grid;
+  grid-template-columns: 7fr 4fr;
+  gap: 7rem;
+  align-items: start;
 }
 .details_imgs {
+  display: grid;
+  grid-template-columns: 17fr 50fr;
+  column-gap: 3rem;
+  row-gap: 1.6rem;
+  figure {
+    width: 17rem;
+    height: 13.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-gray);
+    border-radius: var(--radius);
+  }
+  figure:nth-child(2) {
+    grid-row: span 4;
+    width: 50rem;
+    height: 60rem;
+  }
+  img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+  }
 }
 .details_details {
 }
+.f-sm {
+  @include font(1.4rem, 2.1rem);
+}
+.f-md {
+  @include font(2rem, 2rem);
+  letter-spacing: 0.3px;
+  font-family: var(--f-inter);
+}
 .details_title {
+  @include font(2.4rem, 2.4rem, 600);
+  letter-spacing: 0.3px;
+  font-family: var(--f-inter);
 }
 .details_rating_box {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  color: var(--bg-black-transparent);
+}
+.details_rating {
+  display: flex;
+  gap: 1.6rem;
 }
 .details_inStock {
+  color: var(--c-accent);
 }
 .details_price {
+  @include font(2.4rem, 2.4rem, 400);
 }
 .details_description {
+  padding-bottom: 2.4rem;
+  border-bottom: 1px solid var(--bg-black-transparent);
 }
+
 .details_colors {
 }
 .colors {
@@ -24,8 +76,44 @@
 .sizes {
 }
 .details_buy {
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+  .wishlist-icon {
+    margin-left: 0.3rem;
+  }
 }
 .count {
 }
 .details_delivary {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: var(--radius);
+  padding: 0.8rem 0;
+  margin-top: 4rem;
+}
+.details_delivary_item {
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+  padding: 1.6rem;
+  a {
+    text-decoration: underline;
+  }
+  .title {
+    @include font(1.6rem, 2.4rem, 500);
+  }
+  .description {
+    @include font(1.2rem, 1.8rem, 500);
+  }
+}
+.details_delivary_item:first-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+.details_title,
+.details_rating_box {
+  margin-bottom: 1.6rem;
+}
+.details_description,
+.details_sizes {
+  margin: 2.4rem 0;
 }

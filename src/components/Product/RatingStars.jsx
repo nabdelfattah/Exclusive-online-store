@@ -7,7 +7,7 @@ export function RatingStars(rate) {
     setRating(rate);
   }, []);
   return (
-    <>
+    <div className="ratingStars">
       {[...Array(5)].map((star, index) => {
         const currentRating = index + 1;
 
@@ -33,6 +33,6 @@ export function RatingStars(rate) {
           </label>
         );
       })}
-    </>
+    </div>
   );
 }

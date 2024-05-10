@@ -199,3 +199,10 @@ button:disabled:hover {
 .mb-7 {
   margin-bottom: 7.1rem !important;
 }
+.ratingStars input[type="radio"] {
+  display: none;
+}
+.ratingStars .star {
+  cursor: pointer;
+  font-size: 2.5rem;
+}

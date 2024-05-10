@@ -6,14 +6,6 @@
 }
 .pdt {
   position: relative;
-  input[type="radio"] {
-    display: none;
-  }
-  .star {
-    cursor: pointer;
-    font-size: 2.5rem;
-    // margin: 1px;
-  }
 }
 .pdt:hover .pdt_addToCartBtn {
   transform: translateY(0%);
