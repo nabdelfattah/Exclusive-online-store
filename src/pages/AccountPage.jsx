@@ -136,7 +136,7 @@ export function AccountPage() {
             />
           </div>
           <div className="account_form_buttons">
-            <button>Cancel</button>
+            <button type="button">Cancel</button>
             <button className="btn-primary">Save Changes</button>
           </div>
         </form>

@@ -43,8 +43,16 @@ export function DetailsPage() {
   }
   function buyHandler(e) {
     e.preventDefault();
-    addToCart({ id: +id, color, size, count });
-    navigateTo("/cart");
+    addToCart({
+      id: +id,
+      color,
+      size,
+      count,
+      price: pdtObj.price,
+      img: pdtObj.thumbnail,
+      name: pdtObj.title,
+    });
+    navigateTo("/checkout");
   }
   function addToWishlistHandler() {
     addToWishlist(+id);
@@ -155,9 +163,13 @@ export function DetailsPage() {
                 </div>
                 <div className="details_buy">
                   <div className="count">
-                    <button onClick={decreaseCountHandler}>-</button>
+                    <button type="button" onClick={decreaseCountHandler}>
+                      -
+                    </button>
                     <p>{count}</p>
-                    <button onClick={increaseCountHandler}>+</button>
+                    <button type="button" onClick={increaseCountHandler}>
+                      +
+                    </button>
                   </div>
                   <button className="btn-primary" onClick={buyHandler}>
                     Buy Now

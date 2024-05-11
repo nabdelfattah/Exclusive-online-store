@@ -16,7 +16,15 @@ export function ProductCard(props) {
   } = props.data;
   const [color, setColor] = useState("color1");
   function addToCartHandler() {
-    addToCart({ id, color, size: "M", count: 1 });
+    addToCart({
+      id,
+      color,
+      size: "M",
+      count: 1,
+      price,
+      img: thumbnail,
+      name: title,
+    });
   }
   function addToWishlistHandler() {
     addToWishlist(id);
