@@ -1,4 +1,4 @@
-import { Breadcrumb } from "../components";
+import { Breadcrumb, Coupon, CartTotal } from "../components";
 import { Link } from "react-router-dom";
 import banks from "../assets/icons/banks.svg";
 import check from "../assets/icons/check.svg";
@@ -128,15 +128,11 @@ export function CheckoutPage() {
                 );
               })}
             </ul>
-            <p className="total">
-              Subtotal: <span>${totalPrice}</span>
-            </p>
-            <p className="shipping">
-              Shipping: <span>Free</span>
-            </p>
-            <p className="total">
-              Total: <span>${totalPrice}</span>
-            </p>
+            <CartTotal
+              subtotal={totalPrice}
+              shipping="Free"
+              total={totalPrice}
+            />
             <ul className="paymentMethods">
               <li className="method_wrapper">
                 <div>
@@ -152,12 +148,7 @@ export function CheckoutPage() {
                 </div>
               </li>
             </ul>
-            <div className="coupon_wrapper">
-              <input type="text" name="coupon" placeholder="Coupon Code" />
-              <button type="button" className="btn-primary">
-                Apply Coupon
-              </button>
-            </div>
+            <Coupon />
             <button className="btn-primary">Place Order</button>
           </div>
         </form>
