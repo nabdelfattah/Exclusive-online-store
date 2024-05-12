@@ -13,7 +13,6 @@ export function Header() {
     setCart(JSON.parse(localStorage.getItem("cart") || "[]"));
     setWishlist(JSON.parse(localStorage.getItem("wishlist") || "[]"));
   }, []);
-  console.log(cart, wishlist);
 
   function clickUserIconHandler() {
     userIconRef.current.classList.toggle("userIcon--selected");

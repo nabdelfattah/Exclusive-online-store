@@ -1,7 +1,24 @@
+import { useNavigate } from "react-router-dom";
+
 export function Search() {
+  const navigateTo = useNavigate();
+
+  function searchPdtHandler(e) {
+    e.preventDefault();
+    const value = e.target.q.value;
+    console.log(value);
+    e.target.q.value = "";
+    navigateTo(`/search/${value}`);
+  }
   return (
-    <form className="header_form">
-      <input className="header_input" type="text" placeholder="Search" />
+    <form className="header_form" onSubmit={searchPdtHandler}>
+      <input
+        className="header_input"
+        type="text"
+        placeholder="Search"
+        name="q"
+        defaultValue={""}
+      />
       <svg
         width="24"
         height="24"

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { ProductCard } from "../components/Product";
 import { useFetch } from "../useFetch";
+import { useParams } from "react-router-dom";
 const validCategories = [
   "smartphones",
   "laptops",
@@ -14,8 +15,14 @@ const validCategories = [
   "motorcycle",
   "lighting",
 ];
-export function ProductsPage() {
-  const pdtsList = useFetch("https://dummyjson.com/products?limit=0");
+export function ProductsPage({ url }) {
+  const params = useParams();
+  if (url == "") {
+    url = `https://dummyjson.com/products/search?q=${params.q}`;
+  }
+  console.log("re-evaluate Products Page...", url);
+
+  const pdtsList = useFetch(url);
   let filteredPdts;
   if (pdtsList) {
     filteredPdts = pdtsList.products.filter((obj) =>

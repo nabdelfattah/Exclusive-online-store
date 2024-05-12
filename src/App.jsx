@@ -22,7 +22,13 @@ function App() {
       <Routes>
         <Route path="/" element={<LayoutPage />}>
           <Route index element={<HomePage />} />
-          <Route path="products" element={<ProductsPage />} />
+          <Route
+            path="products"
+            element={
+              <ProductsPage url="https://dummyjson.com/products?limit=0" />
+            }
+          />
+          <Route path="/search/:q" element={<ProductsPage url="" />} />
           <Route path="products/:id" element={<DetailsPage />} />
           <Route path="wishlist" element={<WishlistPage />} />
           <Route path="cart" element={<CartPage />} />
