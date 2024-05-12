@@ -49,6 +49,7 @@ function isValidEmail(email) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
 }
+
 export function addToWishlist(id) {
   // Get current wishlist items from local storage
   let wishlistItems = JSON.parse(localStorage.getItem('wishlist')) || [];
@@ -57,10 +58,12 @@ export function addToWishlist(id) {
   if (!wishlistItems.includes(id)) {
     // Add the item to the wishlist
     wishlistItems.push(id);
-    
-    // Update the wishlist in local storage
-    localStorage.setItem('wishlist', JSON.stringify(wishlistItems));
+  } else {
+    // Remove it from wishlist. To have the effect of toggling
+    wishlistItems = wishlistItems.filter(item => item != id)
   }
+  // Update the wishlist in local storage
+  localStorage.setItem('wishlist', JSON.stringify(wishlistItems));
 }
 
 export function addToCart(item) {
