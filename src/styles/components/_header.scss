@@ -81,6 +81,25 @@
   gap: 1.6rem;
   align-items: center;
 }
+.wishlistIcon,
+.cartIcon {
+  position: relative;
+}
+.wishlistCounter,
+.cartCounter {
+  position: absolute;
+  top: -0.1rem;
+  right: 0.1rem;
+  background-color: var(--c-primary);
+  color: white;
+  @include font(1.2rem, 1.8rem);
+  border-radius: 50%;
+  width: 1.6rem;
+  height: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .userIcon {
   transition: var(--animation);
 }

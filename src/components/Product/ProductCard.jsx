@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import { RatingStars } from "./";
 import { addToCart, addToWishlist } from "../../helper";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { UserContext } from "../../UserContext";
 
 export function ProductCard(props) {
+  const { setWishlist, setCart } = useContext(UserContext);
   const {
     id,
     title,
@@ -26,9 +28,11 @@ export function ProductCard(props) {
       name: title,
       stock,
     });
+    setCart(JSON.parse(localStorage.getItem("cart") || "[]"));
   }
   function addToWishlistHandler() {
     addToWishlist(id);
+    setWishlist(JSON.parse(localStorage.getItem("wishlist") || "[]"));
   }
   let chosenColor;
   switch (id) {

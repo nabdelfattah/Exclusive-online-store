@@ -6,10 +6,17 @@ import {
   updateProfile,
 } from "firebase/auth";
 
-export const UserContext = createContext();
+export const UserContext = createContext({
+  wishlist: null,
+  setWishlist: (val) => {},
+  cart: null,
+  setCart: (val) => {},
+});
 
 function UserContextProvider(props) {
-  const [user, setUser] = useState();
+  const [user, setUser] = useState(null);
+  const [wishlist, setWishlist] = useState([]);
+  const [cart, setCart] = useState([]);
 
   async function login(email, password) {
     try {
@@ -55,7 +62,18 @@ function UserContextProvider(props) {
     return unsubscribe;
   }, []);
   return (
-    <UserContext.Provider value={{ user, signup, login, logout }}>
+    <UserContext.Provider
+      value={{
+        user,
+        signup,
+        login,
+        logout,
+        wishlist,
+        setWishlist,
+        cart,
+        setCart,
+      }}
+    >
       {props.children}
     </UserContext.Provider>
   );

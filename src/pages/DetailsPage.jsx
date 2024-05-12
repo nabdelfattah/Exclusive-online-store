@@ -1,14 +1,16 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { Breadcrumb, Header, Loading } from "../components";
 import { ProductList, RatingStars } from "../components/Product";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import truck from "../assets/icons/truck.svg";
 import rotatingArrows from "../assets/icons/rotatingArrows.svg";
 import { useFetch } from "../useFetch";
 import { addToCart, addToWishlist } from "../helper";
 import { HomeHeader } from "../components/Home/HomeHeader";
+import { UserContext } from "../UserContext";
 
 export function DetailsPage() {
+  const { setWishlist, setCart } = useContext(UserContext);
   // Scroll to top when page loads
   useEffect(() => {
     window.scrollTo(0, 0); // Scrolls to the top left corner of the page
@@ -53,10 +55,12 @@ export function DetailsPage() {
       name: pdtObj.title,
       stock: pdtObj.stock,
     });
+    setCart(JSON.parse(localStorage.getItem("cart") || "[]"));
     navigateTo("/checkout");
   }
   function addToWishlistHandler() {
     addToWishlist(+id);
+    setWishlist(JSON.parse(localStorage.getItem("wishlist") || "[]"));
   }
 
   return (

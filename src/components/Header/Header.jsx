@@ -1,12 +1,19 @@
 import { Link } from "react-router-dom";
 import { HeaderNavigation, Search, UserNavigation } from "./";
-import wishlist from "../../assets/icons/header/wishlist.svg";
-import cart from "../../assets/icons/header/cart.svg";
-import { useRef } from "react";
+import wishlistIcon from "../../assets/icons/header/wishlist.svg";
+import cartIcon from "../../assets/icons/header/cart.svg";
+import { useContext, useEffect, useRef } from "react";
+import { UserContext } from "../../UserContext";
 
 export function Header() {
   const userIconRef = useRef();
   const userNavRef = useRef();
+  const { cart, setCart, wishlist, setWishlist } = useContext(UserContext);
+  useEffect(() => {
+    setCart(JSON.parse(localStorage.getItem("cart") || "[]"));
+    setWishlist(JSON.parse(localStorage.getItem("wishlist") || "[]"));
+  }, []);
+  console.log(cart, wishlist);
 
   function clickUserIconHandler() {
     userIconRef.current.classList.toggle("userIcon--selected");
@@ -23,11 +30,21 @@ export function Header() {
         <div className="header_wrapper">
           <Search />
           <div className="header_iconsWrapper">
-            <Link to="/wishlist">
-              <img src={wishlist} />
+            <Link className="wishlistIcon" to="/wishlist">
+              <img src={wishlistIcon} />
+              {wishlist.length ? (
+                <span className="wishlistCounter">{wishlist.length}</span>
+              ) : (
+                ""
+              )}
             </Link>
-            <Link to="/cart">
-              <img src={cart} />
+            <Link className="cartIcon" to="/cart">
+              <img src={cartIcon} />
+              {cart.length ? (
+                <span className="cartCounter">{cart.length}</span>
+              ) : (
+                ""
+              )}
             </Link>
             <button className="userIcon" onClick={clickUserIconHandler}>
               <svg

@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Breadcrumb, CartTotal, Coupon } from "../components";
 import { ProductInCart } from "../components/ProductInCart";
 import { Link } from "react-router-dom";
+import { UserContext } from "../UserContext";
 
 export function CartPage() {
+  const { setCart } = useContext(UserContext);
   const breadcrumb = [
     { route: "/", text: "Home" },
     { route: "/cart", text: "Cart" },
@@ -23,6 +25,7 @@ export function CartPage() {
   function updateCartHandler() {
     localStorage.setItem("cart", JSON.stringify(updatedCart));
     setCartPdts(updatedCart);
+    setCart(updatedCart);
   }
 
   return (
