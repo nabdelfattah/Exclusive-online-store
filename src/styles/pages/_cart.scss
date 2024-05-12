@@ -1,11 +1,94 @@
-.total,
-.shipping {
+@import "../mixins";
+
+.cart_pdts_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-bottom: 2.4rem;
+}
+.cart_header.container {
+  margin-bottom: 4rem;
+}
+.cart_header,
+.pdtCart {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  align-items: center;
+  box-shadow: 1px 0 13px rgba(0, 0, 0, 0.1);
+  padding: 2.4rem 4rem;
+  @include font(1.6rem, 2.4rem);
+}
+
+.cart_header p:first-child,
+.pdtCart div:first-child {
+  justify-self: start;
+}
+.cart_header p:last-child,
+.pdtCart p:last-child {
+  justify-self: end;
+}
+.pdtCart p:last-child {
+  margin-right: 2.6rem;
+}
+.pdtCart_info {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+}
+.pdtcart_info--deleted::before {
+  content: url("../assets/icons/delete.svg");
+  position: absolute;
+  top: -1.2rem;
+  left: -1.2rem;
+  z-index: 2;
+}
+.pdtCart_img {
+  width: 5.4rem;
+  height: 5.4rem;
+}
+.pdtCart_counter {
+  width: 7.2rem;
+  height: 4.4rem;
+  padding: 0.6rem 1.2rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  border: 1px solid var(--bg-black-transparent);
+  border-radius: var(--radius);
+  p {
+    grid-row: span 2;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  img {
+    cursor: pointer;
+  }
+}
+.emptyCart {
+  box-shadow: 1px 0 13px rgba(0, 0, 0, 0.1);
+  padding: 14rem 4rem;
+  @include font(1.6rem, 2.4rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cart_btns,
+.cart_coupon_total_wrapper {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 }
-.shipping {
-  border-top: 1px solid var(--bg-black-transparent);
-  border-bottom: 1px solid var(--bg-black-transparent);
-  padding: 1.6rem 0;
-  margin: 1.6rem 0;
+.cart_total_box {
+  width: 47rem;
+  padding: 3.2rem 2.4rem;
+  border: 1.5px solid var(--c-black);
+  .total_heading {
+    margin-bottom: 2.4rem;
+    @include font(2rem, 2.8rem, 500);
+  }
+  .btn-primary {
+    margin-top: 1.6rem;
+  }
 }

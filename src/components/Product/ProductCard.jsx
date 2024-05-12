@@ -24,6 +24,7 @@ export function ProductCard(props) {
       price,
       img: thumbnail,
       name: title,
+      stock,
     });
   }
   function addToWishlistHandler() {

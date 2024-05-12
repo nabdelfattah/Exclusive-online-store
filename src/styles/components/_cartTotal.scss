@@ -1,0 +1,11 @@
+.total,
+.shipping {
+  display: flex;
+  justify-content: space-between;
+}
+.shipping {
+  border-top: 1px solid var(--bg-black-transparent);
+  border-bottom: 1px solid var(--bg-black-transparent);
+  padding: 1.6rem 0;
+  margin: 1.6rem 0;
+}

@@ -51,6 +51,7 @@ export function DetailsPage() {
       price: pdtObj.price,
       img: pdtObj.thumbnail,
       name: pdtObj.title,
+      stock: pdtObj.stock,
     });
     navigateTo("/checkout");
   }
