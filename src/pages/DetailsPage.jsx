@@ -45,16 +45,7 @@ export function DetailsPage() {
   }
   function buyHandler(e) {
     e.preventDefault();
-    addToCart({
-      id: +id,
-      color,
-      size,
-      count,
-      price: pdtObj.price,
-      img: pdtObj.thumbnail,
-      name: pdtObj.title,
-      stock: pdtObj.stock,
-    });
+    addToCart({ ...pdtObj, count: 1 });
     setCart(JSON.parse(localStorage.getItem("cart") || "[]"));
     navigateTo("/checkout");
   }

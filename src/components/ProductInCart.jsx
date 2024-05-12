@@ -14,13 +14,11 @@ export function ProductInCart({ product, updateCart }) {
       return [
         ...newList,
         {
-          color: product.color,
           count: count + 1,
           id: product.id,
-          img: product.img,
-          name: product.name,
+          thumbnail: product.thumbnail,
+          title: product.title,
           price: product.price,
-          size: product.size,
           stock: product.stock - (count + 1),
         },
       ];
@@ -42,11 +40,10 @@ export function ProductInCart({ product, updateCart }) {
       return [
         ...newList,
         {
-          color: product.color,
           count: count - 1,
           id: product.id,
-          img: product.img,
-          name: product.name,
+          thumbnail: product.thumbnail,
+          title: product.title,
           price: product.price,
           size: product.size,
           stock: product.stock + (count - 1),
@@ -61,8 +58,8 @@ export function ProductInCart({ product, updateCart }) {
       <div
         className={`pdtCart_info ${isDeleted ? "pdtcart_info--deleted" : ""}`}
       >
-        <img src={product.img} className={`pdtCart_img`} />
-        <span>{product.name}</span>
+        <img src={product.thumbnail} className={`pdtCart_img`} />
+        <span>{product.title}</span>
       </div>
       <p>${product.price}</p>
       <div className="pdtCart_counter">

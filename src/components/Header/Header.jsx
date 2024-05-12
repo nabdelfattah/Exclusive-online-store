@@ -9,6 +9,7 @@ export function Header() {
   const userIconRef = useRef();
   const userNavRef = useRef();
   const { cart, setCart, wishlist, setWishlist } = useContext(UserContext);
+  console.log(cart);
   useEffect(() => {
     setCart(JSON.parse(localStorage.getItem("cart") || "[]"));
     setWishlist(JSON.parse(localStorage.getItem("wishlist") || "[]"));

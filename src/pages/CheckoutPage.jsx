@@ -120,8 +120,12 @@ export function CheckoutPage() {
                       to={`/products/${obj.id}`}
                       className="pdtName_wrapper"
                     >
-                      <img className="pdtImg" src={obj.img} alt={obj.name} />
-                      <p className="pdtName">{obj.name}</p>
+                      <img
+                        className="pdtImg"
+                        src={obj.thumbnail}
+                        alt={obj.title}
+                      />
+                      <p className="pdtName">{obj.title}</p>
                     </Link>
                     <p className="pdtPrice">${obj.price * obj.count}</p>
                   </li>

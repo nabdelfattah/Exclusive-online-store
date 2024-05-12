@@ -15,7 +15,7 @@ export function WishlistPage() {
           `https://dummyjson.com/products/${element}`
         );
         const data = await response.json();
-        addToCart(data);
+        addToCart({ ...data, count: 1 });
       } catch {
         alert("Can't move you wishlist to cart.");
       }

@@ -11,16 +11,7 @@ export function FetchedProductCard(props) {
   console.log(data);
   const [color, setColor] = useState("color1");
   function addToCartHandler() {
-    addToCart({
-      id: data.id,
-      color: color,
-      size: "M",
-      count: 1,
-      price: data.price,
-      img: data.thumbnail,
-      name: data.title,
-      stock: data.stock,
-    });
+    addToCart({ ...data, count: 1 });
     setCart(JSON.parse(localStorage.getItem("cart") || "[]"));
   }
   function addToWishlistHandler() {
