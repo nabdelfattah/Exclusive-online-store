@@ -20,23 +20,8 @@ export const UserNavigation = forwardRef((props, ref) => {
       alert(err);
     }
   }
-
-  let timeoutId;
-  function leaveNavHandler() {
-    clearTimeout(timeoutId); // Clear the timeout when the mouse leaves the navigation
-    timeoutId = setTimeout(() => {
-      props.toggleNav();
-    }, 1500);
-  }
   return (
-    <ul
-      className="header_userNavList"
-      ref={ref}
-      onMouseLeave={leaveNavHandler}
-      onMouseEnter={() => {
-        clearTimeout(timeoutId);
-      }}
-    >
+    <ul className="header_userNavList" ref={ref}>
       {user ? (
         <>
           <li>

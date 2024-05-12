@@ -41,7 +41,9 @@ export function Header() {
             <Link className="cartIcon" to="/cart">
               <img src={cartIcon} />
               {cart.length ? (
-                <span className="cartCounter">{cart.length}</span>
+                <span className="cartCounter">
+                  {cart.reduce((acc, obj) => acc + obj.count, 0)}
+                </span>
               ) : (
                 ""
               )}
