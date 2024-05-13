@@ -8,7 +8,7 @@ import { useFetch } from "../../useFetch";
 export function FetchedProductCard(props) {
   const { setWishlist, setCart } = useContext(UserContext);
   const data = useFetch(`https://dummyjson.com/products/${props.id}`);
-  console.log(data);
+
   const [color, setColor] = useState("color1");
   function addToCartHandler() {
     addToCart({ ...data, count: 1 });

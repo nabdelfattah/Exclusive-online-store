@@ -1,5 +1,9 @@
 @import "../mixins";
-
+.wishlist_wrapper {
+  .pdtList {
+    flex-wrap: wrap;
+  }
+}
 .wishlist_header {
   margin: 8rem 0 6rem;
   display: flex;

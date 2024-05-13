@@ -23,7 +23,7 @@ export function WishlistPage() {
   }
 
   return (
-    <div className="container mb-14">
+    <div className="wishlist_wrapper container mb-14">
       <div className="wishlist_header">
         <p>Wishlist ({wishlist.length})</p>
         {wishlist.length ? (

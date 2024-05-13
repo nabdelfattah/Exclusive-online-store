@@ -6,7 +6,6 @@ export function Search() {
   function searchPdtHandler(e) {
     e.preventDefault();
     const value = e.target.q.value;
-    console.log(value);
     e.target.q.value = "";
     navigateTo(`/search/${value}`);
   }

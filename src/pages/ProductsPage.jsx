@@ -20,10 +20,9 @@ export function ProductsPage({ url }) {
   if (url == "") {
     url = `https://dummyjson.com/products/search?q=${params.q}`;
   }
-  console.log("re-evaluate Products Page...", url);
 
   const pdtsList = useFetch(url);
-  let filteredPdts;
+  let filteredPdts = [];
   if (pdtsList) {
     filteredPdts = pdtsList.products.filter((obj) =>
       validCategories.includes(obj.category)
@@ -39,7 +38,7 @@ export function ProductsPage({ url }) {
       setTargetIndex(pdtsList.products.length);
     }
   }
-
+  console.log(filteredPdts);
   useEffect(() => {
     window.scrollTo(0, 0); // Scrolls to the top left corner of the page
   }, []);
@@ -49,13 +48,17 @@ export function ProductsPage({ url }) {
       {pdtsList ? (
         <div className="products-wrapper container">
           <ul className="pdtList">
-            {filteredPdts.slice(0, targetIndex).map((obj) => {
-              return (
-                <li key={obj.id}>
-                  <ProductCard data={obj} />
-                </li>
-              );
-            })}
+            {filteredPdts.length ? (
+              filteredPdts.slice(0, targetIndex).map((obj) => {
+                return (
+                  <li key={obj.id}>
+                    <ProductCard data={obj} />
+                  </li>
+                );
+              })
+            ) : (
+              <p>No Products Found</p>
+            )}
           </ul>
           {targetIndex < filteredPdts.length ? (
             <button className="btn-primary" onClick={showMoreHandler}>

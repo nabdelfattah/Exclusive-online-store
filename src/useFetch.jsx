@@ -14,7 +14,6 @@ export function useFetch(url) {
   useEffect(() => {
     fetctData(url)
       .then((data) => {
-        console.log("fetching...");
         setData(data);
       })
       .catch(() => {

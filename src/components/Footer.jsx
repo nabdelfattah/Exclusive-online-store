@@ -4,6 +4,9 @@ import qrCode from "../assets/icons/footer/qr-code.svg";
 import googlePlay from "../assets/icons/footer/google-store.svg";
 import appStore from "../assets/icons/footer/app-store.svg";
 export function Footer() {
+  function sendMailHandler(e) {
+    e.preventDefault();
+  }
   return (
     <footer className="footer">
       <div className="container">
@@ -13,7 +16,7 @@ export function Footer() {
           </Link>
           <p className="footer_heading">Subscribe</p>
           <p className="footer_text">Get 10% off your first order</p>
-          <form className="footer_form">
+          <form className="footer_form" onSubmit={sendMailHandler}>
             <input
               className="footer_input"
               type="email"
@@ -42,19 +45,19 @@ export function Footer() {
           <p className="footer_heading">Account</p>
           <ul className="footer_navList">
             <li>
-              <Link to="users/:id">My Account</Link>
+              <Link to="/account">My Account</Link>
             </li>
             <li>
-              <Link to="login">Login / Register</Link>
+              <Link to="/login">Login / Register</Link>
             </li>
             <li>
-              <Link to="users/:id">Cart</Link>
+              <Link to="/cart">Cart</Link>
             </li>
             <li>
-              <Link to="users/:id">Wishlist</Link>
+              <Link to="/wishlist">Wishlist</Link>
             </li>
             <li>
-              <Link to="products">Shop</Link>
+              <Link to="/products">Shop</Link>
             </li>
           </ul>
         </div>

@@ -16,6 +16,9 @@ export function ContactPage() {
     { route: "/", text: "Home" },
     { route: "/", text: "Contact" },
   ];
+  function sendMsgHandler(e) {
+    e.preventDefault();
+  }
   return (
     <>
       <Breadcrumb chain={contactChain} />
@@ -66,7 +69,9 @@ export function ContactPage() {
             />
           </div>
           <textarea name="message" placeholder="Your Massage" />
-          <button className="btn-primary">Send Massage</button>
+          <button className="btn-primary" onClick={sendMsgHandler}>
+            Send Massage
+          </button>
         </form>
       </div>
     </>
