@@ -1,4 +1,4 @@
-import { useContext, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { Breadcrumb } from "../components";
 import { UserContext } from "../UserContext";
 import { Link, NavLink } from "react-router-dom";
@@ -15,6 +15,23 @@ export function AccountPage() {
   function toggleAccountNavHandler() {
     accountNavRef.current.classList.toggle("account_navigate--visible");
   }
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (
+        // if user click outside the nav
+        !event.target.closest(".account_navigate") &&
+        !event.target.closest(".menu-secondary")
+      ) {
+        // Close the nav
+        accountNavRef.current.classList.remove("account_navigate--visible");
+      }
+    }
+
+    window.addEventListener("click", handleClickOutside);
+    return () => {
+      window.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
   return (
     <>
       <div className="account_header container">
@@ -29,7 +46,7 @@ export function AccountPage() {
         )}
       </div>
       <div className="account_wrapper mb-14 container">
-        <button className="account_nav_menu" onClick={toggleAccountNavHandler}>
+        <button className="menu-secondary" onClick={toggleAccountNavHandler}>
           <img src={accountNavIcon} alt="menu icon" />
         </button>
         <div className="account_navigate" ref={accountNavRef}>

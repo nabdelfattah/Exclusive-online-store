@@ -1,16 +1,18 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import hero1 from "../../assets/icons/lg/hero1.png";
 import hero2 from "../../assets/icons/lg/hero2.png";
 import hero3 from "../../assets/icons/lg/hero3.png";
 import hero4 from "../../assets/icons/lg/hero4.png";
 import hero5 from "../../assets/icons/lg/hero5.png";
+import accountNavIcon from "../../assets/icons/menu-account.svg";
 
 export function SectionHero() {
   const [selectedBtn, setSelectedBtn] = useState(0);
   function carouselBtnHandler(e) {
     setSelectedBtn(+e.currentTarget.name);
   }
+  const navRef = useRef();
   const carouselContent = [
     { img: hero1, alt: "" },
     { img: hero2, alt: "" },
@@ -18,9 +20,15 @@ export function SectionHero() {
     { img: hero4, alt: "" },
     { img: hero5, alt: "" },
   ];
+  function toggleAccountNavHandler() {
+    navRef.current.classList.toggle("account_navigate--visible");
+  }
   return (
     <section className="home_hero container mb-14">
-      <nav className="hero_nav">
+      <button className="menu-secondary" onClick={toggleAccountNavHandler}>
+        <img src={accountNavIcon} alt="menu icon" />
+      </button>
+      <nav ref={navRef} className="hero_nav account_navigate">
         <ul className="hero_navlist">
           <li>
             <Link className="hero_subNav" to="/products">

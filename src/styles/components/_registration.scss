@@ -108,3 +108,18 @@
   padding: 1rem 1rem;
   border-radius: var(--radius);
 }
+@media (max-width: 75em) {
+  .registration_wrapper {
+    gap: 4rem;
+  }
+}
+@media (max-width: 59em) {
+  .registration_wrapper {
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+    .registration_img {
+      width: 50%;
+    }
+  }
+}

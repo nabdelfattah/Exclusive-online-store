@@ -68,3 +68,65 @@
   left: 47%;
   color: var(--c-primary-hover);
 }
+/**************************/
+/* BELOW 1200px (Landscape Tablets) */
+/**************************/
+@media (max-width: 75em) {
+  .breadcrumb.container {
+    padding: 4rem 1rem 2rem;
+  }
+  .contact_wrapper.container {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .contact_info {
+    flex-direction: row;
+    max-width: 83rem;
+    width: 100%;
+  }
+  .contact_info_call {
+    padding-right: 3.2rem;
+    padding-bottom: 0;
+    border-right: 1px solid var(--bg-black-transparent);
+    border-bottom: none;
+  }
+  .contact_info_mail {
+    padding-left: 3.2rem;
+    padding-top: 0;
+  }
+  .contact_form {
+    grid-template-columns: 1fr !important;
+    max-width: 83rem;
+    width: 100%;
+    input {
+      width: 100%;
+    }
+    textarea {
+      grid-column: 1;
+    }
+    button {
+      grid-column: 1;
+    }
+  }
+  .contact_inputWrapper::before {
+    left: 11rem;
+  }
+  .products-wrapper {
+    margin: 11rem auto;
+  }
+}
+@media (max-width: 59em) {
+  .contact_info {
+    flex-direction: column;
+  }
+  .contact_info_call {
+    padding-right: 0;
+    padding-bottom: 3.2rem;
+    border-bottom: 1px solid var(--bg-black-transparent);
+    border-right: none;
+  }
+  .contact_info_mail {
+    padding-top: 3.2rem;
+    padding-left: 0;
+  }
+}

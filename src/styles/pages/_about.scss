@@ -133,3 +133,30 @@
   display: flex;
   gap: 1.6rem;
 }
+@media (max-width: 75em) {
+  .heading-primary {
+    font-size: 5rem;
+    line-height: 5rem;
+  }
+  .about_statistics {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+@media (max-width: 59em) {
+  .about_hero {
+    grid-template-columns: 1fr;
+    margin: 3.6rem;
+    .text {
+      justify-self: start;
+      margin-right: 0rem;
+      margin-left: 0rem;
+    }
+    .picture {
+      height: 60.9rem;
+    }
+    .img {
+      position: static; /* Position the overflowing element absolutely */
+    }
+  }
+}

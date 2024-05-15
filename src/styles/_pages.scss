@@ -19,6 +19,23 @@
 .error_description {
   margin: 4rem auto 8rem;
 }
+@media (max-width: 75em) {
+  .error_heading {
+    font-size: 6rem;
+    line-height: 4.5rem;
+  }
+}
+@media (max-width: 59em) {
+  .error_heading {
+    font-size: 4rem;
+  }
+  .error_description {
+    margin: 2rem auto 3rem;
+  }
+  .error_wrapper {
+    margin: 4.8rem auto 8rem;
+  }
+}
 //////////////////////////////////
 /// ProductsPage
 ////////////////

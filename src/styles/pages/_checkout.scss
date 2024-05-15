@@ -109,3 +109,15 @@
     }
   }
 }
+@media (max-width: 75em) {
+  .breadcrumb.container {
+    flex-wrap: wrap;
+  }
+  .checkout_wrapper {
+    margin-top: 4rem;
+  }
+  .checkout_form {
+    flex-direction: column;
+    gap: 5.3rem;
+  }
+}

@@ -70,54 +70,6 @@
   header .container {
     flex-wrap: wrap;
   }
-  //////////////////////////////
-  // Home page
-  .hero_carousel_imgs a {
-    left: 6%;
-    bottom: 10%;
-  }
-  .section-categories {
-    padding-bottom: 6rem;
-  }
-  header .btn-arr-wrapper {
-    display: none;
-  }
-  .mb-14 {
-    margin-bottom: 11rem !important;
-  }
-  .section-sale .btn-primary,
-  .section-explore .btn-primary {
-    margin-top: 5rem;
-  }
-  .advertisement .btn-primary {
-    left: 6%;
-    bottom: 10%;
-  }
-  .newPdt {
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: right;
-  }
-  .newPdt_grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 28.4rem 28.4rem;
-  }
-  .newPdt:first-child {
-    grid-row: 1/2;
-  }
-  .newPdt:nth-child(2) {
-    grid-column: 2/3;
-  }
-  .newPdt:nth-child(3) {
-    background-image: url(../assets/icons/new1.svg);
-  }
-  .newPdt:last-of-type {
-    background-image: url(../assets/icons/new2.svg);
-  }
-  .feature {
-    text-align: center;
-  }
   .footer .container {
     position: relative;
     display: flex;
@@ -132,135 +84,6 @@
     bottom: 0;
     left: 0;
     margin-bottom: 3rem;
-  }
-  ///////////////////////////////////
-  // Contact page
-  .breadcrumb.container {
-    padding: 4rem 1rem 2rem;
-  }
-  .contact_wrapper.container {
-    grid-template-columns: 1fr;
-    justify-items: center;
-  }
-  .contact_info {
-    flex-direction: row;
-    max-width: 83rem;
-    width: 100%;
-  }
-  .contact_info_call {
-    padding-right: 3.2rem;
-    padding-bottom: 0;
-    border-right: 1px solid var(--bg-black-transparent);
-    border-bottom: none;
-  }
-  .contact_info_mail {
-    padding-left: 3.2rem;
-    padding-top: 0;
-  }
-  .contact_form {
-    grid-template-columns: 1fr !important;
-    max-width: 83rem;
-    width: 100%;
-    input {
-      width: 100%;
-    }
-    textarea {
-      grid-column: 1;
-    }
-    button {
-      grid-column: 1;
-    }
-  }
-  .contact_inputWrapper::before {
-    left: 11rem;
-  }
-  .products-wrapper {
-    margin: 11rem auto;
-  }
-  //////////////////////////////
-  // About page
-  .heading-primary {
-    font-size: 5rem;
-    line-height: 5rem;
-  }
-  .about_statistics {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  ///////////////////////////////
-  // Error page
-  .error_heading {
-    font-size: 6rem;
-    line-height: 4.5rem;
-  }
-  //////////////////////////////
-  // Registration pages
-  .registration_wrapper {
-    gap: 4rem;
-  }
-  //////////////////////////////
-  // Account page
-  .account_username {
-    padding: 3.8rem 2rem 0;
-  }
-  .account_header {
-    margin-bottom: 3rem;
-  }
-  .account_wrapper.container {
-    column-gap: 6rem;
-    max-width: 100%;
-  }
-  .account_nav_list {
-    margin-left: 1.6rem;
-  }
-  .account_nav_link {
-    font-size: 1.5rem;
-  }
-  .account_form {
-    grid-template-columns: 1fr;
-  }
-  .account_form_heading,
-  .account_form .form_item:nth-child(6),
-  .account_form_buttons {
-    grid-column: auto;
-  }
-  .account_form {
-    padding: 3rem 6rem;
-  }
-  //////////////////////////////
-  // Cart page
-  .cart_header.container {
-    padding: 2.4rem 4rem;
-    max-width: 100%;
-  }
-  .cart_coupon_total_wrapper {
-    align-items: center;
-    flex-direction: column;
-  }
-  ///////////////////////
-  // Checkout page
-  .breadcrumb.container {
-    flex-wrap: wrap;
-  }
-  .checkout_wrapper {
-    margin-top: 4rem;
-  }
-  .checkout_form {
-    flex-direction: column;
-    gap: 5.3rem;
-  }
-  //////////////////////////////////
-  // Details page
-  .pdt_addToCartBtn {
-    transform: translateY(0%);
-  }
-  .details_wrapper {
-    grid-template-columns: 1fr;
-    margin-top: 6rem;
-  }
-  .details_details {
-    width: fit-content;
-    margin-bottom: 8rem;
   }
 }
 
@@ -377,121 +200,8 @@
   .footer_col:nth-child(2) {
     align-items: center;
     gap: 4rem;
-    // justify-content: center;
     flex-direction: column;
     text-align: center;
-  }
-  //////////////////////////////
-  // Error page
-  .error_heading {
-    font-size: 4rem;
-  }
-  .error_description {
-    margin: 2rem auto 3rem;
-  }
-  .error_wrapper {
-    margin: 4.8rem auto 8rem;
-  }
-  ///////////////////////////////
-  // Contact page
-  .contact_info {
-    flex-direction: column;
-  }
-  .contact_info_call {
-    padding-right: 0;
-    padding-bottom: 3.2rem;
-    border-bottom: 1px solid var(--bg-black-transparent);
-    border-right: none;
-  }
-  .contact_info_mail {
-    padding-top: 3.2rem;
-    padding-left: 0;
-  }
-  ///////////////////////////
-  // About page
-  .about_hero {
-    grid-template-columns: 1fr;
-    margin: 3.6rem;
-    .text {
-      justify-self: start;
-      margin-right: 0rem;
-      margin-left: 0rem;
-    }
-    .picture {
-      height: 60.9rem;
-    }
-    .img {
-      position: static; /* Position the overflowing element absolutely */
-    }
-  }
-  ////////////////////////////////
-  // Registration
-  .registration_wrapper {
-    grid-template-columns: 1fr;
-    align-items: center;
-    justify-items: center;
-    .registration_img {
-      width: 50%;
-    }
-  }
-  /////////////////////////////////
-  // Account page
-  .account_wrapper {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-  .account_nav_menu {
-    display: flex;
-  }
-  .account_navigate {
-    position: relative;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: var(--animation);
-  }
-  .account_navigate--visible {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: all;
-  }
-  .account_nav {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.7);
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(10px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 4rem 0;
-    border: 1px solid black;
-  }
-  ///////////////////////////////
-  // Cart page
-  .cart_wrapper.container {
-    padding: 0 1rem;
-    max-width: 100%;
-  }
-  .cart_header,
-  .pdtCart {
-    padding: 1.4rem 1rem;
-  }
-  //////////////////////////////
-  // Details page
-  .details_imgs {
-    grid-template-columns: 1fr;
-    figure {
-      width: 95%;
-      height: 95%;
-    }
-  }
-  .details_imgs figure:nth-child(2) {
-    grid-row: 1;
-    height: 95%;
-    width: 95%;
   }
 }
 
@@ -514,19 +224,6 @@
   .pdtCart p:last-child {
     justify-self: auto;
   }
-  ///////////////////////
-  // Details page -- loading
-  .loading {
-    padding: 8rem 0;
-    gap: 2rem;
-  }
-  .loading svg {
-    width: 6rem;
-    height: 6rem;
-  }
-  .loading p {
-    font-size: 4rem;
-  }
 }
 
 /**************************/
@@ -535,11 +232,6 @@
 @media (max-width: 37em) {
   .banner .container p {
     max-width: 31rem;
-  }
-
-  .account_username {
-    position: inherit;
-    padding: 0 4rem;
   }
   .mobileNav_btn--menue,
   .mobileNav_btn--close {
@@ -551,64 +243,5 @@
     align-items: center;
     justify-content: start;
     gap: 4rem;
-  }
-  ////////////////////////////
-  // Account page
-  .account_form {
-    padding: 3rem;
-    .input {
-      margin-bottom: 1.2rem;
-    }
-  }
-  .account_form_buttons .btn-primary {
-    margin-left: 0rem;
-    margin-top: 1.6rem;
-  }
-  .account_form_buttons {
-    display: flex;
-    flex-direction: column;
-  }
-  ///////////////////////
-  // Cart page
-  .cart_btns {
-    flex-direction: column;
-    gap: 1.6rem;
-  }
-  .coupon_wrapper {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .cart_total_box {
-    width: auto;
-  }
-  .account_checkIcon_box {
-    flex-shrink: 0;
-  }
-  .checkout_pdt {
-    max-width: 42.5rem;
-    width: auto;
-    gap: 1.6rem;
-  }
-  .method_wrapper div {
-    gap: 0.6rem;
-  }
-  /////////////////////////////////
-  // Details page
-  .details_wrapper.container {
-    max-width: 100%;
-  }
-  .details_buy {
-    flex-direction: column;
-  }
-  .details_rating_box {
-    flex-direction: column;
-    align-items: start;
-  }
-  .details_sizes,
-  .sizes {
-    gap: 1.4rem;
-  }
-  .details_delivary {
-    padding: 0;
   }
 }

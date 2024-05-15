@@ -249,3 +249,54 @@
   flex-direction: column;
   gap: 6rem;
 }
+/**************************/
+/* BELOW 1200px (Landscape Tablets) */
+/**************************/
+@media (max-width: 75em) {
+  .hero_carousel_imgs a {
+    left: 6%;
+    bottom: 10%;
+  }
+  .section-categories {
+    padding-bottom: 6rem;
+  }
+  header .btn-arr-wrapper {
+    display: none;
+  }
+  .mb-14 {
+    margin-bottom: 11rem !important;
+  }
+  .section-sale .btn-primary,
+  .section-explore .btn-primary {
+    margin-top: 5rem;
+  }
+  .advertisement .btn-primary {
+    left: 6%;
+    bottom: 10%;
+  }
+  .newPdt {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+  }
+  .newPdt_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 28.4rem 28.4rem;
+  }
+  .newPdt:first-child {
+    grid-row: 1/2;
+  }
+  .newPdt:nth-child(2) {
+    grid-column: 2/3;
+  }
+  .newPdt:nth-child(3) {
+    background-image: url(../assets/icons/new1.svg);
+  }
+  .newPdt:last-of-type {
+    background-image: url(../assets/icons/new2.svg);
+  }
+  .feature {
+    text-align: center;
+  }
+}

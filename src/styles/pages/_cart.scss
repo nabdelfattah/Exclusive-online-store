@@ -92,3 +92,47 @@
     margin-top: 1.6rem;
   }
 }
+@media (max-width: 75em) {
+  .cart_header.container {
+    padding: 2.4rem 4rem;
+    max-width: 100%;
+  }
+  .cart_coupon_total_wrapper {
+    align-items: center;
+    flex-direction: column;
+  }
+}
+@media (max-width: 59em) {
+  .cart_wrapper.container {
+    padding: 0 1rem;
+    max-width: 100%;
+  }
+  .cart_header,
+  .pdtCart {
+    padding: 1.4rem 1rem;
+  }
+}
+@media (max-width: 37em) {
+  .cart_btns {
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+  .coupon_wrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .cart_total_box {
+    width: auto;
+  }
+  .account_checkIcon_box {
+    flex-shrink: 0;
+  }
+  .checkout_pdt {
+    max-width: 42.5rem;
+    width: auto;
+    gap: 1.6rem;
+  }
+  .method_wrapper div {
+    gap: 0.6rem;
+  }
+}
