@@ -35,7 +35,7 @@
 //////////////////
 .home_hero {
   display: grid;
-  grid-template-columns: 32.2rem auto;
+  grid-template-columns: 23.3fr 89.2fr;
   column-gap: 4.5rem;
 }
 .hero_nav {
@@ -73,7 +73,7 @@
 }
 .hero_carousel_imgs {
   display: flex;
-  overflow: hidden;
+  // overflow: hidden;
   max-height: 100%;
   max-width: 100%;
   img {
@@ -176,6 +176,9 @@
     &:hover {
       background-color: #00e65c;
     }
+  }
+  img {
+    width: 100%;
   }
 }
 ///////////////////////////////////////////

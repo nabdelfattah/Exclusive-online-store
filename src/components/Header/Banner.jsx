@@ -18,9 +18,15 @@ export function Banner() {
           className="banner_select"
           onChange={selectHandler}
         >
-          <option value="english">English</option>
-          <option value="spanish">española</option>
-          <option value="arabic">العربية</option>
+          <option value="english" title="English">
+            English
+          </option>
+          <option value="spanish" title="española">
+            española
+          </option>
+          <option value="arabic" title="العربية">
+            العربية
+          </option>
         </select>
       </div>
     </div>

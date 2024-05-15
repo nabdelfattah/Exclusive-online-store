@@ -45,8 +45,7 @@
     flex-direction: column;
     gap: 0.8rem;
   }
-  .form_item:nth-child(6),
-  .form_item:last-child {
+  .form_item:nth-child(6) {
     grid-column: span 2;
   }
   .input {
@@ -72,4 +71,16 @@
   .btn-primary {
     margin-left: 3.2rem;
   }
+}
+.account_nav_menu {
+  padding: 1.4rem;
+  margin: 2rem 2rem 4rem;
+  display: flex;
+  width: fit-content;
+  background-color: var(--c-off-white);
+  border-radius: 50%;
+  box-shadow: 1px 0 13px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: none;
+  transition: var(--animation);
 }

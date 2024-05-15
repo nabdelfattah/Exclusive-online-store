@@ -140,6 +140,14 @@
     }
   }
 }
+.count_btns {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+.details_wishlist-btn {
+  display: flex;
+}
 .wishlist-icon {
   width: 4rem;
   height: 4rem;
@@ -185,4 +193,7 @@
 
 .details_relatedPdts .home_subHeading {
   margin: 0;
+}
+.details_relatedPdts {
+  overflow: hidden;
 }

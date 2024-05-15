@@ -4,16 +4,28 @@
   background-color: var(--c-black);
   color: var(--c-off-white);
   .container {
-    display: flex;
+    // display: flex;
     gap: 8.7rem;
     padding: 8rem 0 6rem;
+    display: grid;
+    grid-template-columns: 21.7rem 1fr 18.9rem;
   }
   .logo {
     margin-bottom: 2.4rem;
   }
 }
 .footer_col:nth-child(2) {
+  width: 100%;
+  display: flex;
+  gap: 8.7rem;
+  justify-content: center;
+  // margin-left: 8.7rem;
+}
+.footer_sub-col:first-child {
   max-width: 17.5rem;
+}
+.footer_col:last-child {
+  min-width: 19.8rem;
 }
 .footer_navList {
   display: flex;

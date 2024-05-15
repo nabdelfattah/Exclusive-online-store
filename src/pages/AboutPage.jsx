@@ -1,6 +1,6 @@
 import { Breadcrumb, Features } from "../components/";
 import aboutImg_jpg from "../assets/about-hero.jpg";
-import aboutImg from "../assets/about-hero.webp";
+import aboutImg from "../assets/about-hero1.webp";
 import person1 from "../assets/people/person1.jpg";
 import person2 from "../assets/people/person2.jpg";
 import person3 from "../assets/people/person3.jpg";
@@ -85,11 +85,10 @@ export function AboutPage() {
             ranging from consumer.
           </p>
         </div>
-        <picture>
+        <div className="picture">
           {/* Photo by Pawel Chu on Unsplash */}
-          <source srcSet={aboutImg} type="image/webp" />
-          <img src={aboutImg_jpg} />
-        </picture>
+          <div className="img"></div>
+        </div>
       </section>
       <section className="about_statistics container mb-14">
         <article className="stat_item">

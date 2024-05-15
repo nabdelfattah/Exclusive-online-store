@@ -1,14 +1,20 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { Breadcrumb } from "../components";
 import { UserContext } from "../UserContext";
 import { Link, NavLink } from "react-router-dom";
+import accountNavIcon from "../assets/icons/menu-account.svg";
 
 export function AccountPage() {
   const { user } = useContext(UserContext);
+  const accountNavRef = useRef();
   const breadcrumb = [
     { route: "/", text: "Home" },
     { route: "/account", text: "My Account" },
   ];
+
+  function toggleAccountNavHandler() {
+    accountNavRef.current.classList.toggle("account_navigate--visible");
+  }
   return (
     <>
       <div className="account_header container">
@@ -23,7 +29,10 @@ export function AccountPage() {
         )}
       </div>
       <div className="account_wrapper mb-14 container">
-        <div className="account_navigate">
+        <button className="account_nav_menu" onClick={toggleAccountNavHandler}>
+          <img src={accountNavIcon} alt="menu icon" />
+        </button>
+        <div className="account_navigate" ref={accountNavRef}>
           <nav className="account_nav">
             <Link className="account_nav_link" to="/account">
               Manage My Account

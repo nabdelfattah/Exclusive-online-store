@@ -28,55 +28,57 @@ export function Footer() {
           </form>
         </div>
         <div className="footer_col">
-          <p className="footer_heading">Support</p>
-          <ul className="footer_navList">
-            <li>
-              <address>111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.</address>
-            </li>
-            <li>
-              <a href="mailto:exclusive@gmail.com">exclusive@gmail.com</a>
-            </li>
-            <li>
-              <a href="tel:+88015-88888-9999">+88015-88888-9999</a>
-            </li>
-          </ul>
-        </div>
-        <div className="footer_col">
-          <p className="footer_heading">Account</p>
-          <ul className="footer_navList">
-            <li>
-              <Link to="/account">My Account</Link>
-            </li>
-            <li>
-              <Link to="/login">Login / Register</Link>
-            </li>
-            <li>
-              <Link to="/cart">Cart</Link>
-            </li>
-            <li>
-              <Link to="/wishlist">Wishlist</Link>
-            </li>
-            <li>
-              <Link to="/products">Shop</Link>
-            </li>
-          </ul>
-        </div>
-        <div className="footer_col">
-          <p className="footer_heading">Quick Link</p>
-          <ul className="footer_navList">
-            <li>
-              <Link to="about">Privacy Policy</Link>
-            </li>
-            <li>
-              <Link to="about">Terms Of Use</Link>
-            </li>
-            <li>
-              <Link to="about">FAQ</Link>
-            </li>
-            <li>
-              <Link to="contact">Contact</Link>
-            </li>
-          </ul>
+          <div className="footer_sub-col">
+            <p className="footer_heading">Support</p>
+            <ul className="footer_navList">
+              <li>
+                <address>111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.</address>
+              </li>
+              <li>
+                <a href="mailto:exclusive@gmail.com">exclusive@gmail.com</a>
+              </li>
+              <li>
+                <a href="tel:+88015-88888-9999">+88015-88888-9999</a>
+              </li>
+            </ul>
+          </div>
+          <div className="footer_sub-col">
+            <p className="footer_heading">Account</p>
+            <ul className="footer_navList">
+              <li>
+                <Link to="/account">My Account</Link>
+              </li>
+              <li>
+                <Link to="/login">Login / Register</Link>
+              </li>
+              <li>
+                <Link to="/cart">Cart</Link>
+              </li>
+              <li>
+                <Link to="/wishlist">Wishlist</Link>
+              </li>
+              <li>
+                <Link to="/products">Shop</Link>
+              </li>
+            </ul>
+          </div>
+          <div className="footer_sub-col">
+            <p className="footer_heading">Quick Link</p>
+            <ul className="footer_navList">
+              <li>
+                <Link to="about">Privacy Policy</Link>
+              </li>
+              <li>
+                <Link to="about">Terms Of Use</Link>
+              </li>
+              <li>
+                <Link to="about">FAQ</Link>
+              </li>
+              <li>
+                <Link to="contact">Contact</Link>
+              </li>
+            </ul>
+          </div>
         </div>
         <div className="footer_col">
           <p className="footer_heading">Download App</p>

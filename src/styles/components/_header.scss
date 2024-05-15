@@ -39,9 +39,21 @@
   border-bottom: 0.5px solid rgba(0, 0, 0, 0.5);
   .container {
     display: flex;
-    justify-content: space-between;
-    padding: 4.3rem 1rem 1.9rem;
+    align-items: center;
+    // justify-content: space-between;
+    padding: 4.3rem 0 1.9rem;
     color: var(--c-black);
+    .logo {
+      margin-right: auto;
+    }
+  }
+}
+.main_nav {
+  display: flex;
+  align-items: center;
+  // justify-content: space-between;
+  .header_nav {
+    margin-right: 14.8rem;
   }
 }
 .header_navLink {
@@ -142,4 +154,33 @@
 }
 .showNav {
   display: flex;
+}
+/////////////////////////////////
+/// Mobile navigation
+.mobileNav {
+}
+.mobileNav_btn--menue,
+.mobileNav_btn--close {
+  position: absolute;
+  padding: 0.6rem;
+  border-radius: 50%;
+  // top: 11.5rem;
+  top: 9.6rem;
+  right: 3%;
+  display: flex;
+  transition: var(--animation);
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+}
+// .mobileNav_btn--close {
+//   visibility: hidden;
+//   pointer-events: none;
+//   opacity: 0;
+// }
+.mobileNav_btn--menue img,
+.mobileNav_btn--close img {
+  width: 4rem;
+  height: 4rem;
+  z-index: 99;
 }

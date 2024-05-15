@@ -70,7 +70,9 @@ export function CartPage() {
               shipping="Free"
               total={totalPrice}
             />
-            <button className="btn-primary">Procees to checkout</button>
+            <Link to="/checkout" className="btn-primary">
+              Procees to checkout
+            </Link>
           </div>
         </div>
       </div>

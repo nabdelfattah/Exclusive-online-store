@@ -6,7 +6,7 @@ export function UpButton() {
     });
   }
   return (
-    <button className="btn-arr btn-up" onClick={scrollHandler}>
+    <button aria-label="up" className="btn-arr btn-up" onClick={scrollHandler}>
       <svg
         width="24"
         height="24"

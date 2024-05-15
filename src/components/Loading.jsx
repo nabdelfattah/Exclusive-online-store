@@ -45,7 +45,7 @@ export function Loading() {
         ></circle>
         <circle cx="20" cy="12" r="2" fill="#db4444" fillOpacity=".2"></circle>
       </svg>
-      <p>Loading...</p>
+      <p>Loading</p>
     </div>
   );
 }
