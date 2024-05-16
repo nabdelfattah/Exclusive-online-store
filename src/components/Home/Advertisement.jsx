@@ -1,9 +1,23 @@
 import { Link } from "react-router-dom";
 import adsImg from "../../assets/icons/lg/hero2.svg";
+import smAds from "../../assets/icons/lg/small-screen/sm-category.png";
+import { useEffect, useState } from "react";
+
 export function Advertisement() {
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 704); // Adjust the threshold as needed
+    };
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Check on initial render
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <section className="advertisement container mb-7">
-      <img src={adsImg} />
+      <img src={isSmallScreen ? smAds : adsImg} />
       <Link to="/products" className="btn-primary">
         Buy Now!
       </Link>

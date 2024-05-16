@@ -156,7 +156,24 @@
       height: 60.9rem;
     }
     .img {
-      position: static; /* Position the overflowing element absolutely */
+      position: absolute; /* Position the overflowing element absolutely */
     }
+  }
+}
+@media (max-width: 37em) {
+  .about_hero .picture,
+  .about_hero .img {
+    height: 38.9rem;
+  }
+  .about_managers {
+    flex-wrap: wrap;
+    gap: 5rem;
+  }
+  .manager_imgFrame {
+    height: 27rem;
+    width: 27rem;
+  }
+  .carousel_btns {
+    display: none;
   }
 }

@@ -8,7 +8,7 @@ import person4 from "../assets/people/person4.jpg";
 import person5 from "../assets/people/person5.jpg";
 import person6 from "../assets/people/person6.jpg";
 import person7 from "../assets/people/person7.jpg";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const managers = [
   {
@@ -57,6 +57,8 @@ const managers = [
 
 export function AboutPage() {
   const [selectedBtn, setSelectedBtn] = useState(0);
+  const cardRef = useRef();
+  const cardWidth = cardRef.current ? cardRef.current.clientWidth : 0;
 
   const breadcrumb = [
     { route: "/", text: "Home" },
@@ -221,12 +223,14 @@ export function AboutPage() {
         <div
           className="about_managers"
           style={{
-            transform: `translateX(${-370 * selectedBtn - 30 * selectedBtn}px)`,
+            transform: `translateX(${
+              -cardWidth * selectedBtn - 30 * selectedBtn
+            }px)`,
           }}
         >
           {managers.map((manager) => {
             return (
-              <article key={manager.name} className="manager">
+              <article ref={cardRef} key={manager.name} className="manager">
                 <div className="manager_imgFrame">
                   <img src={manager.image} alt={manager.alt} />
                 </div>

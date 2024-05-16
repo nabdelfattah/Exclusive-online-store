@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export function Banner() {
   function selectHandler(e) {
-    console.log(e);
+    return;
   }
   return (
     <div className="banner">

@@ -38,7 +38,6 @@ export function ProductsPage({ url }) {
       setTargetIndex(pdtsList.products.length);
     }
   }
-  console.log(filteredPdts);
   useEffect(() => {
     window.scrollTo(0, 0); // Scrolls to the top left corner of the page
   }, []);
