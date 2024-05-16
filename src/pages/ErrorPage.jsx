@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import { Breadcrumb } from "../components";
+import { useTranslation } from "react-i18next";
 
 export function ErrorPage() {
+  const { t } = useTranslation();
   const chain = [
     { route: "/", text: "Home" },
     { route: "error", text: "404 Error" },
@@ -10,12 +12,12 @@ export function ErrorPage() {
     <>
       <Breadcrumb chain={chain} />
       <div className="error_wrapper">
-        <h1 className="error_heading">404 Not Found</h1>
+        <h1 className="error_heading">{t("404 Not Found")}</h1>
         <p className="error_description">
-          Your visited page not found. You may go home page.
+          {t("Your visited page not found. You may go home page")}.
         </p>
         <Link className="btn-primary" to="/">
-          Back to home page
+          {t("Back to home page")}
         </Link>
       </div>
     </>

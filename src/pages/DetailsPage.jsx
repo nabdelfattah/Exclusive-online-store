@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from "react-router-dom";
-import { Breadcrumb, Header, Loading } from "../components";
+import { Breadcrumb, Loading } from "../components";
 import { ProductList, RatingStars } from "../components/Product";
 import { useContext, useEffect, useState } from "react";
 import truck from "../assets/icons/truck.svg";
@@ -8,8 +8,10 @@ import { useFetch } from "../useFetch";
 import { addToCart, addToWishlist } from "../helper";
 import { HomeHeader } from "../components/Home/HomeHeader";
 import { UserContext } from "../UserContext";
+import { useTranslation } from "react-i18next";
 
 export function DetailsPage() {
+  const { t } = useTranslation();
   const { setWishlist, setCart } = useContext(UserContext);
   // Scroll to top when page loads
   useEffect(() => {
@@ -82,15 +84,15 @@ export function DetailsPage() {
               <div className="details_rating_box">
                 <RatingStars initialRating={pdtObj.rating} />
                 <p className="f-sm details_rating">
-                  ({pdtObj.stock}) Reviews <span>|</span>
-                  <span className="details_inStock">In Stock</span>
+                  ({pdtObj.stock}) {t("Reviews")} <span>|</span>
+                  <span className="details_inStock">{t("In Stock")}</span>
                 </p>
               </div>
               <p className="details_price">${pdtObj.price}</p>
               <p className="details_description f-sm">{pdtObj.description}</p>
               <form name="payment-form" onSubmit={buyHandler}>
                 <div className="details_colors">
-                  <p className="f-md">Colours:</p>
+                  <p className="f-md">{t("Colours")}:</p>
                   <div className="colors">
                     <input
                       type="radio"
@@ -109,7 +111,7 @@ export function DetailsPage() {
                   </div>
                 </div>
                 <div className="details_sizes">
-                  <p className="f-md">Size:</p>
+                  <p className="f-md">{t("Size")}:</p>
                   <div className="sizes">
                     <input
                       id="xs"
@@ -169,7 +171,7 @@ export function DetailsPage() {
                   </div>
                   <div className="count_btns">
                     <button className="btn-primary" onClick={buyHandler}>
-                      Buy Now
+                      {t("Buy Now")}
                     </button>
                     <button
                       className="details_wishlist-btn"
@@ -209,18 +211,19 @@ export function DetailsPage() {
                 <div className="details_delivary_item">
                   <img src={truck} alt="a truck" />
                   <div className="text-box">
-                    <p className="title">Free Delivery</p>
+                    <p className="title">{t("Free Delivery")}</p>
                     <a className="description">
-                      Enter your postal code for Delivery Availability
+                      {t("Enter your postal code for Delivery Availability")}
                     </a>
                   </div>
                 </div>
                 <div className="details_delivary_item">
                   <img src={rotatingArrows} alt="two rotating arrows" />
                   <div className="text-box">
-                    <p className="title">Return Delivery</p>
+                    <p className="title">{t("Return Delivery")}</p>
                     <p className="description">
-                      Free 30 Days Delivery Returns. <a>Details</a>
+                      {t("Free 30 Days Delivery Returns")}.{" "}
+                      <a>{t("Details")}</a>
                     </p>
                   </div>
                 </div>
@@ -228,7 +231,7 @@ export function DetailsPage() {
             </div>
           </section>
           <section className="details_relatedPdts container mb-14">
-            <HomeHeader subheading="Related Item" heading="" />
+            <HomeHeader subheading={t("Related Item")} heading="" />
             <ProductList category={pdtObj.category} />
           </section>
         </>

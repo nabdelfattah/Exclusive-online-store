@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { ProductCard } from "../components/Product";
 import { useFetch } from "../useFetch";
 import { useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 const validCategories = [
   "smartphones",
   "laptops",
@@ -16,6 +17,7 @@ const validCategories = [
   "lighting",
 ];
 export function ProductsPage({ url }) {
+  const { t } = useTranslation();
   const params = useParams();
   if (url == "") {
     url = `https://dummyjson.com/products/search?q=${params.q}`;
@@ -56,12 +58,12 @@ export function ProductsPage({ url }) {
                 );
               })
             ) : (
-              <p>No Products Found</p>
+              <p>{t("No Products Found")}</p>
             )}
           </ul>
           {targetIndex < filteredPdts.length ? (
             <button className="btn-primary" onClick={showMoreHandler}>
-              Show More
+              {t("Show More")}
             </button>
           ) : (
             ""

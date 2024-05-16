@@ -2,8 +2,10 @@ import { Breadcrumb, Coupon, CartTotal } from "../components";
 import { Link } from "react-router-dom";
 import banks from "../assets/icons/banks.svg";
 import check from "../assets/icons/check.svg";
+import { useTranslation } from "react-i18next";
 
 export function CheckoutPage() {
+  const { t } = useTranslation();
   const breadcrumb = [
     { route: "/account", text: "Account" },
     { route: "/account", text: "My Account" },
@@ -23,11 +25,11 @@ export function CheckoutPage() {
     <>
       <Breadcrumb chain={breadcrumb} />
       <div className="checkout_wrapper container mb-14">
-        <h1 className="checkout_heading">Billing Details</h1>
+        <h1 className="checkout_heading">{t("Billing Details")}</h1>
         <form className="checkout_form" onSubmit={buyHandler}>
           <div className="checout_inputs_Wrapper">
             <label htmlFor="account-fname" className="label">
-              First Name
+              {t("First Name")}
             </label>
             <input
               type="text"
@@ -37,7 +39,7 @@ export function CheckoutPage() {
               required
             />
             <label htmlFor="account-company" className="label">
-              Company Name
+              {t("Company Name")}
             </label>
             <input
               type="text"
@@ -46,7 +48,7 @@ export function CheckoutPage() {
               name="company"
             />
             <label htmlFor="account-street" className="label">
-              Street Address
+              {t("Street Address")}
             </label>
             <input
               type="text"
@@ -56,7 +58,7 @@ export function CheckoutPage() {
               required
             />
             <label htmlFor="account-apartment" className="label">
-              Apartment, floor, etc. (optional)
+              {t("Apartment, floor, etc")}. ({t("optional")})
             </label>
             <input
               type="text"
@@ -65,7 +67,7 @@ export function CheckoutPage() {
               name="apartment"
             />
             <label htmlFor="account-city" className="label">
-              Town/City
+              {t("Town/City")}
             </label>
             <input
               type="text"
@@ -75,7 +77,7 @@ export function CheckoutPage() {
               required
             />
             <label htmlFor="account-phone" className="label">
-              Phone Number
+              {t("Phone Number")}
             </label>
             <input
               type="tel"
@@ -85,7 +87,7 @@ export function CheckoutPage() {
               required
             />
             <label htmlFor="account-email" className="label">
-              Email Address
+              {t("Email Address")}
             </label>
             <input
               type="email"
@@ -108,7 +110,9 @@ export function CheckoutPage() {
                   alt="checkmark"
                 />
               </span>
-              <span>Save this information for faster check-out next time</span>
+              <span>
+                {t("Save this information for faster check-out next time")}
+              </span>
             </label>
           </div>
           <div className="checout_payment_Wrapper">
@@ -141,19 +145,19 @@ export function CheckoutPage() {
               <li className="method_wrapper">
                 <div>
                   <input type="radio" name="method" id="bank" />
-                  <label htmlFor="bank">Bank</label>
+                  <label htmlFor="bank">{t("Bank")}</label>
                 </div>
                 <img src={banks} alt="available banks" />
               </li>
               <li className="method_wrapper">
                 <div>
                   <input type="radio" name="method" id="cash" />
-                  <label htmlFor="cash">Cash on delivery</label>
+                  <label htmlFor="cash">{t("Cash on delivery")}</label>
                 </div>
               </li>
             </ul>
             <Coupon />
-            <button className="btn-primary">Place Order</button>
+            <button className="btn-primary">{t("Place Order")}</button>
           </div>
         </form>
       </div>

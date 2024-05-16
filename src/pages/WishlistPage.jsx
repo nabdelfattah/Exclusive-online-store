@@ -4,8 +4,10 @@ import { FetchedProductCard, ProductList } from "../components/Product";
 import { HomeHeader } from "../components/Home/HomeHeader";
 import { Link } from "react-router-dom";
 import { addToCart } from "../helper";
+import { useTranslation } from "react-i18next";
 
 export function WishlistPage() {
+  const { t } = useTranslation();
   const { wishlist } = useContext(UserContext);
 
   function moveToCartHandler() {
@@ -25,10 +27,12 @@ export function WishlistPage() {
   return (
     <div className="wishlist_wrapper container mb-14">
       <div className="wishlist_header">
-        <p>Wishlist ({wishlist.length})</p>
+        <p>
+          {t("Wishlist")} ({wishlist.length})
+        </p>
         {wishlist.length ? (
           <button className="btn-outline" onClick={moveToCartHandler}>
-            Move All To Bag
+            {t("Move All To Bag")}
           </button>
         ) : (
           ""
@@ -40,9 +44,9 @@ export function WishlistPage() {
         })}
       </div>
       <div className="wishlist_relatedPdts">
-        <HomeHeader subheading="Just For You" heading="">
+        <HomeHeader subheading={t("Just For You")} heading="">
           <Link to="/products" className="btn-outline">
-            See All
+            {t("See All")}
           </Link>
         </HomeHeader>
         <ProductList category="sunglasses" />
