@@ -3,8 +3,10 @@ import registrationImg from "../assets/icons/lg/side-image.svg";
 import { RegistrationHeader, RegistrationInput } from "../components";
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../UserContext";
+import { useTranslation } from "react-i18next";
 
 export function LogInPage() {
+  const { t } = useTranslation();
   const [errMsg, setErrMsg] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const { login, user } = useContext(UserContext);
@@ -30,23 +32,34 @@ export function LogInPage() {
   }
   return (
     <div className="registration_wrapper">
-      <img className="registration_img" src={registrationImg} />
+      <img
+        className="registration_img"
+        src={registrationImg}
+        alt={t("A cart and bags and huge phone")}
+      />
       <form className="registration_form" name="login" onSubmit={loginHandler}>
-        <RegistrationHeader heading="Log in to Exclusive" errMsg={errMsg} />
+        <RegistrationHeader
+          heading={t("Log in to Exclusive")}
+          errMsg={errMsg}
+        />
         <RegistrationInput
-          label="Email or Phone Number"
+          label={t("Email or Phone Number")}
           type="email"
           name="email"
         />
-        <RegistrationInput label="Password" type="password" name="password" />
+        <RegistrationInput
+          label={t("Password")}
+          type="password"
+          name="password"
+        />
         <div className="login_btns">
           <button className="btn-primary" disabled={isLoading}>
-            Log In
+            {t("Log In")}
           </button>
           {isLoading ? (
             ""
           ) : (
-            <Link className="forget-password">Forget Password?</Link>
+            <Link className="forget-password">{t("Forget Password?")}</Link>
           )}
         </div>
       </form>

@@ -91,5 +91,34 @@
   "FAQ": "FAQ",
   "Download App": "Télécharger l'application",
   "Save $3 with App New User Only": "Économisez 3$ avec l'application pour les nouveaux utilisateurs uniquement",
-  "Copyright Rimel 2022. All right reserved": "Copyright Rimel 2022. Tous droits réservés"
+  "Copyright Rimel 2022. All right reserved": "Copyright Rimel 2022. Tous droits réservés",
+
+  "Loading": "Chargement",
+  "Coupon Code": "Code promo",
+  "Apply Coupon": "Appliquer Coupon",
+
+  "Subtotal": "Total",
+  "Shipping": "Expédition",
+  "Total": "Total",
+  "Free": "Gratuit",
+
+  "Enter your details below": "Entrez vos coordonnées ci-dessous",
+  "Faild to create an account. Perhaps someone is already using the email.": "Échec de la création d'un compte. Peut-être que quelqu'un utilise déjà la messagerie électronique.",
+  "Name is required.": "Le nom est requis.",
+  "Email is required.": "Un e-mail est requis.",
+  "Invalid email address.": "Adresse e-mail invalide.",
+  "Password is required.": "Mot de passe requis.",
+  "Password must be at least 8 characters long.": "Le mot de passe doit comporter au moins 8 caractères.",
+  "A cart and bags and huge phone": "Un chariot, des sacs et un énorme téléphone",
+  "Name": "Nom",
+  "Email or Phone Number": "E-mail ou numéro de téléphone",
+  "Password": "Mot de passe",
+
+  "Create Account": "Créer un compte",
+  "Sign up with Google": "Inscrivez-vous avec Google",
+  "Already have account?": "Vous avez déjà un compte ?",
+  "Log in": "Se connecter",
+  "Create an account": "Créer un compte",
+  "Log in to Exclusive": "Connectez-vous à Exclusif",
+  "Forget Password?": "Mot de passe oublié?"
 }

@@ -15,7 +15,7 @@ export function Footer() {
       <div className="container">
         <div className="footer_col">
           <Link to="/" className="logo">
-            {t("Exclusive")}
+            Exclusive
           </Link>
           <p className="footer_heading">{t("Subscribe")}</p>
           <p className="footer_text">{t("Get 10% off your first order")}</p>

@@ -91,5 +91,34 @@
   "FAQ": "FAQ",
   "Download App": "Descargar aplicación",
   "Save $3 with App New User Only": "Ahorre $3 con la aplicación solo para nuevos usuarios",
-  "Copyright Rimel 2022. All right reserved": "Copyright Rimel 2022. Todos los derechos reservados"
+  "Copyright Rimel 2022. All right reserved": "Copyright Rimel 2022. Todos los derechos reservados",
+
+  "Loading": "Cargando",
+  "Coupon Code": "Código promocional",
+  "Apply Coupon": "Aplicar cupón",
+
+  "Subtotal": "Total parcial",
+  "Shipping": "Envío",
+  "Total": "Total",
+  "Free": "Gratis",
+
+  "Enter your details below": "Ingresa tus datos a continuación",
+  "Faild to create an account. Perhaps someone is already using the email.": "Error al crear una cuenta. Quizás alguien ya esté usando el correo electrónico.",
+  "Name is required.": "Se requiere el nombre.",
+  "Email is required.": "Correo electronico es requerido.",
+  "Invalid email address.": "Dirección de correo electrónico no válida.",
+  "Password is required.": "Se requiere contraseña.",
+  "Password must be at least 8 characters long.": "La contraseña debe tener al menos 8 caracteres.",
+  "A cart and bags and huge phone": "Un carrito, bolsas y un teléfono enorme",
+  "Name": "Nombre",
+  "Email or Phone Number": "Correo electrónico o número de teléfono",
+  "Password": "Contraseña",
+
+  "Create Account": "Crear una cuenta",
+  "Sign up with Google": "Regístrate en Google",
+  "Already have account?": "¿Ya tienes cuenta?",
+  "Log in": "Acceso",
+  "Create an account": "Crea una cuenta",
+  "Log in to Exclusive": "Inicia sesión en Exclusivo",
+  "Forget Password?": "¿Contraseña olvidada?"
 }

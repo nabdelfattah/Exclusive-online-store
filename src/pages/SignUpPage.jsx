@@ -5,9 +5,10 @@ import { RegistrationHeader, RegistrationInput } from "../components";
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../UserContext";
 import { validateSignUp } from "../helper";
-// import
+import { useTranslation } from "react-i18next";
 
 export function SignUpPage() {
+  const { t } = useTranslation();
   const [errMsg, setErrMsg] = useState("");
   const [IsLoading, setIsLoading] = useState(false);
   const { signup, user } = useContext(UserContext);
@@ -44,30 +45,38 @@ export function SignUpPage() {
 
   return (
     <div className="registration_wrapper">
-      <img className="registration_img" src={registrationImg} />
+      <img
+        className="registration_img"
+        src={registrationImg}
+        alt={t("A cart and bags and huge phone")}
+      />
       <form
         className="registration_form"
         name="signup"
         onSubmit={signupHandler}
       >
-        <RegistrationHeader heading="Create an account" errMsg={errMsg} />
-        <RegistrationInput label="Name" type="text" name="name" />
+        <RegistrationHeader heading={t("Create an account")} errMsg={errMsg} />
+        <RegistrationInput label={t("Name")} type="text" name="name" />
         <RegistrationInput
-          label="Email or Phone Number"
+          label={t("Email or Phone Number")}
           type="email"
           name="email"
         />
-        <RegistrationInput label="Password" type="password" name="password" />
+        <RegistrationInput
+          label={t("Password")}
+          type="password"
+          name="password"
+        />
         <div className="signup-btns">
           <button disabled={IsLoading} className="btn-primary">
-            Create Account
+            {t("Create Account")}
           </button>
           <button disabled={IsLoading} className="btn-outline" type="button">
             <img src={googleIcon} />
-            Sign up with Google
+            {t("Sign up with Google")}
           </button>
           <p className="registration_redirectionText">
-            Already have account? <Link to="/login">Log in</Link>
+            {t("Already have account?")} <Link to="/login">{t("Log in")}</Link>
           </p>
         </div>
       </form>

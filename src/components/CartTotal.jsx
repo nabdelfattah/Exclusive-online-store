@@ -1,14 +1,17 @@
+import { useTranslation } from "react-i18next";
+
 export function CartTotal({ subtotal, shipping, total }) {
+  const { t } = useTranslation();
   return (
     <>
       <p className="total">
-        Subtotal: <span>${subtotal}</span>
+        {t("Subtotal")}: <span>${subtotal}</span>
       </p>
       <p className="shipping">
-        Shipping: <span>{shipping}</span>
+        {t("Shipping")}: <span>{t(shipping)}</span>
       </p>
       <p className="total">
-        Total: <span>${total}</span>
+        {t("Total")}: <span>${total}</span>
       </p>
     </>
   );

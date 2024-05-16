@@ -35,11 +35,9 @@
   "HeadPhones": "HeadPhones",
   "Gaming": "Gaming",
   "Accessories": "Accessories",
-
   "Our Products": "Our Products",
   "Explore Our Products": "Explore Our Products",
   "View All Products": "View All Products",
-
   "Featured": "Featured",
   "New Arrival": "New Arrival",
   "PlayStation 5": "PlayStation 5",
@@ -50,14 +48,12 @@
   "Amazon wireless speakers": "Amazon wireless speakers",
   "Perfume": "Perfume",
   "GUCCI INTENSE OUD EDP": "GUCCI INTENSE OUD EDP",
-
   "Today’s": "Today’s",
   "Flash Sales": "Flash Sales",
   "Days": "Days",
   "Hours": "Hours",
   "Minutes": "Minutes",
   "Seconds": "Seconds",
-
   "FREE AND FAST DELIVERY": "FREE AND FAST DELIVERY",
   "Free delivery for all orders over $140": "Free delivery for all orders over $140",
   "24/7 CUSTOMER SERVICE": "24/7 CUSTOMER SERVICE",
@@ -67,7 +63,6 @@
   "truck icon": "truck icon",
   "head phone": "head phone",
   "guarantee icon": "guarantee icon",
-
   "Exclusive": "Exclusive",
   "Subscribe": "Subscribe",
   "Get 10% off your first order": "Get 10% off your first order",
@@ -86,5 +81,34 @@
   "FAQ": "FAQ",
   "Download App": "Download App",
   "Save $3 with App New User Only": "Save $3 with App New User Only",
-  "Copyright Rimel 2022. All right reserved": "Copyright Rimel 2022. All right reserved"
+  "Copyright Rimel 2022. All right reserved": "Copyright Rimel 2022. All right reserved",
+
+  "Loading": "Loading",
+  "Coupon Code": "Coupon Code",
+  "Apply Coupon": "Apply Coupon",
+
+  "Subtotal": "Subtotal",
+  "Shipping": "Shipping",
+  "Total:": "Total:",
+  "Free": "Free",
+
+  "Enter your details below": "Enter your details below",
+  "Faild to create an account. Perhaps someone is already using the email.": "Faild to create an account. Perhaps someone is already using the email.",
+  "Name is required.": "Name is required.",
+  "Email is required.": "Email is required.",
+  "Invalid email address.": "Invalid email address.",
+  "Password is required.": "Password is required.",
+  "Password must be at least 8 characters long.": "Password must be at least 8 characters long.",
+  "A cart and bags and huge phone": "A cart and bags and huge phone",
+  "Name": "Name",
+  "Email or Phone Number": "Email or Phone Number",
+  "Password": "Password",
+
+  "Create Account": "Create Account",
+  "Sign up with Google": "Sign up with Google",
+  "Already have account?": "Already have account?",
+  "Log in": "Log in",
+  "Create an account": "Create an account",
+  "Log in to Exclusive": "Log in to Exclusive",
+  "Forget Password?": "Forget Password?"
 }

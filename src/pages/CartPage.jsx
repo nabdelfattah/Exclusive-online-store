@@ -3,8 +3,10 @@ import { Breadcrumb, CartTotal, Coupon } from "../components";
 import { ProductInCart } from "../components/ProductInCart";
 import { Link } from "react-router-dom";
 import { UserContext } from "../UserContext";
+import { useTranslation } from "react-i18next";
 
 export function CartPage() {
+  const { t } = useTranslation();
   const { setCart } = useContext(UserContext);
   const breadcrumb = [
     { route: "/", text: "Home" },
