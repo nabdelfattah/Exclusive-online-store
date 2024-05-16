@@ -1,7 +1,9 @@
 import React from "react";
 import loading from "../../public/logo.svg";
+import { useTranslation } from "react-i18next";
 
 export function Loading() {
+  const { t } = useTranslation();
   return (
     <div className="loading">
       <svg

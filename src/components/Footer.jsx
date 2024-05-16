@@ -3,7 +3,10 @@ import mailArrow from "../assets/icons/footer/arrow-r-mail.svg";
 import qrCode from "../assets/icons/footer/qr-code.svg";
 import googlePlay from "../assets/icons/footer/google-store.svg";
 import appStore from "../assets/icons/footer/app-store.svg";
+import { useTranslation } from "react-i18next";
+
 export function Footer() {
+  const { t } = useTranslation();
   function sendMailHandler(e) {
     e.preventDefault();
   }
@@ -12,24 +15,24 @@ export function Footer() {
       <div className="container">
         <div className="footer_col">
           <Link to="/" className="logo">
-            Exclusive
+            {t("Exclusive")}
           </Link>
-          <p className="footer_heading">Subscribe</p>
-          <p className="footer_text">Get 10% off your first order</p>
+          <p className="footer_heading">{t("Subscribe")}</p>
+          <p className="footer_text">{t("Get 10% off your first order")}</p>
           <form className="footer_form" onSubmit={sendMailHandler}>
             <input
               className="footer_input"
               type="email"
               name="email"
               id="footer_email"
-              placeholder="Enter your email"
+              placeholder={t("Enter your email")}
             />
-            <img src={mailArrow} />
+            <img src={mailArrow} alt={t("arrow icon")} />
           </form>
         </div>
         <div className="footer_col">
           <div className="footer_sub-col">
-            <p className="footer_heading">Support</p>
+            <p className="footer_heading">{t("Support")}</p>
             <ul className="footer_navList">
               <li>
                 <address>111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.</address>
@@ -43,53 +46,55 @@ export function Footer() {
             </ul>
           </div>
           <div className="footer_sub-col">
-            <p className="footer_heading">Account</p>
+            <p className="footer_heading">{t("Account")}</p>
             <ul className="footer_navList">
               <li>
-                <Link to="/account">My Account</Link>
+                <Link to="/account">{t("My Account")}</Link>
               </li>
               <li>
-                <Link to="/login">Login / Register</Link>
+                <Link to="/login">{t("Login / Register")}</Link>
               </li>
               <li>
-                <Link to="/cart">Cart</Link>
+                <Link to="/cart">{t("Cart")}</Link>
               </li>
               <li>
-                <Link to="/wishlist">Wishlist</Link>
+                <Link to="/wishlist">{t("Wishlist")}</Link>
               </li>
               <li>
-                <Link to="/products">Shop</Link>
+                <Link to="/products">{t("Shop")}</Link>
               </li>
             </ul>
           </div>
           <div className="footer_sub-col">
-            <p className="footer_heading">Quick Link</p>
+            <p className="footer_heading">{t("Quick Link")}</p>
             <ul className="footer_navList">
               <li>
-                <Link to="about">Privacy Policy</Link>
+                <Link to="about">{t("Privacy Policy")}</Link>
               </li>
               <li>
-                <Link to="about">Terms Of Use</Link>
+                <Link to="about">{t("Terms Of Use")}</Link>
               </li>
               <li>
-                <Link to="about">FAQ</Link>
+                <Link to="about">{t("FAQ")}</Link>
               </li>
               <li>
-                <Link to="contact">Contact</Link>
+                <Link to="contact">{t("Contact")}</Link>
               </li>
             </ul>
           </div>
         </div>
         <div className="footer_col">
-          <p className="footer_heading">Download App</p>
-          <p className="footer_downloadText">Save $3 with App New User Only</p>
+          <p className="footer_heading">{t("Download App")}</p>
+          <p className="footer_downloadText">
+            {t("Save $3 with App New User Only")}
+          </p>
           <div className="footer_downloadGrid">
-            <img src={qrCode} />
+            <img src={qrCode} alt="QR code" />
             <a href="#">
-              <img src={googlePlay} />
+              <img src={googlePlay} alt="Google play" />
             </a>
             <a href="#">
-              <img src={appStore} />
+              <img src={appStore} alt="App Store" />
             </a>
           </div>
           <div className="footer_socialLinks">
@@ -202,7 +207,7 @@ export function Footer() {
             strokeLinejoin="round"
           />
         </svg>
-        Copyright Rimel 2022. All right reserved
+        {t("Copyright Rimel 2022. All right reserved")}
       </p>
     </footer>
   );
