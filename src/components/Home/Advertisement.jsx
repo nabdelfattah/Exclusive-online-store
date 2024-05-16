@@ -2,8 +2,10 @@ import { Link } from "react-router-dom";
 import adsImg from "../../assets/icons/lg/hero2.svg";
 import smAds from "../../assets/icons/lg/small-screen/sm-category.png";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export function Advertisement() {
+  const { t } = useTranslation();
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   useEffect(() => {
     const handleResize = () => {
@@ -19,7 +21,7 @@ export function Advertisement() {
     <section className="advertisement container mb-7">
       <img src={isSmallScreen ? smAds : adsImg} />
       <Link to="/products" className="btn-primary">
-        Buy Now!
+        {t("Buy Now!")}
       </Link>
     </section>
   );

@@ -6,8 +6,10 @@ import menue from "../../assets/icons/menue.svg";
 import close from "../../assets/icons/close.svg";
 import { useContext, useEffect, useRef } from "react";
 import { UserContext } from "../../UserContext";
+import { useTranslation } from "react-i18next";
 
 export function Header() {
+  const { t } = useTranslation();
   const userIconRef = useRef();
   const userNavRef = useRef();
   const { cart, setCart, wishlist, setWishlist } = useContext(UserContext);

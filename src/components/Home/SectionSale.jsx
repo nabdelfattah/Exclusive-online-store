@@ -3,8 +3,10 @@ import { HomeHeader } from "./HomeHeader";
 import { Timer } from "./Timer";
 import { ProductList } from "../Product";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export function SectionSale() {
+  const { t } = useTranslation();
   const [productIndex, setProductIndex] = useState(0);
   const [nextBtnDisabled, setNextBtnDisabled] = useState(false);
   const [previousBtnDisabled, setPreviousBtnDisabled] = useState(true);
@@ -27,7 +29,7 @@ export function SectionSale() {
   }
   return (
     <section className="section-sale container mb-8">
-      <HomeHeader subheading="Today’s" heading="Flash Sales">
+      <HomeHeader subheading={t("Today’s")} heading={t("Flash Sales")}>
         <Timer />
         <div className="btn-arr-wrapper">
           <button
@@ -85,7 +87,7 @@ export function SectionSale() {
         <ProductList category="mens-watches" />
       </div>
       <Link to="/products" className="btn-primary">
-        View All Products
+        {t("View All Products")}
       </Link>
     </section>
   );

@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
-
+import { useTranslation } from "react-i18next";
 export function Search() {
   const navigateTo = useNavigate();
-
+  const { t } = useTranslation();
   function searchPdtHandler(e) {
     e.preventDefault();
     const value = e.target.q.value;
@@ -14,7 +14,7 @@ export function Search() {
       <input
         className="header_input"
         type="text"
-        placeholder="Search"
+        placeholder={t("What are you looking for?")}
         name="q"
         defaultValue={""}
       />

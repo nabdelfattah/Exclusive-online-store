@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import { HomeHeader } from "./HomeHeader";
+import { useTranslation } from "react-i18next";
+
 export function SectionNew() {
+  const { t } = useTranslation();
   const newPdts = [
     {
       title: "PlayStation 5",
@@ -15,16 +18,19 @@ export function SectionNew() {
   ];
   return (
     <section className="section-newPdt container mb-14">
-      <HomeHeader subheading="Featured" heading="New Arrival"></HomeHeader>
+      <HomeHeader
+        subheading={t("Featured")}
+        heading={t("New Arrival")}
+      ></HomeHeader>
       <div className="newPdt_grid">
         {newPdts.map((obj) => {
           return (
             <div className="newPdt" key={JSON.stringify(obj)}>
               <div className="newPdt_textWrapper">
-                <h3 className="title">{obj.title}</h3>
-                <p className="description">{obj.description}</p>
+                <h3 className="title">{t(obj.title)}</h3>
+                <p className="description">{t(obj.description)}</p>
                 <Link to="products" className="shopNowLink">
-                  Shop Now
+                  {t("Shop Now")}
                 </Link>
               </div>
             </div>

@@ -11,8 +11,10 @@ import smHero3 from "../../assets/icons/lg/small-screen/sm-hero3.png";
 import smHero4 from "../../assets/icons/lg/small-screen/sm-hero4.png";
 import smHero5 from "../../assets/icons/lg/small-screen/sm-hero5.png";
 import accountNavIcon from "../../assets/icons/menu-account.svg";
+import { useTranslation } from "react-i18next";
 
 export function SectionHero() {
+  const { t } = useTranslation();
   const [selectedBtn, setSelectedBtn] = useState(0);
   function carouselBtnHandler(e) {
     setSelectedBtn(+e.currentTarget.name);
@@ -70,7 +72,7 @@ export function SectionHero() {
         <ul className="hero_navlist">
           <li>
             <Link className="hero_subNav" to="/products">
-              Woman’s Fashion
+              {t("Woman’s Fashion")}
               <svg
                 width="24"
                 height="24"
@@ -87,7 +89,7 @@ export function SectionHero() {
           </li>
           <li>
             <Link className="hero_subNav" to="/products">
-              Men’s Fashion
+              {t("Men’s Fashion")}
               <svg
                 width="24"
                 height="24"
@@ -103,25 +105,25 @@ export function SectionHero() {
             </Link>
           </li>
           <li>
-            <Link to="/products">Electronics</Link>
+            <Link to="/products">{t("Electronics")}</Link>
           </li>
           <li>
-            <Link to="/products">Home & Lifestyle</Link>
+            <Link to="/products">{t("Home & Lifestyle")}</Link>
           </li>
           <li>
-            <Link to="/products">Medicine</Link>
+            <Link to="/products">{t("Medicine")}</Link>
           </li>
           <li>
-            <Link to="/products">Sports & Outdoor</Link>
+            <Link to="/products">{t("Sports & Outdoor")}</Link>
           </li>
           <li>
-            <Link to="/products">Baby’s & Toys</Link>
+            <Link to="/products">{t("Baby’s & Toys")}</Link>
           </li>
           <li>
-            <Link to="/products">Groceries & Pets</Link>
+            <Link to="/products">{t("Groceries & Pets")}</Link>
           </li>
           <li>
-            <Link to="/products">Health & Beauty</Link>
+            <Link to="/products">{t("Health & Beauty")}</Link>
           </li>
         </ul>
       </nav>
@@ -140,7 +142,7 @@ export function SectionHero() {
             );
           })}
           <Link to="products">
-            <span className="shopNowLink">Shop Now</span>
+            <span className="shopNowLink">{t("Shop Now")}</span>
             <svg
               width="24"
               height="24"

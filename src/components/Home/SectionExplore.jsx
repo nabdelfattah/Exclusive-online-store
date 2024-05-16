@@ -2,8 +2,10 @@ import { useState } from "react";
 import { HomeHeader } from "./HomeHeader";
 import { Link } from "react-router-dom";
 import { ProductList } from "../Product";
+import { useTranslation } from "react-i18next";
 
 export function SectionExplore() {
+  const { t } = useTranslation();
   const [productIndex, setProductIndex] = useState(0);
   const [nextBtnDisabled, setNextBtnDisabled] = useState(false);
   const [previousBtnDisabled, setPreviousBtnDisabled] = useState(true);
@@ -26,7 +28,10 @@ export function SectionExplore() {
   }
   return (
     <section className="section-explore container mb-14">
-      <HomeHeader subheading="Our Products" heading="Explore Our Products">
+      <HomeHeader
+        subheading={t("Our Products")}
+        heading={t("Explore Our Products")}
+      >
         <div className="btn-arr-wrapper">
           <button
             className="btn-arr"
@@ -84,7 +89,7 @@ export function SectionExplore() {
         <ProductList category="laptops" />
       </div>
       <Link to="products" className="btn-primary">
-        View All Products
+        {t("View All Products")}
       </Link>
     </section>
   );

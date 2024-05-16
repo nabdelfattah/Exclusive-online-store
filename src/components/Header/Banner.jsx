@@ -1,16 +1,30 @@
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 export function Banner() {
+  const { i18n, t } = useTranslation();
   function selectHandler(e) {
-    return;
+    const selectedLang = e.target.value;
+    let lng;
+    switch (selectedLang) {
+      case "spanish":
+        lng = "sp";
+        break;
+      case "french":
+        lng = "fr";
+        break;
+      default:
+        lng = "en";
+    }
+    i18n.changeLanguage(lng);
   }
   return (
     <div className="banner">
       <div className="container">
         <p>
-          Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
+          {t("bannerText")}
           <Link to="/products" className="banner_link">
-            ShopNow
+            {t("bannerLink")}
           </Link>
         </p>
         <select
@@ -21,11 +35,11 @@ export function Banner() {
           <option value="english" title="English">
             English
           </option>
-          <option value="spanish" title="española">
+          <option value="spanish" title="Española">
             española
           </option>
-          <option value="arabic" title="العربية">
-            العربية
+          <option value="french" title="Française">
+            Française
           </option>
         </select>
       </div>

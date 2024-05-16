@@ -1,13 +1,18 @@
 import { Link } from "react-router-dom";
 import { HomeHeader } from "./HomeHeader";
 import { ProductList } from "../Product";
+import { useTranslation } from "react-i18next";
 
 export function SectionBestSelling({ products }) {
+  const { t } = useTranslation();
   return (
     <section className="section-best container mb-14">
-      <HomeHeader subheading="This Month" heading="Best Selling Products">
+      <HomeHeader
+        subheading={t("This Month")}
+        heading={t("Best Selling Products")}
+      >
         <Link to="/products" className="btn-primary">
-          View All
+          {t("View All")}
         </Link>
       </HomeHeader>
       <ProductList category="furniture" />

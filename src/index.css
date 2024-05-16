@@ -41,11 +41,10 @@ body {
   color: var(--c-black);
   font-size: 1.6rem;
   font-weight: 400;
-  overflow-x: hidden;
   scroll-behavior: smooth;
   width: 100%;
   position: relative;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   /* scroll-padding-top: 12rem; */
 }
 a {

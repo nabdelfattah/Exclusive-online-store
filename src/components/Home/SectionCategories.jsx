@@ -8,7 +8,7 @@ import category6 from "../../assets/icons/category/Category6.svg";
 import category7 from "../../assets/icons/category/Category7.svg";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
+import { useTranslation } from "react-i18next";
 const categories = [
   { name: "Phones", img: category1 },
   { name: "Computers", img: category2 },
@@ -20,6 +20,7 @@ const categories = [
 ];
 
 export function SectionCategories() {
+  const { t } = useTranslation();
   const [categoryIndex, setCategoryIndex] = useState(0);
   function arrowPreviousHandler() {
     setCategoryIndex((index) => {
@@ -35,7 +36,10 @@ export function SectionCategories() {
   }
   return (
     <section className="section-categories container mb-7">
-      <HomeHeader subheading="Categories" heading="Browse By Category">
+      <HomeHeader
+        subheading={t("Categories")}
+        heading={t("Browse By Category")}
+      >
         <div className="btn-arr-wrapper">
           <button className="btn-arr" onClick={arrowPreviousHandler}>
             <svg
@@ -83,7 +87,7 @@ export function SectionCategories() {
               key={categories[desiredOne].name}
             >
               <img src={categories[desiredOne].img} />
-              <p className="category_name">{categories[desiredOne].name}</p>
+              <p className="category_name">{t(categories[desiredOne].name)}</p>
             </Link>
           );
         })}

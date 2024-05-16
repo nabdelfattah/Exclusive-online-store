@@ -8,10 +8,11 @@ import starIcon from "../../assets/icons/header/star.svg";
 import logoutIcon from "../../assets/icons/header/logout.svg";
 import loginIcon from "../../assets/icons/header/login.svg";
 import signupIcon from "../../assets/icons/header/signup.svg";
+import { useTranslation } from "react-i18next";
 
 export const UserNavigation = forwardRef((props, ref) => {
   const { user, logout } = useContext(UserContext);
-
+  const { t } = useTranslation();
   function logoutHandler() {
     props.toggleNav();
     try {
@@ -27,31 +28,31 @@ export const UserNavigation = forwardRef((props, ref) => {
           <li>
             <Link to="/account">
               <img src={userIcon} />
-              Manage My Account
+              {t("Manage My Account")}
             </Link>
           </li>
           <li>
             <Link to="/account">
               <img src={ordersIcon} />
-              My Order
+              {t("My Order")}
             </Link>
           </li>
           <li>
             <Link to="/account">
               <img src={cancelIcon} />
-              My Cancellations
+              {t("My Cancellations")}
             </Link>
           </li>
           <li>
             <Link to="/account">
               <img src={starIcon} />
-              My Reviews
+              {t("My Reviews")}
             </Link>
           </li>
           <li>
             <Link to="/" onClick={logoutHandler}>
               <img src={logoutIcon} />
-              Logout
+              {t("Log Out")}
             </Link>
           </li>
         </>
@@ -60,13 +61,13 @@ export const UserNavigation = forwardRef((props, ref) => {
           <li>
             <Link to="/signup">
               <img src={signupIcon} />
-              Sign up
+              {t("Sign Up")}
             </Link>
           </li>
           <li>
             <Link to="/login">
               <img src={loginIcon} />
-              Log in
+              {t("Log In")}
             </Link>
           </li>
         </>
