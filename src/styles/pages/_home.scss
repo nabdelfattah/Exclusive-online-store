@@ -402,8 +402,7 @@
   .hero_carousel_imgs {
     max-width: 34.4rem;
     width: 30rem;
-    // max-width: 34.4rem;
-    // width: 34rem;
+    overflow: clip;
   }
   .hero_carousel .carousel_btns {
     display: flex;
