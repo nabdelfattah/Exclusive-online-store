@@ -1,6 +1,4 @@
 import { Breadcrumb, Features } from "../components/";
-import aboutImg_jpg from "../assets/about-hero.jpg";
-import aboutImg from "../assets/about-hero1.webp";
 import person1 from "../assets/people/person1.jpg";
 import person2 from "../assets/people/person2.jpg";
 import person3 from "../assets/people/person3.jpg";
@@ -9,6 +7,7 @@ import person5 from "../assets/people/person5.jpg";
 import person6 from "../assets/people/person6.jpg";
 import person7 from "../assets/people/person7.jpg";
 import { useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const managers = [
   {
@@ -56,6 +55,7 @@ const managers = [
 ];
 
 export function AboutPage() {
+  const { t } = useTranslation();
   const [selectedBtn, setSelectedBtn] = useState(0);
   const cardRef = useRef();
   const cardWidth = cardRef.current ? cardRef.current.clientWidth : 0;
@@ -73,19 +73,9 @@ export function AboutPage() {
       <Breadcrumb chain={breadcrumb} />
       <section className="about_hero mb-14">
         <div className="text">
-          <h2 className="heading-primary">Our Story</h2>
-          <p className="description">
-            Launced in 2015, Exclusive is South Asia’s premier online shopping
-            makterplace with an active presense in Bangladesh. Supported by wide
-            range of tailored marketing, data and service solutions, Exclusive
-            has 10,500 sallers and 300 brands and serves 3 millioons customers
-            across the region.
-          </p>
-          <p className="descriotion">
-            Exclusive has more than 1 Million products to offer, growing at a
-            very fast. Exclusive offers a diverse assotment in categories
-            ranging from consumer.
-          </p>
+          <h2 className="heading-primary">{t("Our Story")}</h2>
+          <p className="description">{t("text1")}</p>
+          <p className="descriotion">{t("text2")}</p>
         </div>
         <div className="picture">
           {/* Photo by Pawel Chu on Unsplash */}
@@ -136,7 +126,7 @@ export function AboutPage() {
             />
           </svg>
           <p className="stat_num">10.5k</p>
-          <p className="stat_txt">Sallers active our site</p>
+          <p className="stat_txt">{t("Sallers active our site")}</p>
         </article>
         <article className="stat_item">
           <svg
@@ -171,7 +161,7 @@ export function AboutPage() {
             />
           </svg>
           <p className="stat_num">33k</p>
-          <p className="stat_txt">Mopnthly Produduct Sale</p>
+          <p className="stat_txt">{t("Mopnthly Produduct Sale")}</p>
         </article>
         <article className="stat_item">
           <svg
@@ -189,7 +179,7 @@ export function AboutPage() {
           </svg>
 
           <p className="stat_num">45.5k</p>
-          <p className="stat_txt">Customer active in our site</p>
+          <p className="stat_txt">{t("Customer active in our site")}</p>
         </article>
         <article className="stat_item">
           <svg
@@ -216,7 +206,7 @@ export function AboutPage() {
           </svg>
 
           <p className="stat_num">25k</p>
-          <p className="stat_txt">Anual gross sale in our site</p>
+          <p className="stat_txt">{t("Anual gross sale in our site")}</p>
         </article>
       </section>
       <section className="about_carousel container mb-14">
@@ -235,7 +225,7 @@ export function AboutPage() {
                   <img src={manager.image} alt={manager.alt} />
                 </div>
                 <p className="name">{manager.name}</p>
-                <p className="title">{manager.title}</p>
+                <p className="title">{t(manager.title)}</p>
                 <div className="manager_links">
                   <a href="#">
                     <svg

@@ -33,7 +33,7 @@ export function SignUpPage() {
         navigateTo("/");
       } catch {
         setErrMsg(
-          "Faild to create an account. Perhaps someone is already using the email."
+          "Faild to create an account. Perhaps someone is already using the email"
         );
       } finally {
         setIsLoading(false);

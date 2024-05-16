@@ -3,8 +3,10 @@ import { Breadcrumb } from "../components";
 import { UserContext } from "../UserContext";
 import { Link, NavLink } from "react-router-dom";
 import accountNavIcon from "../assets/icons/menu-account.svg";
+import { useTranslation } from "react-i18next";
 
 export function AccountPage() {
+  const { t } = useTranslation();
   const { user } = useContext(UserContext);
   const accountNavRef = useRef();
   const breadcrumb = [
@@ -38,7 +40,7 @@ export function AccountPage() {
         <Breadcrumb chain={breadcrumb} />
         {user ? (
           <p className="account_username">
-            Welcome!{" "}
+            {t("Welcome!")}{" "}
             <span style={{ color: "#db4444" }}> {user.displayName}</span>
           </p>
         ) : (
@@ -52,32 +54,32 @@ export function AccountPage() {
         <div className="account_navigate" ref={accountNavRef}>
           <nav className="account_nav">
             <Link className="account_nav_link" to="/account">
-              Manage My Account
+              {t("Manage My Account")}
             </Link>
             <ul className="account_nav_list">
               <li>
                 <NavLink className="account_nav_subLink" to="/account">
-                  My Profile
+                  {t("My Profile")}
                 </NavLink>
               </li>
               <li>
                 <NavLink className="account_nav_subLink" to="/account/address">
-                  Address Book
+                  {t("Address Book")}
                 </NavLink>
               </li>
               <li>
                 <NavLink className="account_nav_subLink" to="/account/payment">
-                  My Payment Options
+                  {t("My Payment Options")}
                 </NavLink>
               </li>
             </ul>
             <Link className="account_nav_link" to="/account">
-              My Orders
+              {t("My Orders")}
             </Link>
             <ul className="account_nav_list">
               <li>
                 <NavLink className="account_nav_subLink" to="/account/returns">
-                  My Returns
+                  {t("My Returns")}
                 </NavLink>
               </li>
               <li>
@@ -85,19 +87,19 @@ export function AccountPage() {
                   className="account_nav_subLink"
                   to="/account/cancellation"
                 >
-                  My Cancellations
+                  {t("My Cancellations")}
                 </NavLink>
               </li>
             </ul>
             <Link className="account_nav_link" to="/wishlist">
-              My WishList
+              {t("My WishList")}
             </Link>
           </nav>
         </div>
         <form className="account_form">
-          <h3 className="account_form_heading">Edit Your Profile</h3>
+          <h3 className="account_form_heading">{t("Edit Your Profile")}</h3>
           <div className="form_item">
-            <label className="label">First Name</label>
+            <label className="label">{t("First Name")}</label>
             <input
               className="input"
               type="text"
@@ -106,7 +108,7 @@ export function AccountPage() {
             />
           </div>
           <div className="form_item">
-            <label className="label">Last Name</label>
+            <label className="label">{t("Last Name")}</label>
             <input
               className="input"
               type="text"
@@ -115,7 +117,7 @@ export function AccountPage() {
             />
           </div>
           <div className="form_item">
-            <label className="label">Email</label>
+            <label className="label">{t("Email")}</label>
             <input
               className="input"
               type="email"
@@ -124,7 +126,7 @@ export function AccountPage() {
             />
           </div>
           <div className="form_item">
-            <label className="label">Address</label>
+            <label className="label">{t("Address")}</label>
             <input
               className="input"
               type="text"
@@ -134,14 +136,14 @@ export function AccountPage() {
           </div>
           <div className="form_item">
             <label className="label" htmlFor="change-password">
-              Change Password
+              {t("Change Password")}
             </label>
             <input
               className="input mb"
               type="password"
               id="current-password"
               name="current-password"
-              placeholder="Current Password"
+              placeholder={t("Current Password")}
               required
             />
             <input
@@ -149,7 +151,7 @@ export function AccountPage() {
               type="password"
               id="new-password"
               name="new-password"
-              placeholder="New Password"
+              placeholder={t("New Password")}
               required
             />
             <input
@@ -157,13 +159,13 @@ export function AccountPage() {
               type="password"
               id="confirm-password"
               name="confirm-password"
-              placeholder="Confirm New Password"
+              placeholder={t("Confirm New Password")}
               required
             />
           </div>
           <div className="account_form_buttons">
-            <button type="button">Cancel</button>
-            <button className="btn-primary">Save Changes</button>
+            <button type="button">{t("Cancel")}</button>
+            <button className="btn-primary">{t("Save Changes")}</button>
           </div>
         </form>
       </div>

@@ -14,25 +14,25 @@ export function validateSignUp(name, email, password) {
 
   // Check name
   if (!name.trim()) {
-    errors.push("Name is required.");
+    errors.push("Name is required");
     isValid = false;
   }
 
   // Check email
   if (!email.trim()) {
-    errors.push("Email is required.");
+    errors.push("Email is required");
     isValid = false;
   } else if (!isValidEmail(email)) {
-    errors.push("Invalid email address.");
+    errors.push("Invalid email address");
     isValid = false;
   }
 
   // Check password
   if (!password.trim()) {
-    errors.push("Password is required.");
+    errors.push("Password is required");
     isValid = false;
   } else if (password.length < 8) {
-    errors.push("Password must be at least 8 characters long.");
+    errors.push("Password must be at least 8 characters long");
     isValid = false;
   }
   return { isValid, errors };

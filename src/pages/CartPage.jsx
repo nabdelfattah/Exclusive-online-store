@@ -35,10 +35,10 @@ export function CartPage() {
       <Breadcrumb chain={breadcrumb} />
       <div className="container cart_wrapper mb-14">
         <header className="cart_header container">
-          <p className="cart_colName">Product</p>
-          <p className="cart_colName">Price</p>
-          <p className="cart_colName">Quantity</p>
-          <p className="cart_colName">Subtotal</p>
+          <p className="cart_colName">{t("Product")}</p>
+          <p className="cart_colName">{t("Price")}</p>
+          <p className="cart_colName">{t("Quantity")}</p>
+          <p className="cart_colName">{t("Subtotal")}</p>
         </header>
         {cartPdts ? (
           <ul className="cart_pdts_wrapper">
@@ -53,27 +53,27 @@ export function CartPage() {
             })}
           </ul>
         ) : (
-          <p className="emptyCart">Your cart is empty.</p>
+          <p className="emptyCart">{t("Your cart is empty")}.</p>
         )}
         <div className="cart_btns mb-8">
           <Link to="/products" className="btn-outline">
-            Return To Shop
+            {t("Return To Shop")}
           </Link>
           <button className="btn-outline" onClick={updateCartHandler}>
-            Update Cart
+            {t("Update Cart")}
           </button>
         </div>
         <div className="cart_coupon_total_wrapper">
           <Coupon />
           <div className="cart_total_box">
-            <h2 className="total_heading">Cart Total</h2>
+            <h2 className="total_heading">{t("Cart Total")}</h2>
             <CartTotal
               subtotal={totalPrice}
               shipping="Free"
               total={totalPrice}
             />
             <Link to="/checkout" className="btn-primary">
-              Procees to checkout
+              {t("Procees to checkout")}
             </Link>
           </div>
         </div>

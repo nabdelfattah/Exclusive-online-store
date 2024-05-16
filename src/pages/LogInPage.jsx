@@ -25,7 +25,7 @@ export function LogInPage() {
       await login(email, password);
       navigateTo("/");
     } catch (err) {
-      setErrMsg("Faild to log in.");
+      setErrMsg("Faild to log in");
     } finally {
       setIsLoading(false);
     }
