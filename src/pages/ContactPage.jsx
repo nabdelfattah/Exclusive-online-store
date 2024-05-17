@@ -73,7 +73,11 @@ export function ContactPage() {
             />
           </div>
           <textarea name="message" placeholder={t("Your Massage")} />
-          <button className="btn-primary" onClick={sendMsgHandler}>
+          <button
+            name="send-message-button"
+            className="btn-primary"
+            onClick={sendMsgHandler}
+          >
             {t("Send Massage")}
           </button>
         </form>

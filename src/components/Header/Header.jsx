@@ -76,7 +76,11 @@ export function Header() {
                   ""
                 )}
               </Link>
-              <button className="userIcon" onClick={clickUserIconHandler}>
+              <button
+                className="userIcon"
+                name="user-icon"
+                onClick={clickUserIconHandler}
+              >
                 <svg
                   ref={userIconRef}
                   className="userIcon"
@@ -111,7 +115,10 @@ export function Header() {
           </div>
         </div>
         <div className="mobileNav" onClick={toggleMobileNav}>
-          <button className="mobileNav_btn--menue">
+          <button
+            className="mobileNav_btn--menue"
+            name="open-mobile-navigation"
+          >
             <img
               src={menue}
               alt="menue icon"
@@ -123,6 +130,7 @@ export function Header() {
               src={close}
               alt="close menue icon"
               aria-label="close the navigation"
+              name="close-mobile-navigation"
             />
           </button>
         </div>

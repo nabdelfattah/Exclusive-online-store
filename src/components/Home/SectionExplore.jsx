@@ -37,6 +37,7 @@ export function SectionExplore() {
             className="btn-arr"
             onClick={previousArrowHandler}
             disabled={previousBtnDisabled}
+            name="previous-button"
           >
             <svg
               width="24"
@@ -58,6 +59,7 @@ export function SectionExplore() {
             className="btn-arr"
             onClick={nextArrowHandler}
             disabled={nextBtnDisabled}
+            name="next-button"
           >
             <svg
               width="24"

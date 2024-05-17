@@ -59,7 +59,11 @@ export function CartPage() {
           <Link to="/products" className="btn-outline">
             {t("Return To Shop")}
           </Link>
-          <button className="btn-outline" onClick={updateCartHandler}>
+          <button
+            name="update-cart-button"
+            className="btn-outline"
+            onClick={updateCartHandler}
+          >
             {t("Update Cart")}
           </button>
         </div>

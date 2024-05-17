@@ -68,10 +68,19 @@ export function SignUpPage() {
           name="password"
         />
         <div className="signup-btns">
-          <button disabled={IsLoading} className="btn-primary">
+          <button
+            disabled={IsLoading}
+            name="create-account-button"
+            className="btn-primary"
+          >
             {t("Create Account")}
           </button>
-          <button disabled={IsLoading} className="btn-outline" type="button">
+          <button
+            disabled={IsLoading}
+            name="sign-up-with-google-button"
+            className="btn-outline"
+            type="button"
+          >
             <img src={googleIcon} />
             {t("Sign up with Google")}
           </button>

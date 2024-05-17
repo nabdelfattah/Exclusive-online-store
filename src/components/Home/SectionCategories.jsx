@@ -41,7 +41,11 @@ export function SectionCategories() {
         heading={t("Browse By Category")}
       >
         <div className="btn-arr-wrapper">
-          <button className="btn-arr" onClick={arrowPreviousHandler}>
+          <button
+            className="btn-arr"
+            onClick={arrowPreviousHandler}
+            name="previous-button"
+          >
             <svg
               width="24"
               height="24"
@@ -58,7 +62,11 @@ export function SectionCategories() {
               />
             </svg>
           </button>
-          <button className="btn-arr" onClick={arrowNextHandler}>
+          <button
+            className="btn-arr"
+            onClick={arrowNextHandler}
+            name="next-button"
+          >
             <svg
               width="24"
               height="24"
@@ -86,7 +94,10 @@ export function SectionCategories() {
               className="category"
               key={categories[desiredOne].name}
             >
-              <img src={categories[desiredOne].img} />
+              <img
+                src={categories[desiredOne].img}
+                alt={t(categories[desiredOne].name)}
+              />
               <p className="category_name">{t(categories[desiredOne].name)}</p>
             </Link>
           );

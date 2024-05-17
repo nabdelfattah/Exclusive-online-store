@@ -48,7 +48,11 @@ export function AccountPage() {
         )}
       </div>
       <div className="account_wrapper mb-14 container">
-        <button className="menu-secondary" onClick={toggleAccountNavHandler}>
+        <button
+          className="menu-secondary"
+          onClick={toggleAccountNavHandler}
+          aria-label="account-navigation-button"
+        >
           <img src={accountNavIcon} alt="menu icon" />
         </button>
         <div className="account_navigate" ref={accountNavRef}>
@@ -164,8 +168,12 @@ export function AccountPage() {
             />
           </div>
           <div className="account_form_buttons">
-            <button type="button">{t("Cancel")}</button>
-            <button className="btn-primary">{t("Save Changes")}</button>
+            <button type="button" name="cancel-button">
+              {t("Cancel")}
+            </button>
+            <button className="btn-primary" name="save-changes-button">
+              {t("Save Changes")}
+            </button>
           </div>
         </form>
       </div>

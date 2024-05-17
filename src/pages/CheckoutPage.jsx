@@ -157,7 +157,9 @@ export function CheckoutPage() {
               </li>
             </ul>
             <Coupon />
-            <button className="btn-primary">{t("Place Order")}</button>
+            <button className="btn-primary" name="place-order-button">
+              {t("Place Order")}
+            </button>
           </div>
         </form>
       </div>

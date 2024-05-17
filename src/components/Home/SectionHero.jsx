@@ -65,7 +65,11 @@ export function SectionHero() {
 
   return (
     <section className="home_hero container mb-14">
-      <button className="menu-secondary" onClick={toggleNavHandler}>
+      <button
+        className="menu-secondary"
+        onClick={toggleNavHandler}
+        name="categories-menue"
+      >
         <img src={accountNavIcon} alt="menu icon" />
       </button>
       <nav ref={navRef} className="hero_nav account_navigate">

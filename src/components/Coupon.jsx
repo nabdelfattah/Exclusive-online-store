@@ -4,7 +4,7 @@ export function Coupon() {
   return (
     <div className="coupon_wrapper">
       <input type="text" name="coupon" placeholder={t("Coupon Code")} />
-      <button type="button" className="btn-primary">
+      <button type="button" className="btn-primary" aria-label="apply-coupon">
         {t("Apply Coupon")}
       </button>
     </div>

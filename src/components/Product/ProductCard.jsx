@@ -58,7 +58,11 @@ export function ProductCard(props) {
           ""
         )}
         <img src={thumbnail} alt={title} />
-        <button className="pdt_addToCartBtn" onClick={addToCartHandler}>
+        <button
+          className="pdt_addToCartBtn"
+          onClick={addToCartHandler}
+          aria-label="add-to-cart-button"
+        >
           Add To Cart
         </button>
       </div>
@@ -101,7 +105,10 @@ export function ProductCard(props) {
           ""
         )}
         <div className="card_icons">
-          <button onClick={addToWishlistHandler}>
+          <button
+            onClick={addToWishlistHandler}
+            aria-label="add-to-wishlist-button"
+          >
             <svg
               className={isFavorit ? "userFav" : ""}
               width="34"
@@ -120,7 +127,7 @@ export function ProductCard(props) {
               />
             </svg>
           </button>
-          <Link to={`/products/${id}`}>
+          <Link to={`/products/${id}`} aria-label="see-more-datails">
             <svg
               className="detailsIcon"
               width="34"

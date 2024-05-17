@@ -19,7 +19,7 @@ export function Advertisement() {
   }, []);
   return (
     <section className="advertisement container mb-7">
-      <img src={isSmallScreen ? smAds : adsImg} />
+      <img src={isSmallScreen ? smAds : adsImg} alt={`a ${t("banner")}`} />
       <Link to="/products" className="btn-primary">
         {t("Buy Now!")}
       </Link>

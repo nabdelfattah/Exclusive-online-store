@@ -53,7 +53,11 @@ export function LogInPage() {
           name="password"
         />
         <div className="login_btns">
-          <button className="btn-primary" disabled={isLoading}>
+          <button
+            className="btn-primary"
+            disabled={isLoading}
+            name="login-button"
+          >
             {t("Log In")}
           </button>
           {isLoading ? (

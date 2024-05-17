@@ -306,6 +306,7 @@ export function AboutPage() {
                 }`}
                 onClick={carouselBtnHandler}
                 name={index}
+                aria-label={index}
               >
                 &nbsp;
               </button>

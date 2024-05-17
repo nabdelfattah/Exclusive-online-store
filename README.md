@@ -1,7 +1,5 @@
 # Almdrasa - E-commerce
 
-![Design preview for Exclusive e-commerce web app.](./design/desktop-preview.jpg)
-
 ## Table of contents
 
 - [Overview](#overview)
@@ -13,25 +11,26 @@
 
 ## Overview:
 
-This project is a responsive multi-lingual e-commerce website where users are able to:
+This project is a responsive multi-lingual e-commerce website where users can:
 
 - Create an account
-- Add Products to Wishlist
-- Add products to cart
+- Add Products to their Wishlist
+- Add products to their cart
+- Review products
 - Search for a product or a category of products.
-- Review product
 
-I used [Dummy JSON API](https://dummyjson.com/) to get dummy/fake JSON data to use as placeholder. And I used **FireBase Api** for Authentication. And I used **i18next library** to enable multi-lanuages to my website. I chosed _English_, _Frensh_, and _Spanish_.
+I used [Dummy JSON API](https://dummyjson.com/) to get dummy/fake JSON data to use as a placeholder. And I used **FireBase API** for Authentication. I used **i18next library** to enable multi-languages on my website. I choose _English_, _French_, and _Spanish_.
 
 ## Links:
 
-Watch my [Live Demo](https://dev.to/afif/border-with-gradient-and-radius-387f)
+[Original Design on Figma](https://www.figma.com/file/yn2DFQJla0UiSMvomFsqwT/E-Commerce-Website-%D9%90Almdrasa?type=design&node-id=1-3&mode=design&t=d3LCgTgpGZAG20AI-0)
+Watch my [Live Demo](https://youtu.be/kR0Ua1kgMRc)
 
 ## Screenshot:
 
-<img src="" alt="Desktop preview" height="300">
-<img src="" alt="Tablet preview" height="300">
-<img src="" alt="Mobile preview" height="300">
+<img src="./design/desktop-preview.png" alt="Desktop preview" height="300">
+<img src="./design/tablet-preview.png" alt="Tablet preview" height="300">
+<img src="./design/phone-preview.png" alt="Mobile preview" height="300">
 
 ## Built With:
 
@@ -49,6 +48,5 @@ Watch my [Live Demo](https://dev.to/afif/border-with-gradient-and-radius-387f)
 
 ## Author:
 
-- Portfolio - [Nada W. Abdelfattah](https://www.linkedin.com/in/nada-w-abdelfattah/)
 - Linked-in - [Nada W. Abdelfattah](https://www.linkedin.com/in/nada-w-abdelfattah/)
 - GitHub - [nabdelfattah](https://github.com/nabdelfattah)

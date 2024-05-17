@@ -3,6 +3,7 @@ import { ProductCard } from "../components/Product";
 import { useFetch } from "../useFetch";
 import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { Loading } from "../components";
 const validCategories = [
   "smartphones",
   "laptops",
@@ -62,7 +63,11 @@ export function ProductsPage({ url }) {
             )}
           </ul>
           {targetIndex < filteredPdts.length ? (
-            <button className="btn-primary" onClick={showMoreHandler}>
+            <button
+              className="btn-primary"
+              name="show-more-button"
+              onClick={showMoreHandler}
+            >
               {t("Show More")}
             </button>
           ) : (
@@ -70,7 +75,7 @@ export function ProductsPage({ url }) {
           )}
         </div>
       ) : (
-        ""
+        <Loading />
       )}
     </>
   );

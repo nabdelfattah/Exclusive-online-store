@@ -161,11 +161,19 @@ export function DetailsPage() {
                 </div>
                 <div className="details_buy">
                   <div className="count">
-                    <button type="button" onClick={decreaseCountHandler}>
+                    <button
+                      type="button"
+                      aria-label="decrease-count-button"
+                      onClick={decreaseCountHandler}
+                    >
                       -
                     </button>
                     <p>{count}</p>
-                    <button type="button" onClick={increaseCountHandler}>
+                    <button
+                      type="button"
+                      aria-label="increase-count-button"
+                      onClick={increaseCountHandler}
+                    >
                       +
                     </button>
                   </div>
@@ -177,6 +185,7 @@ export function DetailsPage() {
                       className="details_wishlist-btn"
                       onClick={addToWishlistHandler}
                       type="button"
+                      aria-label="add-to-wishlist"
                     >
                       <svg
                         className="wishlist-icon"
