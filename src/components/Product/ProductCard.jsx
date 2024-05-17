@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import { RatingStars } from "./";
 import { addToCart, addToWishlist } from "../../helper";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../UserContext";
 
 export function ProductCard(props) {
-  const { setWishlist, setCart } = useContext(UserContext);
+  const { wishlist, setWishlist, setCart } = useContext(UserContext);
+  const [isFavorit, setIsFavorit] = useState(false);
   const {
     id,
     title,
@@ -17,6 +18,10 @@ export function ProductCard(props) {
     rating,
   } = props.data;
   const [color, setColor] = useState("color1");
+  useEffect(() => {
+    if (wishlist.includes(id)) setIsFavorit(true);
+    else setIsFavorit(false);
+  }, [wishlist]);
 
   function addToCartHandler() {
     addToCart({ ...props.data, count: 1 });
@@ -70,7 +75,7 @@ export function ProductCard(props) {
           )}
         </div>
         <div className="pdt_rating_wrapper">
-          <RatingStars initialRating={rating} id={id} img={thumbnail}/>
+          <RatingStars initialRating={rating} id={id} img={thumbnail} />
           <span className="pdt_rating_num">({stock})</span>
         </div>
         {category == "laptops" ? (
@@ -98,6 +103,7 @@ export function ProductCard(props) {
         <div className="card_icons">
           <button onClick={addToWishlistHandler}>
             <svg
+              className={isFavorit ? "userFav" : ""}
               width="34"
               height="34"
               viewBox="0 0 34 34"
@@ -116,6 +122,7 @@ export function ProductCard(props) {
           </button>
           <Link to={`/products/${id}`}>
             <svg
+              className="detailsIcon"
               width="34"
               height="34"
               viewBox="0 0 34 34"

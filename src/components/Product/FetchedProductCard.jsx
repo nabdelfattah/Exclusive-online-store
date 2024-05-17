@@ -1,14 +1,18 @@
 import { Link } from "react-router-dom";
 import { RatingStars } from "./";
 import { addToCart, addToWishlist } from "../../helper";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../UserContext";
 import { useFetch } from "../../useFetch";
 
 export function FetchedProductCard(props) {
-  const { setWishlist, setCart } = useContext(UserContext);
+  const { wishlist, setWishlist, setCart } = useContext(UserContext);
   const data = useFetch(`https://dummyjson.com/products/${props.id}`);
-
+  const [isFavorit, setIsFavorit] = useState(false);
+  useEffect(() => {
+    if (wishlist.includes(props.id)) setIsFavorit(true);
+    else setIsFavorit(false);
+  }, [wishlist]);
   const [color, setColor] = useState("color1");
   function addToCartHandler() {
     addToCart({ ...data, count: 1 });
@@ -68,7 +72,11 @@ export function FetchedProductCard(props) {
               )}
             </div>
             <div className="pdt_rating_wrapper">
-              <RatingStars initialRating={data.rating} id={data.id} />
+              <RatingStars
+                initialRating={data.rating}
+                id={data.id}
+                img={data.thumbnail}
+              />
               <span className="pdt_rating_num">({data.stock})</span>
             </div>
             {data.category == "laptops" ? (
@@ -96,6 +104,7 @@ export function FetchedProductCard(props) {
             <div className="card_icons">
               <button onClick={addToWishlistHandler}>
                 <svg
+                  className={isFavorit ? "userFav" : ""}
                   width="34"
                   height="34"
                   viewBox="0 0 34 34"
@@ -114,6 +123,7 @@ export function FetchedProductCard(props) {
               </button>
               <Link to={`/products/${data.id}`}>
                 <svg
+                  className="detailsIcon"
                   width="34"
                   height="34"
                   viewBox="0 0 34 34"

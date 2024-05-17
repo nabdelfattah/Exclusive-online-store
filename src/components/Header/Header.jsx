@@ -10,9 +10,12 @@ import { useTranslation } from "react-i18next";
 
 export function Header() {
   const { t } = useTranslation();
+
   const userIconRef = useRef();
   const userNavRef = useRef();
+
   const { cart, setCart, wishlist, setWishlist } = useContext(UserContext);
+
   useEffect(() => {
     setCart(JSON.parse(localStorage.getItem("cart") || "[]"));
     setWishlist(JSON.parse(localStorage.getItem("wishlist") || "[]"));
@@ -25,6 +28,24 @@ export function Header() {
   function toggleMobileNav() {
     document.body.classList.toggle("open_nav");
   }
+
+  useEffect(() => {
+    function handleClickOutsideUserNav(event) {
+      if (
+        // if user click outside the userIcon
+        !event.target.closest(".header_userNavList") &&
+        !event.target.closest(".userIcon")
+      ) {
+        // Close the nav
+        clickUserIconHandler();
+      }
+    }
+    window.addEventListener("click", handleClickOutsideUserNav);
+    return () => {
+      window.removeEventListener("click", handleClickOutsideUserNav);
+    };
+  }, []);
+
   return (
     <header className="header-primary">
       <div className="container">

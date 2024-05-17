@@ -72,10 +72,6 @@
 .pdt_price--before {
   color: rgba(0, 0, 0, 0.5);
 }
-.card_colors {
-  // display: flex;
-  // gap: ;
-}
 .card_icons {
   position: absolute;
   top: 1.2rem;
@@ -88,9 +84,12 @@
     fill: var(--c-white);
     transition: var(--animation);
   }
-  svg:hover {
+  .detailsIcon:hover {
     fill: var(--c-primary-hover);
   }
+}
+.userFav {
+  fill: var(--c-primary-hover) !important;
 }
 ///////////////////////////////////////////
 // tags
