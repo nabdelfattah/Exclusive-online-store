@@ -23,14 +23,11 @@ I used [Dummy JSON API](https://dummyjson.com/) to get dummy/fake JSON data to u
 
 ## Links:
 
-[Original Design on Figma](https://www.figma.com/file/yn2DFQJla0UiSMvomFsqwT/E-Commerce-Website-%D9%90Almdrasa?type=design&node-id=1-3&mode=design&t=d3LCgTgpGZAG20AI-0)
-Watch my [Live Demo](https://youtu.be/kR0Ua1kgMRc)
+[Original Design on Figma](https://www.figma.com/file/yn2DFQJla0UiSMvomFsqwT/E-Commerce-Website-%D9%90Almdrasa?type=design&node-id=1-3&mode=design&t=d3LCgTgpGZAG20AI-0). Watch my [Live Demo](https://youtu.be/kR0Ua1kgMRc)
 
 ## Screenshot:
 
-<img src="./design/desktop-preview.png" alt="Desktop preview" height="300">
-<img src="./design/tablet-preview.png" alt="Tablet preview" height="300">
-<img src="./design/phone-preview.png" alt="Mobile preview" height="300">
+<img src="./design/desktop-preview.png" alt="Desktop preview" height="300"><img src="./design/tablet-preview.png" alt="Tablet preview" height="300"><img src="./design/phone-preview.png" alt="Mobile preview" height="300">
 
 ## Built With:
 
