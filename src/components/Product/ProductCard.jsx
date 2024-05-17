@@ -66,7 +66,7 @@ export function ProductCard(props) {
         <p className="pdt_title">{title}</p>
         <div className="pdt_price">
           ${price}{" "}
-          {discountPercentage >= 15 ? (
+          {discountPercentage >= 15 || category == "mens-watches" ? (
             <span className="price--before">
               ${Math.round(price / (1 - discountPercentage / 100))}
             </span>

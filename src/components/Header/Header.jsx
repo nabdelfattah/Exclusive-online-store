@@ -37,7 +37,8 @@ export function Header() {
         !event.target.closest(".userIcon")
       ) {
         // Close the nav
-        clickUserIconHandler();
+        userIconRef.current.classList.remove("userIcon--selected");
+        userNavRef.current.classList.remove("showNav");
       }
     }
     window.addEventListener("click", handleClickOutsideUserNav);
