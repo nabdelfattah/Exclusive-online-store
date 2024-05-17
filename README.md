@@ -44,7 +44,7 @@ Watch my [Live Demo](https://youtu.be/kR0Ua1kgMRc)
 
 - Planning
 - Authorize users
-- Implement multi-lingual websites
+- Implement multilingual websites
 
 ## Author:
 

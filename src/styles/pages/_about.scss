@@ -142,6 +142,17 @@
     flex-wrap: wrap;
     justify-content: center;
   }
+  .about_managers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+  .manager:last-child {
+    grid-column: span 2;
+  }
+  .carousel_btns {
+    display: none;
+  }
 }
 @media (max-width: 59em) {
   .about_hero {
@@ -159,6 +170,12 @@
       position: absolute; /* Position the overflowing element absolutely */
     }
   }
+  .about_managers {
+    grid-template-columns: 1fr;
+  }
+  .manager:last-child {
+    grid-column: span 1;
+  }
 }
 @media (max-width: 37em) {
   .about_hero .picture,
@@ -167,6 +184,7 @@
   }
   .about_managers {
     flex-wrap: wrap;
+    justify-content: center;
     gap: 5rem;
   }
   .manager_imgFrame {
