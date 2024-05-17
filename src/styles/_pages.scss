@@ -51,3 +51,28 @@
     }
   }
 }
+/////////////////////////////
+/// Review page
+.review_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  height: 100%;
+  padding: 2rem 4rem;
+  box-shadow: 1px 0 13px rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius);
+}
+.review_img {
+  max-width: 20rem;
+}
+.review_num {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-top: auto;
+}
+@media (max-width: 37em) {
+  .review_container {
+    padding: 2rem 3.2rem;
+  }
+}

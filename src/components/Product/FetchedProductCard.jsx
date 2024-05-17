@@ -68,7 +68,7 @@ export function FetchedProductCard(props) {
               )}
             </div>
             <div className="pdt_rating_wrapper">
-              <RatingStars initialRating={data.rating} />
+              <RatingStars initialRating={data.rating} id={data.id} />
               <span className="pdt_rating_num">({data.stock})</span>
             </div>
             {data.category == "laptops" ? (

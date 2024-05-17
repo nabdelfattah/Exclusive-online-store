@@ -19,3 +19,4 @@ export * from "./Coupon"
 export * from "./Features"
 export * from "./UpButton"
 export * from './Footer'
+export * from './ReviewPdt'

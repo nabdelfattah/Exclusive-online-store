@@ -44,7 +44,7 @@ export const UserNavigation = forwardRef((props, ref) => {
             </Link>
           </li>
           <li>
-            <Link to="/account">
+            <Link to="/reviews">
               <img src={starIcon} />
               {t("My Reviews")}
             </Link>

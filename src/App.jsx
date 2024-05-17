@@ -14,6 +14,7 @@ import {
   CartPage,
   CheckoutPage,
   AccountPage,
+  ReviewsPage,
 } from "./pages";
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           <Route path="products/:id" element={<DetailsPage />} />
           <Route path="wishlist" element={<WishlistPage />} />
           <Route path="cart" element={<CartPage />} />
+          <Route path="reviews" element={<ReviewsPage />} />
           <Route path="checkout" element={<CheckoutPage />} />
           <Route path="signup" element={<SignUpPage />} />
           <Route path="login" element={<LogInPage />} />

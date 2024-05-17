@@ -84,3 +84,21 @@ export function addToCart(item) {
   // Update the cart in local storage
   localStorage.setItem('cart', JSON.stringify(cartItems));
 }
+
+
+export function storeReview(review) {
+  const { id, rating, img } = review;
+  // Retrieve the existing reviews from local storage
+  const reviews = JSON.parse(localStorage.getItem('userReviews')) || [];
+  // Check if the product already has a review
+  const existingReviewIndex = reviews.findIndex(r => r.id === id);
+  if (existingReviewIndex !== -1) {
+    // If the product already exists, update the rating
+    reviews[existingReviewIndex].rating = rating;
+  } else {
+    // If the product doesn't exist, add the new review
+    reviews.push({ id, rating, img });
+  }
+  // Store the updated reviews back in local storage
+  localStorage.setItem('userReviews', JSON.stringify(reviews));
+}

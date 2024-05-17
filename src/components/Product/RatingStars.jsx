@@ -1,14 +1,16 @@
 import { useState } from "react";
+import { storeReview } from "../../helper";
 
-export function RatingStars({ initialRating }) {
+export function RatingStars({ initialRating, id, img }) {
   const [rating, setRating] = useState(Math.round(initialRating));
   const [hover, setHover] = useState(null);
 
   const handleRatingChange = (currentRating) => {
     setRating(currentRating);
+    storeReview({ id: id, rating: currentRating, img: img });
   };
 
-  const handleMouseEnter = (currentRating) => {
+  const handleMouseEnter = (currentRating, e) => {
     setHover(currentRating);
   };
 
