@@ -1,11 +1,18 @@
 import { Breadcrumb, Features } from "../components/";
 import person1 from "../assets/people/person1.jpg";
+import person1Sm from "../assets/people/person1.webp";
 import person2 from "../assets/people/person2.jpg";
+import person2Sm from "../assets/people/person2.webp";
 import person3 from "../assets/people/person3.jpg";
+import person3Sm from "../assets/people/person3.webp";
 import person4 from "../assets/people/person4.jpg";
+import person4Sm from "../assets/people/person4.webp";
 import person5 from "../assets/people/person5.jpg";
+import person5Sm from "../assets/people/person5.webp";
 import person6 from "../assets/people/person6.jpg";
+import person6Sm from "../assets/people/person6.webp";
 import person7 from "../assets/people/person7.jpg";
+import person7Sm from "../assets/people/person7.webp";
 import { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -14,42 +21,49 @@ const managers = [
     name: "Tracey Wilson",
     title: "Founder & Chairman",
     image: person1,
+    imageSm: person1Sm,
     alt: "Photo by LinkedIn Sales Solutions on Unsplash",
   },
   {
     name: "Kwame Osei",
     title: "Managing Director",
     image: person2,
+    imageSm: person2Sm,
     alt: "Photo by Christina Morillo: https://www.pexels.com/photo/man-wearing-blue-button-up-sweater-1181391/",
   },
   {
     name: "Jason Francisco",
     title: "Product Designer",
     image: person3,
+    imageSm: person3Sm,
     alt: "Photo by Tiger Lily: https://www.pexels.com/photo/photo-of-man-in-bubble-jacket-while-holding-tablet-computer-4484077/",
   },
   {
     name: "Eric Smith",
     title: "Digital Marketing Specialist",
     image: person4,
+    imageSm: person4Sm,
     alt: "Photo by Nick Karvounis on Unsplash ",
   },
   {
     name: "Ernie Smith",
     title: "Operations Manager",
     image: person5,
+    imageSm: person5Sm,
     alt: "Photo by Gregory Hayes on Unsplash",
   },
   {
     name: "Gustav Johansson",
     title: "Supply Chain Manager",
     image: person6,
+    imageSm: person6Sm,
     alt: "Photo by Sora Shimazaki: https://www.pexels.com/photo/glad-asian-businessman-standing-with-documents-in-hand-in-office-5668774/",
   },
   {
     name: "Malik Nkrumah",
     title: "Customer Service Representative",
     image: person7,
+    imageSm: person7Sm,
     alt: "Photo by Zen Chung: https://www.pexels.com/photo/positive-black-man-in-smart-casual-clothes-5745170/",
   },
 ];
@@ -68,9 +82,11 @@ export function AboutPage() {
   function carouselBtnHandler(e) {
     setSelectedBtn(+e.currentTarget.name);
   }
+
   return (
     <>
       <Breadcrumb chain={breadcrumb} />
+
       <section className="about_hero mb-14">
         <div className="text">
           <h2 className="heading-primary">{t("Our Story")}</h2>
@@ -82,6 +98,7 @@ export function AboutPage() {
           <div className="img"></div>
         </div>
       </section>
+
       <section className="about_statistics container mb-14">
         <article className="stat_item">
           <svg
@@ -209,6 +226,7 @@ export function AboutPage() {
           <p className="stat_txt">{t("Anual gross sale in our site")}</p>
         </article>
       </section>
+
       <section className="about_carousel container mb-14">
         <div
           className="about_managers"
@@ -221,9 +239,14 @@ export function AboutPage() {
           {managers.map((manager) => {
             return (
               <article ref={cardRef} key={manager.name} className="manager">
-                <div className="manager_imgFrame">
-                  <img src={manager.image} alt={manager.alt} />
-                </div>
+                <picture className="manager_imgFrame">
+                  <source srcSet={manager.imageSm} type="image/webp" />
+                  <img
+                    className="manager_img"
+                    src={manager.image}
+                    alt={manager.alt}
+                  />
+                </picture>
                 <p className="name">{manager.name}</p>
                 <p className="title">{t(manager.title)}</p>
                 <div className="manager_links">

@@ -121,10 +121,11 @@
   }
 }
 .manager_imgFrame {
+  display: inline-block;
   height: 43rem;
   width: 37rem;
   overflow: hidden;
-  img {
+  .manager_img {
     max-width: 100%;
   }
 }

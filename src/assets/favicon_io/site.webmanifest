@@ -1,0 +1,27 @@
+{
+  "start_url": "/index.html",
+  "name": "Exclusive Online Store",
+  "short_name": "Exclusive",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "./any-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "theme_color": "#db4444",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}

@@ -59,16 +59,24 @@ export function Header() {
           <div className="header_wrapper">
             <Search />
             <div className="header_iconsWrapper">
-              <Link className="wishlistIcon" to="/wishlist">
-                <img src={wishlistIcon} />
+              <Link
+                className="wishlistIcon"
+                to="/wishlist"
+                aria-label="go to your wishlist"
+              >
+                <img src={wishlistIcon} alt="wishlist icon" />
                 {wishlist.length ? (
                   <span className="wishlistCounter">{wishlist.length}</span>
                 ) : (
                   ""
                 )}
               </Link>
-              <Link className="cartIcon" to="/cart">
-                <img src={cartIcon} />
+              <Link
+                className="cartIcon"
+                to="/cart"
+                aria-label="go to your cart"
+              >
+                <img src={cartIcon} alt="cart icon" />
                 {cart.length ? (
                   <span className="cartCounter">
                     {cart.reduce((acc, obj) => acc + obj.count, 0)}
@@ -79,7 +87,7 @@ export function Header() {
               </Link>
               <button
                 className="userIcon"
-                name="user-icon"
+                aria-label="user-icon"
                 onClick={clickUserIconHandler}
               >
                 <svg
