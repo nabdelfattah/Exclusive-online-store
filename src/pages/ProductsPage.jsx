@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { ProductCard } from "../components/Product";
-import { useFetch } from "../useFetch";
+import { useFetch } from "../hooks/useFetch";
 import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Loading } from "../components";

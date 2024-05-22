@@ -10,6 +10,7 @@ import {
   SectionSale,
   UpButton,
 } from "../components";
+import { useElementOnScreen } from "../hooks/useElementOnScreen ";
 
 export function HomePage() {
   // Scroll to top when page loads
@@ -18,30 +19,11 @@ export function HomePage() {
   }, []);
 
   // Hide the up button and show it when user beneath hero section
-  const [isHidden, setIsHidden] = useState(false);
-  const heroRef = useRef(null);
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        // Update isHidden based on whether the hero section is intersecting
-        setIsHidden(entry.isIntersecting);
-      },
-      { threshold: 0.5 } // Adjust the threshold as needed
-    );
-    if (heroRef.current) {
-      observer.observe(heroRef.current);
-    }
-    // Cleanup
-    return () => {
-      if (heroRef.current) {
-        observer.unobserve(heroRef.current);
-      }
-    };
-  }, []);
+  const [isVisible, observedElRef] = useElementOnScreen({ threshold: 0.5 });
 
   return (
     <div className="HomePage">
-      <div ref={heroRef}>
+      <div ref={observedElRef}>
         <SectionHero />
       </div>
       <SectionSale />
@@ -51,7 +33,7 @@ export function HomePage() {
       <SectionExplore />
       <SectionNew />
       <Features />
-      {isHidden ? "" : <UpButton />}
+      {isVisible ? "" : <UpButton />}
     </div>
   );
 }

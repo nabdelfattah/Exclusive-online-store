@@ -3,7 +3,7 @@ import { RatingStars } from "./";
 import { addToCart, addToWishlist } from "../../helper";
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../UserContext";
-import { useFetch } from "../../useFetch";
+import { useFetch } from "../../hooks/useFetch";
 
 export function FetchedProductCard(props) {
   const { wishlist, setWishlist, setCart } = useContext(UserContext);

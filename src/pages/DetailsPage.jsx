@@ -4,7 +4,7 @@ import { ProductList, RatingStars } from "../components/Product";
 import { useContext, useEffect, useState } from "react";
 import truck from "../assets/icons/truck.svg";
 import rotatingArrows from "../assets/icons/rotatingArrows.svg";
-import { useFetch } from "../useFetch";
+import { useFetch } from "../hooks/useFetch";
 import { addToCart, addToWishlist } from "../helper";
 import { HomeHeader } from "../components/Home/HomeHeader";
 import { UserContext } from "../UserContext";

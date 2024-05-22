@@ -41,23 +41,7 @@
   .breadcrumb.container {
     padding: 4rem 0rem 2rem;
   }
-  .header-primary {
-    height: 12rem;
-  }
-  .header-primary .container {
-    position: relative;
-    padding: 3.3rem 1rem 3rem;
-  }
-  .header_nav {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    padding-left: 1rem;
-  }
-  .header_nav,
-  .header_wrapper {
-    gap: 2rem;
-  }
+
   .pdtList {
     flex-shrink: 1;
   }
@@ -67,9 +51,7 @@
     overflow: hidden;
     justify-content: center;
   }
-  header .container {
-    flex-wrap: wrap;
-  }
+
   .footer .container {
     position: relative;
     display: flex;
@@ -94,81 +76,6 @@
   html {
     /* 8px / 16px = 0.5 = 50% */
     font-size: 50%;
-  }
-  /* MOBILE NAVIGATION */
-  .mobileNav_btn--menue {
-    visibility: visible;
-    pointer-events: all;
-    opacity: 1;
-  }
-  .header-primary {
-    height: auto;
-  }
-  .header-primary .container {
-    position: static;
-  }
-  .main_nav {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    background-color: rgba(255, 255, 255, 0.9);
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(10px);
-    transform: translateX(100%);
-    transition: var(--animation);
-  }
-  .main_nav::before {
-    content: "Exclusive";
-    position: absolute;
-    top: 4rem;
-    left: 50%;
-    transform: translateX(-50%);
-    @include font(2.4rem, 2.4rem, 700);
-    font-family: var(--f-inter);
-    letter-spacing: 0.3px;
-    user-select: none;
-  }
-  .header_nav,
-  .header_wrapper {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  .header_wrapper {
-    flex-direction: column;
-    gap: 3rem;
-    top: 12rem;
-  }
-  .header_form {
-    margin-left: -3rem;
-  }
-  .header_nav {
-    flex-direction: column;
-    top: 26rem;
-  }
-  .header_navLink {
-    font-weight: 600;
-  }
-  .open_nav {
-    #root {
-      overflow-y: hidden;
-    }
-    .main_nav {
-      z-index: 99;
-      transform: translatex(0%);
-    }
-    .mobileNav_btn--menue {
-      opacity: 0;
-      pointer-events: none;
-      visibility: hidden;
-    }
-    .mobileNav_btn--close {
-      opacity: 1;
-      pointer-events: all;
-      visibility: visible;
-    }
   }
   .banner {
     height: 100%;
