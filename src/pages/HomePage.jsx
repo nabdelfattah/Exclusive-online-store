@@ -11,6 +11,7 @@ import {
   UpButton,
 } from "../components";
 import { useElementOnScreen } from "../hooks/useElementOnScreen ";
+import { HeaderContext } from "../HeaderContext";
 
 export function HomePage() {
   // Scroll to top when page loads
@@ -19,7 +20,15 @@ export function HomePage() {
   }, []);
 
   // Hide the up button and show it when user beneath hero section
-  const [isVisible, observedElRef] = useElementOnScreen({ threshold: 0.5 });
+  const [isVisible, observedElRef] = useElementOnScreen({ threshold: 0.2 });
+  const { setIsSticky } = useContext(HeaderContext);
+
+  useEffect(() => {
+    setIsSticky(!isVisible);
+    return () => {
+      setIsSticky(false);
+    };
+  }, [isVisible, setIsSticky]);
 
   return (
     <div className="HomePage">

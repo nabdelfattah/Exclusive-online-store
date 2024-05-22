@@ -7,10 +7,11 @@ import close from "../../assets/icons/close.svg";
 import { useContext, useEffect, useRef } from "react";
 import { UserContext } from "../../UserContext";
 import { useTranslation } from "react-i18next";
+import { HeaderContext } from "../../HeaderContext";
 
 export function Header() {
   const { t } = useTranslation();
-
+  const { isSticky } = useContext(HeaderContext);
   const userIconRef = useRef();
   const userNavRef = useRef();
 
@@ -48,7 +49,7 @@ export function Header() {
   }, []);
 
   return (
-    <header className="header-primary">
+    <header className={`header-primary ${isSticky ? "sticky" : ""}`}>
       <div className="container">
         <Link to="/" className="logo">
           Exclusive
