@@ -10,13 +10,13 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 const categories = [
-  { name: "Phones", img: category1 },
-  { name: "Computers", img: category2 },
-  { name: "SmartWatch", img: category3 },
-  { name: "Camera", img: category4 },
-  { name: "HeadPhones", img: category5 },
-  { name: "Gaming", img: category6 },
-  { name: "Accessories", img: category7 },
+  { name: "Phones", img: category1, alt: "an icon of a phone" },
+  { name: "Computers", img: category2, alt: "an icon of a computer" },
+  { name: "SmartWatch", img: category3, alt: "an icon of a smartWatch" },
+  { name: "Camera", img: category4, alt: "an icon of a camera" },
+  { name: "HeadPhones", img: category5, alt: "an icon of a headphones" },
+  { name: "Gaming", img: category6, alt: "an icon of a Gaming device" },
+  { name: "Accessories", img: category7, alt: "an icon of a CD" },
 ];
 
 export function SectionCategories() {
@@ -96,7 +96,7 @@ export function SectionCategories() {
             >
               <img
                 src={categories[desiredOne].img}
-                alt={t(categories[desiredOne].name)}
+                alt={t(categories[desiredOne].alt)}
               />
               <p className="category_name">{t(categories[desiredOne].name)}</p>
             </Link>

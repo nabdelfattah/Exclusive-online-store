@@ -1,15 +1,25 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import hero1 from "../../assets/icons/lg/hero1.png";
+import hero1Webp from "../../assets/icons/lg/hero1.webp";
 import hero2 from "../../assets/icons/lg/hero2.png";
+import hero2Webp from "../../assets/icons/lg/hero2.webp";
 import hero3 from "../../assets/icons/lg/hero3.png";
+import hero3Webp from "../../assets/icons/lg/hero3.webp";
 import hero4 from "../../assets/icons/lg/hero5.png";
+import hero4Webp from "../../assets/icons/lg/hero5.webp";
 import hero5 from "../../assets/icons/lg/hero4.png";
+import hero5Webp from "../../assets/icons/lg/hero4.webp";
 import smHero1 from "../../assets/icons/lg/small-screen/sm-hero1.png";
+import smHero1Webp from "../../assets/icons/lg/small-screen/sm-hero1.webp";
 import smHero2 from "../../assets/icons/lg/small-screen/sm-hero2.png";
+import smHero2Webp from "../../assets/icons/lg/small-screen/sm-hero2.webp";
 import smHero3 from "../../assets/icons/lg/small-screen/sm-hero3.png";
+import smHero3Webp from "../../assets/icons/lg/small-screen/sm-hero3.webp";
 import smHero4 from "../../assets/icons/lg/small-screen/sm-hero4.png";
+import smHero4Webp from "../../assets/icons/lg/small-screen/sm-hero4.webp";
 import smHero5 from "../../assets/icons/lg/small-screen/sm-hero5.png";
+import smHero5Webp from "../../assets/icons/lg/small-screen/sm-hero5.webp";
 import accountNavIcon from "../../assets/icons/menu-account.svg";
 import { useTranslation } from "react-i18next";
 
@@ -23,11 +33,11 @@ export function SectionHero() {
   const imgWidth = imgRef.current ? imgRef.current.clientWidth : 0;
   const navRef = useRef();
   const carouselContent = [
-    { img: [hero1, smHero1], alt: "iPhone 14 Series" },
-    { img: [hero2, smHero2], alt: "PlayStation 5" },
-    { img: [hero3, smHero3], alt: "Speakers" },
-    { img: [hero4, smHero4], alt: "Perfume" },
-    { img: [hero5, smHero5], alt: "Music Player" },
+    { img: [hero1, smHero1, hero1Webp, smHero1Webp], alt: "iPhone 14 Series" },
+    { img: [hero2, smHero2, hero2Webp, smHero2Webp], alt: "PlayStation 5" },
+    { img: [hero3, smHero3, hero3Webp, smHero3Webp], alt: "Speakers" },
+    { img: [hero4, smHero4, hero4Webp, smHero4Webp], alt: "Perfume" },
+    { img: [hero5, smHero5, hero5Webp, smHero5Webp], alt: "Music Player" },
   ];
   // Manage secondary navigation
   function toggleNavHandler() {
@@ -72,6 +82,7 @@ export function SectionHero() {
       >
         <img src={accountNavIcon} alt="menu icon" />
       </button>
+
       <nav ref={navRef} className="hero_nav account_navigate">
         <ul className="hero_navlist">
           <li>
@@ -131,18 +142,26 @@ export function SectionHero() {
           </li>
         </ul>
       </nav>
+
       <div className="hero_carousel">
         <div className="hero_carousel_imgs" ref={imgRef}>
           {carouselContent.map((obj, index) => {
             return (
-              <img
+              <picture
                 key={JSON.stringify(obj)}
-                src={isSmallScreen ? obj.img[1] : obj.img[0]}
-                alt={obj.alt}
                 style={{
                   transform: `translateX(-${imgWidth * selectedBtn}px)`,
                 }}
-              />
+              >
+                <source
+                  srcSet={isSmallScreen ? obj.img[3] : obj.img[2]}
+                  type="image/webp"
+                />
+                <img
+                  src={isSmallScreen ? obj.img[1] : obj.img[0]}
+                  alt={obj.alt}
+                />
+              </picture>
             );
           })}
           <Link to="products">
@@ -174,7 +193,7 @@ export function SectionHero() {
                   selectedBtn == index ? "carousel_btn--selected" : ""
                 }`}
                 onClick={carouselBtnHandler}
-                name={index}
+                aria-label={`move to image number ${index + 1}`}
               >
                 &nbsp;
               </button>

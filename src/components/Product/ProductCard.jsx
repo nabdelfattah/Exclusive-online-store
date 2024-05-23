@@ -84,7 +84,7 @@ export function ProductCard(props) {
         </div>
         {category == "laptops" ? (
           <div className="card_colors">
-            <div className="colors">
+            <label className="colors" aria-label="Choose color">
               <input
                 type="radio"
                 name="color"
@@ -99,7 +99,7 @@ export function ProductCard(props) {
                 style={{ backgroundColor: "#DB4444" }}
                 onChange={(event) => setColor(event.target.value)}
               />
-            </div>
+            </label>
           </div>
         ) : (
           ""
