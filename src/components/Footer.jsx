@@ -14,7 +14,7 @@ export function Footer() {
     <footer className="footer">
       <div className="container">
         <div className="footer_col">
-          <Link to="/" className="logo">
+          <Link to="/" className="logo" aria-label="Go to home page">
             Exclusive
           </Link>
           <p className="footer_heading">{t("Subscribe")}</p>
@@ -98,7 +98,7 @@ export function Footer() {
             </a>
           </div>
           <div className="footer_socialLinks">
-            <a href="#">
+            <a href="#" aria-label="facebook account">
               <svg
                 width="24"
                 height="24"
@@ -112,7 +112,7 @@ export function Footer() {
                 />
               </svg>
             </a>
-            <a href="#">
+            <a href="#" aria-label="X account">
               <svg
                 width="24px"
                 height="24px"
@@ -141,7 +141,7 @@ export function Footer() {
                 </g>
               </svg>
             </a>
-            <a href="#">
+            <a href="#" aria-label="Instagram account">
               <svg
                 width="24"
                 height="24"
@@ -167,7 +167,7 @@ export function Footer() {
                 />
               </svg>
             </a>
-            <a href="#">
+            <a href="#" aria-label="Linked-in account">
               <svg
                 width="24"
                 height="24"
