@@ -21,7 +21,7 @@
   text-decoration: underline;
   margin-left: 0.8rem;
 }
-.banner_select {
+.banner_select select {
   display: inline-block;
   @include font(1.4rem, 3rem);
   color: var(--c-off-white);

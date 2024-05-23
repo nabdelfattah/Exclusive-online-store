@@ -89,7 +89,7 @@ export function Footer() {
             {t("Save $3 with App New User Only")}
           </p>
           <div className="footer_downloadGrid">
-            <img src={qrCode} alt="QR code" />
+            <img src={qrCode} alt="QR code" width={80} height={80} />
             <a href="#">
               <img src={googlePlay} alt="Google play" />
             </a>

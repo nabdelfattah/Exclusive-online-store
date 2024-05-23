@@ -250,7 +250,7 @@ export function AboutPage() {
                 <p className="name">{manager.name}</p>
                 <p className="title">{t(manager.title)}</p>
                 <div className="manager_links">
-                  <a href="#">
+                  <a href="#" aria-label="X account">
                     <svg
                       width="24"
                       height="24"
@@ -273,7 +273,7 @@ export function AboutPage() {
                       </defs>
                     </svg>
                   </a>
-                  <a href="#">
+                  <a href="#" aria-label="Instagram account">
                     <svg
                       width="24"
                       height="24"
@@ -299,7 +299,7 @@ export function AboutPage() {
                       />
                     </svg>
                   </a>
-                  <a href="#">
+                  <a href="#" aria-label="Linkedin profile">
                     <svg
                       width="24"
                       height="24"

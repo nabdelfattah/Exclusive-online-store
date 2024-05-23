@@ -27,21 +27,19 @@ export function Banner() {
             {t("bannerLink")}
           </Link>
         </p>
-        <select
-          defaultValue="english"
-          className="banner_select"
-          onChange={selectHandler}
-        >
-          <option value="english" title="English">
-            English
-          </option>
-          <option value="spanish" title="Española">
-            española
-          </option>
-          <option value="french" title="Française">
-            Française
-          </option>
-        </select>
+        <label className="banner_select" aria-label="Choose a country">
+          <select id="country" defaultValue="english" onChange={selectHandler}>
+            <option value="english" title="English">
+              English
+            </option>
+            <option value="spanish" title="Española">
+              española
+            </option>
+            <option value="french" title="Française">
+              Française
+            </option>
+          </select>
+        </label>
       </div>
     </div>
   );
