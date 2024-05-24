@@ -54,7 +54,7 @@ export function ProductInCart({ product, updateCart }) {
   }
 
   return (
-    <div className="pdtCart">
+    <li className="pdtCart">
       <div
         className={`pdtCart_info ${isDeleted ? "pdtcart_info--deleted" : ""}`}
       >
@@ -72,6 +72,6 @@ export function ProductInCart({ product, updateCart }) {
         <img src={down} alt="down arrow" onClick={decrementCounter} />
       </div>
       <p>${product.price * count}</p>
-    </div>
+    </li>
   );
 }
