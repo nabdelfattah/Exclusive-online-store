@@ -194,6 +194,7 @@ export function SectionHero() {
                 }`}
                 onClick={carouselBtnHandler}
                 aria-label={`move to image number ${index + 1}`}
+                name={index}
               >
                 &nbsp;
               </button>
