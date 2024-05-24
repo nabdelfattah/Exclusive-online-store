@@ -7,10 +7,15 @@ import { useTranslation } from "react-i18next";
 
 export function SectionSale() {
   const { t } = useTranslation();
+
   const [productIndex, setProductIndex] = useState(0);
   const [nextBtnDisabled, setNextBtnDisabled] = useState(false);
   const [previousBtnDisabled, setPreviousBtnDisabled] = useState(true);
+  const [productCount, setProductCount] = useState(0);
 
+  const handleProductCount = (count) => {
+    setProductCount(count);
+  };
   function previousArrowHandler() {
     if (productIndex == 0) {
       setPreviousBtnDisabled(true);
@@ -20,7 +25,7 @@ export function SectionSale() {
     }
   }
   function nextArrowHandler() {
-    if (productIndex == 1) {
+    if (productIndex == productCount - 4) {
       setNextBtnDisabled(true);
     } else {
       setPreviousBtnDisabled(false);
@@ -86,7 +91,10 @@ export function SectionSale() {
           }rem)`,
         }}
       >
-        <ProductList category="mens-watches" />
+        <ProductList
+          category="mens-watches"
+          onProductCountChange={handleProductCount}
+        />
       </div>
       <Link to="/products" className="btn-primary">
         {t("View All Products")}

@@ -5,6 +5,9 @@ import { useTranslation } from "react-i18next";
 
 export function SectionBestSelling({ products }) {
   const { t } = useTranslation();
+  function handleProductCount() {
+    return;
+  }
   return (
     <section className="section-best container mb-14">
       <HomeHeader
@@ -15,7 +18,10 @@ export function SectionBestSelling({ products }) {
           {t("View All")}
         </Link>
       </HomeHeader>
-      <ProductList category="furniture" />
+      <ProductList
+        category="furniture"
+        onProductCountChange={handleProductCount}
+      />
     </section>
   );
 }

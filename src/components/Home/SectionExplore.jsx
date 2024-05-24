@@ -9,7 +9,11 @@ export function SectionExplore() {
   const [productIndex, setProductIndex] = useState(0);
   const [nextBtnDisabled, setNextBtnDisabled] = useState(false);
   const [previousBtnDisabled, setPreviousBtnDisabled] = useState(true);
+  const [productCount, setProductCount] = useState(0);
 
+  const handleProductCount = (count) => {
+    setProductCount(count);
+  };
   function previousArrowHandler() {
     if (productIndex == 0) {
       setPreviousBtnDisabled(true);
@@ -19,7 +23,7 @@ export function SectionExplore() {
     }
   }
   function nextArrowHandler() {
-    if (productIndex == 1) {
+    if (productIndex == productCount - 4) {
       setNextBtnDisabled(true);
     } else {
       setPreviousBtnDisabled(false);
@@ -87,8 +91,14 @@ export function SectionExplore() {
           }rem)`,
         }}
       >
-        <ProductList category="lighting" />
-        <ProductList category="laptops" />
+        <ProductList
+          category="mens-shoes"
+          onProductCountChange={handleProductCount}
+        />
+        <ProductList
+          category="laptops"
+          onProductCountChange={handleProductCount}
+        />
       </div>
       <Link to="products" className="btn-primary">
         {t("View All Products")}
