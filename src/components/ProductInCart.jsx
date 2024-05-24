@@ -65,13 +65,13 @@ export function ProductInCart({ product, updateCart }) {
         />
         <span>{product.title}</span>
       </div>
-      <p>${product.price}</p>
+      <p className="subTotal">&nbsp; ${product.price}</p>
       <div className="pdtCart_counter">
         <p className="counter">{count}</p>
         <img src={up} alt="up arrow" onClick={incrementCounter} />
         <img src={down} alt="down arrow" onClick={decrementCounter} />
       </div>
-      <p>${product.price * count}</p>
+      <p className="total">&nbsp; ${product.price * count}</p>
     </li>
   );
 }

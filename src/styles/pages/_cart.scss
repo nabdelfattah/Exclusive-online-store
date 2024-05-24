@@ -112,7 +112,41 @@
     padding: 1.4rem 1rem;
   }
 }
+/**************************/
+/* BELOW 704px (Smaller tablets) */
+/**************************/
+@media (max-width: 44em) {
+  .pdtCart {
+    padding: 1.4rem 1rem;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 1.4rem;
+  }
+  .pdtCart div:first-child {
+    justify-self: center;
+  }
+  .pdtCart p:last-child {
+    margin-right: 0;
+    justify-self: center;
+  }
+  .cart_header {
+    display: none;
+  }
+  .pdtCart .subTotal::before {
+    content: "Price:";
+  }
+  .pdtCart .total::before {
+    content: "Subtotal:";
+  }
+}
 @media (max-width: 37em) {
+  .pdtCart {
+    justify-items: start;
+  }
+  .pdtCart div:first-child,
+  .pdtCart p:last-child {
+    justify-self: start;
+  }
   .cart_btns {
     flex-direction: column;
     gap: 1.6rem;

@@ -112,27 +112,6 @@
 }
 
 /**************************/
-/* BELOW 704px (Smaller tablets) */
-/**************************/
-@media (max-width: 44em) {
-  .cart_header,
-  .pdtCart {
-    padding: 1.4rem 1rem;
-    grid-template-columns: 1fr;
-    justify-items: center;
-    gap: 1.4rem;
-  }
-  .cart_header p:first-child,
-  .pdtCart div:first-child {
-    justify-self: auto;
-  }
-  .cart_header p:last-child,
-  .pdtCart p:last-child {
-    justify-self: auto;
-  }
-}
-
-/**************************/
 /* BELOW 592px (Phones) */
 /**************************/
 @media (max-width: 37em) {

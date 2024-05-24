@@ -1,7 +1,6 @@
 import { useTranslation } from "react-i18next";
 
 export function CartTotal({ subtotal, shipping, total }) {
-  console.log(Math.round(subtotal));
   const { t } = useTranslation();
   return (
     <>
