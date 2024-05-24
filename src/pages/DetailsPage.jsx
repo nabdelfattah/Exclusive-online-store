@@ -221,7 +221,7 @@ export function DetailsPage() {
                   <img src={truck} alt="a truck" />
                   <div className="text-box">
                     <p className="title">{t("Free Delivery")}</p>
-                    <a className="description">
+                    <a href="#" className="description">
                       {t("Enter your postal code for Delivery Availability")}
                     </a>
                   </div>
@@ -232,7 +232,7 @@ export function DetailsPage() {
                     <p className="title">{t("Return Delivery")}</p>
                     <p className="description">
                       {t("Free 30 Days Delivery Returns")}.{" "}
-                      <a>{t("Details")}</a>
+                      <a href="#">{t("Details")}</a>
                     </p>
                   </div>
                 </div>

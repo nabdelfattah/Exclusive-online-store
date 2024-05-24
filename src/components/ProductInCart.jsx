@@ -58,7 +58,11 @@ export function ProductInCart({ product, updateCart }) {
       <div
         className={`pdtCart_info ${isDeleted ? "pdtcart_info--deleted" : ""}`}
       >
-        <img src={product.thumbnail} className={`pdtCart_img`} />
+        <img
+          src={product.thumbnail}
+          alt={`an image of a ${product.title}`}
+          className={`pdtCart_img`}
+        />
         <span>{product.title}</span>
       </div>
       <p>${product.price}</p>

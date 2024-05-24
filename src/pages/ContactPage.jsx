@@ -28,14 +28,14 @@ export function ContactPage() {
         <div className="contact_info">
           <section className="contact_info_call">
             <h3>
-              <img src={contactInfo1} /> {t("Call To Us")}
+              <img src={contactInfo1} alt="a phone icon" /> {t("Call To Us")}
             </h3>
             <p>{t("We are available 24/7, 7 days a week")}.</p>
             <p>Phone: +8801611112222</p>
           </section>
           <section className="contact_info_mail">
             <h3>
-              <img src={contactInfo2} /> {t("Write To US")}
+              <img src={contactInfo2} alt="a message icon" /> {t("Write To US")}
             </h3>
             <p>
               {t("Fill out our form and we will contact you within 24 hours")}.

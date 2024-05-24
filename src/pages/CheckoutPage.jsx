@@ -127,7 +127,7 @@ export function CheckoutPage() {
                       <img
                         className="pdtImg"
                         src={obj.thumbnail}
-                        alt={obj.title}
+                        alt={`an image of ${obj.title}`}
                       />
                       <p className="pdtName">{obj.title}</p>
                     </Link>
