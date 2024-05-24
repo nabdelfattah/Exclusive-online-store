@@ -12,6 +12,10 @@ import { useTranslation } from "react-i18next";
 
 export function DetailsPage() {
   const { t } = useTranslation();
+
+  const handleProductCount = (count) => {
+    return;
+  };
   const { setWishlist, setCart } = useContext(UserContext);
   // Scroll to top when page loads
   useEffect(() => {
@@ -241,7 +245,10 @@ export function DetailsPage() {
           </section>
           <section className="details_relatedPdts container mb-14">
             <HomeHeader subheading={t("Related Item")} heading="" />
-            <ProductList category={pdtObj.category} />
+            <ProductList
+              category={pdtObj.category}
+              onProductCountChange={handleProductCount}
+            />
           </section>
         </>
       ) : (

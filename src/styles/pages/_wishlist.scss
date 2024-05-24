@@ -4,6 +4,11 @@
     flex-wrap: wrap;
   }
 }
+.justForU {
+  .pdtList {
+    flex-wrap: nowrap;
+  }
+}
 .wishlist_header {
   margin: 8rem 0 6rem;
   display: flex;

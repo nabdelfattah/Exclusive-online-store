@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { UserContext } from "../UserContext";
 import { FetchedProductCard, ProductList } from "../components/Product";
 import { HomeHeader } from "../components/Home/HomeHeader";
@@ -10,6 +10,9 @@ export function WishlistPage() {
   const { t } = useTranslation();
   const { wishlist } = useContext(UserContext);
 
+  const handleProductCount = (count) => {
+    return;
+  };
   function moveToCartHandler() {
     wishlist.forEach(async (element) => {
       try {
@@ -49,7 +52,12 @@ export function WishlistPage() {
             {t("See All")}
           </Link>
         </HomeHeader>
-        <ProductList category="sunglasses" />
+        <div className="justForU">
+          <ProductList
+            category="sunglasses"
+            onProductCountChange={handleProductCount}
+          />
+        </div>
       </div>
     </div>
   );

@@ -21,7 +21,7 @@ export function Timer() {
 
   const now = new Date();
   const [targetDate] = useState(
-    new Date(now.getTime() + 3 * 24 * 60 * 60 * 1000)
+    new Date(now.getTime() + 4 * 24 * 60 * 60 * 1000)
   );
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(targetDate));
 
