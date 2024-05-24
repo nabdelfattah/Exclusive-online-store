@@ -3,9 +3,8 @@ import { useTranslation } from "react-i18next";
 
 export function Timer() {
   const { t } = useTranslation();
-  const calculateTimeLeft = () => {
-    const difference = +new Date("2024-6-1") - +new Date();
-
+  const calculateTimeLeft = (targetDate) => {
+    const difference = targetDate - new Date();
     let timeLeft = {};
 
     if (difference > 0) {
@@ -20,15 +19,19 @@ export function Timer() {
     return timeLeft;
   };
 
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const now = new Date();
+  const [targetDate] = useState(
+    new Date(now.getTime() + 3 * 24 * 60 * 60 * 1000)
+  );
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(targetDate));
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setTimeLeft(calculateTimeLeft());
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft(targetDate));
     }, 1000);
 
-    return () => clearTimeout(timer);
-  });
+    return () => clearInterval(timer);
+  }, [targetDate]);
 
   return (
     <div className="timer">
