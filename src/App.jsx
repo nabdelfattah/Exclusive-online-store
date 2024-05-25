@@ -15,6 +15,7 @@ import {
   CheckoutPage,
   AccountPage,
   ReviewsPage,
+  UnderConstruction,
 } from "./pages";
 
 function App() {
@@ -38,6 +39,11 @@ function App() {
           <Route path="signup" element={<SignUpPage />} />
           <Route path="login" element={<LogInPage />} />
           <Route path="account" element={<AccountPage />} />
+          <Route path="account/address" element={<UnderConstruction />} />
+          <Route path="account/payment" element={<UnderConstruction />} />
+          <Route path="account/orders" element={<UnderConstruction />} />
+          <Route path="account/returns" element={<UnderConstruction />} />
+          <Route path="account/cancellations" element={<UnderConstruction />} />
           <Route path="contact" element={<ContactPage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="*" element={<ErrorPage />} />

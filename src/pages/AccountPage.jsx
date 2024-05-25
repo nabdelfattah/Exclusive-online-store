@@ -90,7 +90,7 @@ export function AccountPage() {
                     </NavLink>
                   </li>
                 </ul>
-                <Link className="account_nav_link" to="/account">
+                <Link className="account_nav_link" to="/account/orders">
                   {t("My Orders")}
                 </Link>
                 <ul className="account_nav_list">
@@ -105,7 +105,7 @@ export function AccountPage() {
                   <li>
                     <NavLink
                       className="account_nav_subLink"
-                      to="/account/cancellation"
+                      to="/account/cancellations"
                     >
                       {t("My Cancellations")}
                     </NavLink>

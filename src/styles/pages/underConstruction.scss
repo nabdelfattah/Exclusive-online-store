@@ -1,0 +1,34 @@
+@import "../mixins";
+.under_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  height: 50rem;
+}
+.under_img {
+  max-width: 20rem;
+}
+.under_txt {
+  @include font(2rem, 3rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  gap: 2rem;
+  .btn-primary {
+    width: fit-content;
+  }
+}
+@media (max-width: 59em) {
+  .under_wrapper {
+    flex-direction: column;
+  }
+  .under_txt {
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+  }
+}
+@media (max-width: 37em) {
+}
