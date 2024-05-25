@@ -13,7 +13,7 @@
 
 This project is a responsive multi-lingual e-commerce website where users can:
 
-- Create an account
+- Create an account (using email, or via Google)
 - Add Products to their Wishlist
 - Add products to their cart
 - Review products
@@ -23,7 +23,9 @@ I used [Dummy JSON API](https://dummyjson.com/) to get dummy/fake JSON data to u
 
 ## Links:
 
-[Original Design on Figma](https://www.figma.com/file/yn2DFQJla0UiSMvomFsqwT/E-Commerce-Website-%D9%90Almdrasa?type=design&node-id=1-3&mode=design&t=d3LCgTgpGZAG20AI-0). Watch my [Live Demo](https://youtu.be/kR0Ua1kgMRc)
+[Original Design on Figma](https://www.figma.com/file/yn2DFQJla0UiSMvomFsqwT/E-Commerce-Website-%D9%90Almdrasa?type=design&node-id=1-3&mode=design&t=d3LCgTgpGZAG20AI-0).</br>
+[Watch my presentation](https://youtu.be/kR0Ua1kgMRc) and
+[Try my app](https://exclusive-online-store.vercel.app/)
 
 ## Screenshot:
 
