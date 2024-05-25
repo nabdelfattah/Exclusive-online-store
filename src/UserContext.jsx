@@ -3,6 +3,8 @@ import { auth } from "./firebase";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithRedirect,
   updateProfile,
 } from "firebase/auth";
 
@@ -46,6 +48,15 @@ function UserContextProvider(props) {
     }
   }
 
+  async function signupWithGoogle() {
+    try {
+      const provider = new GoogleAuthProvider();
+      await signInWithRedirect(auth, provider);
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
+
   function logout() {
     try {
       auth.signOut();
@@ -66,6 +77,7 @@ function UserContextProvider(props) {
       value={{
         user,
         signup,
+        signupWithGoogle,
         login,
         logout,
         wishlist,

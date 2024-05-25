@@ -9,13 +9,15 @@ import { useTranslation } from "react-i18next";
 
 export function SignUpPage() {
   const { t } = useTranslation();
-  const [errMsg, setErrMsg] = useState("");
-  const [IsLoading, setIsLoading] = useState(false);
-  const { signup, user } = useContext(UserContext);
+
+  const { signup, signupWithGoogle, user } = useContext(UserContext);
   const navigateTo = useNavigate();
   useEffect(() => {
     if (user) navigateTo("/");
   }, []);
+
+  const [errMsg, setErrMsg] = useState("");
+  const [IsLoading, setIsLoading] = useState(false);
 
   async function signupHandler(e) {
     e.preventDefault();
@@ -41,6 +43,9 @@ export function SignUpPage() {
     } else {
       setErrMsg(validationResult.errors[0]);
     }
+  }
+  async function signupWithGoogleHandler() {
+    await signupWithGoogle();
   }
 
   return (
@@ -80,6 +85,7 @@ export function SignUpPage() {
             name="sign-up-with-google-button"
             className="btn-outline"
             type="button"
+            onClick={signupWithGoogleHandler}
           >
             <img src={googleIcon} />
             {t("Sign up with Google")}
