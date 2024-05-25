@@ -71,7 +71,10 @@ export function ProductInCart({ product, updateCart }) {
         <img src={up} alt="up arrow" onClick={incrementCounter} />
         <img src={down} alt="down arrow" onClick={decrementCounter} />
       </div>
-      <p className="total">&nbsp; ${product.price * count}</p>
+      <p className="total">
+        &nbsp; $
+        {Math.round((product.price * count + Number.EPSILON) * 100) / 100}
+      </p>
     </li>
   );
 }
