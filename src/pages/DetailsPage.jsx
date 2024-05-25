@@ -80,7 +80,7 @@ export function DetailsPage() {
                 <img src={pdtObj.images[2]} alt={pdtObj.title} />
               </figure>
               <figure>
-                <img src={pdtObj.images[3]} alt={pdtObj.title} />
+                <img src={pdtObj.images[1]} alt={pdtObj.title} />
               </figure>
             </div>
             <div className="details_details">
