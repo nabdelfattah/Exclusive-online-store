@@ -12,7 +12,6 @@ export function AccountPage() {
   const accountNavRef = useRef();
 
   useEffect(() => {
-    console.log("hiiiiii");
     if (!user) {
       navigateTo("/login");
       return;
